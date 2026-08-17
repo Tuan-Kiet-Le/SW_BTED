@@ -1,0 +1,2 @@
+baseline_name,f1_score,tp,fp,tn,fn,mcnemar_p_vs_struct
+Modern_Embedding_BGE_v1.5,0.987012987012987,38,1,99,0,0.375

@@ -1,0 +1,40 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+results/*.png
+results/*.csv
+data/dataset/*.csv
+data/dataset/*.json
+Data/dataset/*.json
+ablationTest/*.json
+datasets/pure_adapted/*.json
+samples/
+
+# Large/local research inputs and generated environments
+.venv/
+data/
+datasets/
+data_results/
+kaggle/
+results/
+experiments/history/
+repro_candidate_138/data/
+repro_candidate_138/results/
+repro_candidate_138/src/__pycache__/
+
+# Local copies of canonical raw inputs
+/full_texts.json
+/trees_section.json
+/pairs.csv
+/plag_regen_sections.json
+
+# Local model/cache and secrets
+.cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.pkl
+.env
+!.env.example

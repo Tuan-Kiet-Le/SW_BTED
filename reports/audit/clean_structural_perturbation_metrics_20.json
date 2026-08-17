@@ -1,0 +1,277 @@
+{
+  "n_pairs": 20,
+  "cutoff": 0.45,
+  "generator": "D:\\FPT\\Semester_8\\RAG_Research\\scratch\\run_structural_perturbation_benchmark.py",
+  "source_dataset": {
+    "trees": "D:\\FPT\\Semester_8\\SW_BTED_v2\\data\\dataset\\trees_section.json",
+    "texts": "D:\\FPT\\Semester_8\\SW_BTED_v2\\data\\dataset\\full_texts.json",
+    "pairs": "D:\\FPT\\Semester_8\\SW_BTED_v2\\data\\dataset\\pairs.csv"
+  },
+  "score_distributions": {
+    "sim_struct": {
+      "mean": 0.30638499999999996,
+      "min": 0.2696,
+      "max": 0.3701
+    },
+    "sim_global_sbert": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "sim_hybrid": {
+      "mean": 0.5838450000000001,
+      "min": 0.5618,
+      "max": 0.6221
+    }
+  },
+  "confusion": {
+    "full_doc_sbert": {
+      "tp": 0,
+      "fp": 20,
+      "tn": 0,
+      "fn": 0,
+      "accuracy": 0.0
+    },
+    "sw_bted_structural": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 20,
+      "fn": 0,
+      "accuracy": 1.0
+    },
+    "sw_bted_hybrid": {
+      "tp": 0,
+      "fp": 20,
+      "tn": 0,
+      "fn": 0,
+      "accuracy": 0.0
+    }
+  },
+  "mcnemar": {
+    "n10_struct_correct_sbert_wrong": 20,
+    "n01_sbert_correct_struct_wrong": 0,
+    "p_exact": 1.9073486328125e-06
+  },
+  "rows": [
+    {
+      "pair_id": "P1_SU26SE102",
+      "doc_a": "SU26SE102",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.298,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5788,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE163",
+      "doc_a": "SP26SE163",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2798,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5679,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE045",
+      "doc_a": "SP26SE045",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3037,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5822,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE071",
+      "doc_a": "SP26SE071",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3193,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5916,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE045",
+      "doc_a": "SU26SE045",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3037,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5822,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE043",
+      "doc_a": "SU26SE043",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2808,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5685,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE047",
+      "doc_a": "SU26SE047",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2917,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.575,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE148",
+      "doc_a": "SP26SE148",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3408,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.6045,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE116",
+      "doc_a": "SU26SE116",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3701,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.6221,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE035",
+      "doc_a": "SP26SE035",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3228,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5937,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE063",
+      "doc_a": "SU26SE063",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2956,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5774,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE048",
+      "doc_a": "SU26SE048",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.298,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5788,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE002",
+      "doc_a": "SU26SE002",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2921,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5753,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE020",
+      "doc_a": "SP26SE020",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3292,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5975,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE001",
+      "doc_a": "SP26SE001",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3133,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.588,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE093",
+      "doc_a": "SU26SE093",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2696,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5618,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SU26SE057",
+      "doc_a": "SU26SE057",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.2932,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5759,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE105",
+      "doc_a": "SP26SE105",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3118,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5871,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE130",
+      "doc_a": "SP26SE130",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3096,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5858,
+      "label": 0
+    },
+    {
+      "pair_id": "P1_SP26SE074",
+      "doc_a": "SP26SE074",
+      "type": "Perturbed_P1_SectionReorder",
+      "d2_index": 1,
+      "d3_index": 2,
+      "sim_struct": 0.3046,
+      "sim_global_sbert": 1.0,
+      "sim_hybrid": 0.5828,
+      "label": 0
+    }
+  ]
+}

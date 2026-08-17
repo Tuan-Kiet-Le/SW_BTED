@@ -1,0 +1,71 @@
+{
+  "scope": "canonical 138 name-matched pairs",
+  "source_diff": {
+    "legacy": "RAG_Research/src/baselines.py called without full_texts; tree_to_full_text() uses tree labels/leaves",
+    "clean": "SW_BTED_v2/src/baselines.py called with canonical full_texts.json; full document fields used"
+  },
+  "metrics": {
+    "legacy_tree_label_tfidf": {
+      "mean_f1": 0.43640777523130464,
+      "std_f1": 0.016213552094353323,
+      "tp": 38,
+      "fp": 98,
+      "tn": 2,
+      "fn": 0
+    },
+    "clean_full_text_tfidf": {
+      "mean_f1": 0.9866666666666667,
+      "std_f1": 0.02666666666666666,
+      "tp": 38,
+      "fp": 1,
+      "tn": 99,
+      "fn": 0
+    },
+    "legacy_tree_label_section": {
+      "mean_f1": 0.40812494694847634,
+      "std_f1": 0.05484481109073002,
+      "tp": 35,
+      "fp": 98,
+      "tn": 2,
+      "fn": 3
+    },
+    "clean_full_text_section": {
+      "mean_f1": 0.6836632965568498,
+      "std_f1": 0.08936299481635376,
+      "tp": 38,
+      "fp": 38,
+      "tn": 62,
+      "fn": 0
+    }
+  },
+  "score_distributions": {
+    "legacy_tree_label_tfidf": {
+      "positive_mean": 0.08804570831542421,
+      "negative_mean": 0.2271143180285405,
+      "min": 0.04514712772009748,
+      "max": 0.2461237161803984
+    },
+    "clean_full_text_tfidf": {
+      "positive_mean": 0.6118136689537904,
+      "negative_mean": 0.1020245886345964,
+      "min": 0.022671026321331257,
+      "max": 0.8059084341262783
+    },
+    "legacy_tree_label_section": {
+      "positive_mean": 0.6481915285481338,
+      "negative_mean": 0.9361152675640837,
+      "min": 0.24180644943038657,
+      "max": 1.0
+    },
+    "clean_full_text_section": {
+      "positive_mean": 0.4909143442350251,
+      "negative_mean": 0.2212927328073292,
+      "min": 0.00976024877778963,
+      "max": 0.8343111889325397
+    }
+  },
+  "mean_abs_diff": {
+    "tfidf": 0.2374014938492929,
+    "section": 0.5666923049306735
+  }
+}

@@ -1,0 +1,509 @@
+{
+  "protocol": {
+    "folds": 5,
+    "seed": 42,
+    "threshold_step": 0.005,
+    "threshold_train_only": true
+  },
+  "metrics": {
+    "SW_BTED": {
+      "mean_f1": 0.9498039215686275,
+      "std_f1": 0.025341952033574134,
+      "mean_precision": 0.9055555555555556,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        4,
+        96,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.33,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.34,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.34,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.34,
+          "f1": 0.9333333333333333,
+          "precision": 0.875,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.34,
+          "f1": 0.9333333333333333,
+          "precision": 0.875,
+          "recall": 1.0
+        }
+      ]
+    },
+    "SBERT_MiniLM": {
+      "mean_f1": 0.9866666666666667,
+      "std_f1": 0.02666666666666666,
+      "mean_precision": 0.975,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.595,
+          "f1": 0.9333333333333333,
+          "precision": 0.875,
+          "recall": 1.0
+        }
+      ]
+    },
+    "BGE_Small_v1.5": {
+      "mean_f1": 0.9882352941176471,
+      "std_f1": 0.02352941176470589,
+      "mean_precision": 0.9777777777777779,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.75,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    "MPNet_Base_v2": {
+      "mean_f1": 0.9882352941176471,
+      "std_f1": 0.02352941176470589,
+      "mean_precision": 0.9777777777777779,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.64,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    "TF-IDF": {
+      "mean_f1": 0.9866666666666667,
+      "std_f1": 0.02666666666666666,
+      "mean_precision": 0.975,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.25,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.25,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.25,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.215,
+          "f1": 0.9333333333333333,
+          "precision": 0.875,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.25,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      ]
+    },
+    "Standard TED": {
+      "mean_f1": 0.43640777523130464,
+      "std_f1": 0.016213552094353323,
+      "mean_precision": 0.27924297924297925,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        98,
+        2,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.27,
+          "f1": 0.4444444444444444,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.27,
+          "f1": 0.4444444444444444,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.27,
+          "f1": 0.45714285714285713,
+          "precision": 0.2962962962962963,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.27,
+          "f1": 0.4117647058823529,
+          "precision": 0.25925925925925924,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.27,
+          "f1": 0.42424242424242425,
+          "precision": 0.2692307692307692,
+          "recall": 1.0
+        }
+      ]
+    },
+    "pq-Gram": {
+      "mean_f1": 0.9478506787330317,
+      "std_f1": 0.04775899670793552,
+      "mean_precision": 0.9527777777777778,
+      "mean_recall": 0.9464285714285714,
+      "tp_fp_tn_fn": [
+        36,
+        2,
+        98,
+        2
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.005,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.005,
+          "f1": 0.875,
+          "precision": 0.875,
+          "recall": 0.875
+        },
+        {
+          "fold": 3,
+          "threshold": 0.005,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.005,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.01,
+          "f1": 0.9230769230769231,
+          "precision": 1.0,
+          "recall": 0.8571428571428571
+        }
+      ]
+    },
+    "Section Cosine": {
+      "mean_f1": 0.6836632965568498,
+      "std_f1": 0.08936299481635376,
+      "mean_precision": 0.5262914862914863,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        38,
+        62,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.25,
+          "f1": 0.6153846153846154,
+          "precision": 0.4444444444444444,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.25,
+          "f1": 0.5517241379310345,
+          "precision": 0.38095238095238093,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.25,
+          "f1": 0.6956521739130435,
+          "precision": 0.5333333333333333,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.25,
+          "f1": 0.7777777777777778,
+          "precision": 0.6363636363636364,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.245,
+          "f1": 0.7777777777777778,
+          "precision": 0.6363636363636364,
+          "recall": 1.0
+        }
+      ]
+    },
+    "Genuine Flat Domain SBERT": {
+      "mean_f1": 0.4313725490196078,
+      "std_f1": 0.016009736880935804,
+      "mean_precision": 0.2751322751322751,
+      "mean_recall": 1.0,
+      "tp_fp_tn_fn": [
+        38,
+        100,
+        0,
+        0
+      ],
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.0,
+          "f1": 0.4444444444444444,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        {
+          "fold": 2,
+          "threshold": 0.0,
+          "f1": 0.4444444444444444,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        {
+          "fold": 3,
+          "threshold": 0.0,
+          "f1": 0.4444444444444444,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        {
+          "fold": 4,
+          "threshold": 0.0,
+          "f1": 0.4117647058823529,
+          "precision": 0.25925925925925924,
+          "recall": 1.0
+        },
+        {
+          "fold": 5,
+          "threshold": 0.0,
+          "f1": 0.4117647058823529,
+          "precision": 0.25925925925925924,
+          "recall": 1.0
+        }
+      ]
+    }
+  },
+  "mcnemar_vs_sw": [
+    {
+      "baseline": "SBERT_MiniLM",
+      "sw_only_correct": 1,
+      "baseline_only_correct": 4,
+      "discordant": 5,
+      "mcnemar_exact_p": 0.375
+    },
+    {
+      "baseline": "BGE_Small_v1.5",
+      "sw_only_correct": 1,
+      "baseline_only_correct": 4,
+      "discordant": 5,
+      "mcnemar_exact_p": 0.375
+    },
+    {
+      "baseline": "MPNet_Base_v2",
+      "sw_only_correct": 1,
+      "baseline_only_correct": 4,
+      "discordant": 5,
+      "mcnemar_exact_p": 0.375
+    },
+    {
+      "baseline": "TF-IDF",
+      "sw_only_correct": 1,
+      "baseline_only_correct": 4,
+      "discordant": 5,
+      "mcnemar_exact_p": 0.375
+    },
+    {
+      "baseline": "Standard TED",
+      "sw_only_correct": 96,
+      "baseline_only_correct": 2,
+      "discordant": 98,
+      "mcnemar_exact_p": 3.0620424897058794e-26
+    },
+    {
+      "baseline": "pq-Gram",
+      "sw_only_correct": 4,
+      "baseline_only_correct": 4,
+      "discordant": 8,
+      "mcnemar_exact_p": 1.0
+    },
+    {
+      "baseline": "Section Cosine",
+      "sw_only_correct": 37,
+      "baseline_only_correct": 3,
+      "discordant": 40,
+      "mcnemar_exact_p": 1.946500560734421e-08
+    },
+    {
+      "baseline": "Genuine Flat Domain SBERT",
+      "sw_only_correct": 96,
+      "baseline_only_correct": 0,
+      "discordant": 96,
+      "mcnemar_exact_p": 2.524354896707238e-29
+    }
+  ]
+}

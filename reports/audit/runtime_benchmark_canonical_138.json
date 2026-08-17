@@ -1,0 +1,1438 @@
+{
+  "protocol": {
+    "dataset": "canonical four-layer 138 real-only pairs",
+    "warmup_pairs": 5,
+    "timed_calls": 138,
+    "function": "normalize_similarity",
+    "model": "SWCostModel(alpha=0.8, beta_T2=0.0, beta_T3=0.9, beta_T4=0.8)",
+    "timing_unit": "milliseconds per pair",
+    "includes": "APTED alignment and Python scoring",
+    "excludes": "model loading, parsing, and embedding inference"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+    "cpu_count": 16
+  },
+  "overall": {
+    "n_pairs": 138,
+    "mean_ms": 15.443182608695652,
+    "median_ms": 17.9358,
+    "p95_ms": 23.519005000000003,
+    "min_ms": 1.6149,
+    "max_ms": 56.4008,
+    "total_seconds": 2.1311592
+  },
+  "size_bins": [
+    {
+      "size_bin": "smallest quartile",
+      "n_pairs": 34,
+      "nodes_total_min": 46,
+      "nodes_total_max": 127,
+      "mean_ms": 6.525473529411765,
+      "median_ms": 6.87865,
+      "p95_ms": 8.21103
+    },
+    {
+      "size_bin": "middle half",
+      "n_pairs": 69,
+      "nodes_total_min": 127,
+      "nodes_total_max": 172,
+      "mean_ms": 17.02170579710145,
+      "median_ms": 17.929,
+      "p95_ms": 23.766359999999995
+    },
+    {
+      "size_bin": "largest quartile",
+      "n_pairs": 35,
+      "nodes_total_min": 172,
+      "nodes_total_max": 172,
+      "mean_ms": 20.994154285714284,
+      "median_ms": 18.8834,
+      "p95_ms": 26.04723999999998
+    }
+  ],
+  "pair_measurements": [
+    {
+      "doc_a": "SU26SE102",
+      "doc_b": "SU26SE102_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.4175,
+      "similarity": 0.3656
+    },
+    {
+      "doc_a": "SU26SE045",
+      "doc_b": "SU26SE045_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.6163,
+      "similarity": 0.3561
+    },
+    {
+      "doc_a": "SU26SE043",
+      "doc_b": "SU26SE043_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.1157,
+      "similarity": 0.3591
+    },
+    {
+      "doc_a": "SU26SE047",
+      "doc_b": "SU26SE047_plag",
+      "label": 1,
+      "nodes_a": 77,
+      "nodes_b": 41,
+      "nodes_total": 118,
+      "elapsed_ms": 5.9326,
+      "similarity": 0.3745
+    },
+    {
+      "doc_a": "SU26SE063",
+      "doc_b": "SU26SE063_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.4454,
+      "similarity": 0.3575
+    },
+    {
+      "doc_a": "SU26SE048",
+      "doc_b": "SU26SE048_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.948,
+      "similarity": 0.3819
+    },
+    {
+      "doc_a": "SU26SE002",
+      "doc_b": "SU26SE002_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.3253,
+      "similarity": 0.3428
+    },
+    {
+      "doc_a": "SU26SE093",
+      "doc_b": "SU26SE093_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.5564,
+      "similarity": 0.3801
+    },
+    {
+      "doc_a": "SU26SE057",
+      "doc_b": "SU26SE057_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.0663,
+      "similarity": 0.34
+    },
+    {
+      "doc_a": "SU26SE096",
+      "doc_b": "SU26SE096_plag",
+      "label": 1,
+      "nodes_a": 82,
+      "nodes_b": 41,
+      "nodes_total": 123,
+      "elapsed_ms": 7.227,
+      "similarity": 0.372
+    },
+    {
+      "doc_a": "SU26SE013",
+      "doc_b": "SU26SE013_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.4021,
+      "similarity": 0.3747
+    },
+    {
+      "doc_a": "SU26SE021",
+      "doc_b": "SU26SE021_plag",
+      "label": 1,
+      "nodes_a": 77,
+      "nodes_b": 41,
+      "nodes_total": 118,
+      "elapsed_ms": 6.0995,
+      "similarity": 0.3761
+    },
+    {
+      "doc_a": "SU26SE088",
+      "doc_b": "SU26SE088_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.7314,
+      "similarity": 0.3755
+    },
+    {
+      "doc_a": "SU26SE106",
+      "doc_b": "SU26SE106_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.0582,
+      "similarity": 0.3814
+    },
+    {
+      "doc_a": "SU26SE097",
+      "doc_b": "SU26SE097_plag",
+      "label": 1,
+      "nodes_a": 41,
+      "nodes_b": 41,
+      "nodes_total": 82,
+      "elapsed_ms": 2.8989,
+      "similarity": 0.5866
+    },
+    {
+      "doc_a": "SU26SE066",
+      "doc_b": "SU26SE066_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.522,
+      "similarity": 0.3652
+    },
+    {
+      "doc_a": "SU26SE031",
+      "doc_b": "SU26SE031_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.1402,
+      "similarity": 0.3853
+    },
+    {
+      "doc_a": "SU27SE153",
+      "doc_b": "SU27SE153_plag",
+      "label": 1,
+      "nodes_a": 23,
+      "nodes_b": 23,
+      "nodes_total": 46,
+      "elapsed_ms": 1.6149,
+      "similarity": 0.7457
+    },
+    {
+      "doc_a": "SU26SE023",
+      "doc_b": "SU26SE023_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.437,
+      "similarity": 0.3898
+    },
+    {
+      "doc_a": "SU26SE101",
+      "doc_b": "SU26SE101_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.7602,
+      "similarity": 0.3693
+    },
+    {
+      "doc_a": "SU26SE086",
+      "doc_b": "SU26SE086_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.7003,
+      "similarity": 0.365
+    },
+    {
+      "doc_a": "SU26SE034",
+      "doc_b": "SU26SE034_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.8093,
+      "similarity": 0.3834
+    },
+    {
+      "doc_a": "SU26SE003",
+      "doc_b": "SU26SE003_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.4499,
+      "similarity": 0.3477
+    },
+    {
+      "doc_a": "SU26SE008",
+      "doc_b": "SU26SE008_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.7266,
+      "similarity": 0.3785
+    },
+    {
+      "doc_a": "SU26SE041",
+      "doc_b": "SU26SE041_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 8.6139,
+      "similarity": 0.3586
+    },
+    {
+      "doc_a": "SU26SE037",
+      "doc_b": "SU26SE037_plag",
+      "label": 1,
+      "nodes_a": 41,
+      "nodes_b": 41,
+      "nodes_total": 82,
+      "elapsed_ms": 3.1141,
+      "similarity": 0.5283
+    },
+    {
+      "doc_a": "SU26SE010",
+      "doc_b": "SU26SE010_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.9941,
+      "similarity": 0.3457
+    },
+    {
+      "doc_a": "SU26SE022",
+      "doc_b": "SU26SE022_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.0384,
+      "similarity": 0.3804
+    },
+    {
+      "doc_a": "SU26SE017",
+      "doc_b": "SU26SE017_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.8206,
+      "similarity": 0.3787
+    },
+    {
+      "doc_a": "SU26SE170",
+      "doc_b": "SU26SE170_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 8.9791,
+      "similarity": 0.3725
+    },
+    {
+      "doc_a": "SU26SE107",
+      "doc_b": "SU26SE107_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.3982,
+      "similarity": 0.3814
+    },
+    {
+      "doc_a": "SU26SE083",
+      "doc_b": "SU26SE083_plag",
+      "label": 1,
+      "nodes_a": 77,
+      "nodes_b": 41,
+      "nodes_total": 118,
+      "elapsed_ms": 8.7245,
+      "similarity": 0.4091
+    },
+    {
+      "doc_a": "SU26SE025",
+      "doc_b": "SU26SE025_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.528,
+      "similarity": 0.3873
+    },
+    {
+      "doc_a": "SU26SE056",
+      "doc_b": "SU26SE056_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 7.4682,
+      "similarity": 0.3604
+    },
+    {
+      "doc_a": "SU26SE001",
+      "doc_b": "SU26SE001_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 10.4053,
+      "similarity": 0.3787
+    },
+    {
+      "doc_a": "SU26SE072",
+      "doc_b": "SU26SE072_plag",
+      "label": 1,
+      "nodes_a": 59,
+      "nodes_b": 32,
+      "nodes_total": 91,
+      "elapsed_ms": 5.2266,
+      "similarity": 0.4707
+    },
+    {
+      "doc_a": "SU26SE042",
+      "doc_b": "SU26SE042_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 6.8582,
+      "similarity": 0.3625
+    },
+    {
+      "doc_a": "SU26SE095",
+      "doc_b": "SU26SE095_plag",
+      "label": 1,
+      "nodes_a": 86,
+      "nodes_b": 41,
+      "nodes_total": 127,
+      "elapsed_ms": 8.3717,
+      "similarity": 0.3542
+    },
+    {
+      "doc_a": "SU26SE168",
+      "doc_b": "SP26SE003",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.0805,
+      "similarity": 0.2797
+    },
+    {
+      "doc_a": "SU26SE169",
+      "doc_b": "SP26SE112",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 19.1434,
+      "similarity": 0.3019
+    },
+    {
+      "doc_a": "SP26SE001",
+      "doc_b": "SU26SE004",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 85,
+      "nodes_total": 171,
+      "elapsed_ms": 22.0128,
+      "similarity": 0.2882
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SP26SE092",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 82,
+      "nodes_total": 167,
+      "elapsed_ms": 18.1958,
+      "similarity": 0.2834
+    },
+    {
+      "doc_a": "SP26SE007",
+      "doc_b": "SP26SE098",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 84,
+      "nodes_total": 170,
+      "elapsed_ms": 19.6268,
+      "similarity": 0.2909
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SP26SE055",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 20.0226,
+      "similarity": 0.2893
+    },
+    {
+      "doc_a": "SP26SE132",
+      "doc_b": "SP26SE157",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.2967,
+      "similarity": 0.3018
+    },
+    {
+      "doc_a": "SP26SE143",
+      "doc_b": "SP26SE062",
+      "label": 0,
+      "nodes_a": 59,
+      "nodes_b": 86,
+      "nodes_total": 145,
+      "elapsed_ms": 11.6903,
+      "similarity": 0.3212
+    },
+    {
+      "doc_a": "SU26SE063",
+      "doc_b": "SP26SE019",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 85,
+      "nodes_total": 171,
+      "elapsed_ms": 20.0261,
+      "similarity": 0.2891
+    },
+    {
+      "doc_a": "SU26SE088",
+      "doc_b": "SP26SE156",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 19.1822,
+      "similarity": 0.2904
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SP26SE038",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 24.1586,
+      "similarity": 0.3041
+    },
+    {
+      "doc_a": "SU26SE080",
+      "doc_b": "SU26SE046",
+      "label": 0,
+      "nodes_a": 68,
+      "nodes_b": 76,
+      "nodes_total": 144,
+      "elapsed_ms": 14.0681,
+      "similarity": 0.3091
+    },
+    {
+      "doc_a": "SU26SE033",
+      "doc_b": "SP26SE161",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 86,
+      "nodes_total": 163,
+      "elapsed_ms": 21.2035,
+      "similarity": 0.3054
+    },
+    {
+      "doc_a": "SU26SE048",
+      "doc_b": "SU26SE087",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 19.0501,
+      "similarity": 0.2963
+    },
+    {
+      "doc_a": "SP26SE048",
+      "doc_b": "SU26SE087",
+      "label": 0,
+      "nodes_a": 69,
+      "nodes_b": 86,
+      "nodes_total": 155,
+      "elapsed_ms": 16.8333,
+      "similarity": 0.2873
+    },
+    {
+      "doc_a": "SP26SE047",
+      "doc_b": "SP26SE159",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 18.9298,
+      "similarity": 0.2917
+    },
+    {
+      "doc_a": "SU26SE097",
+      "doc_b": "SP26SE150",
+      "label": 0,
+      "nodes_a": 41,
+      "nodes_b": 85,
+      "nodes_total": 126,
+      "elapsed_ms": 6.4908,
+      "similarity": 0.3466
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SP26SE042",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 19.8111,
+      "similarity": 0.2932
+    },
+    {
+      "doc_a": "SU26SE102",
+      "doc_b": "SP26SE034",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 77,
+      "nodes_total": 163,
+      "elapsed_ms": 17.2046,
+      "similarity": 0.2979
+    },
+    {
+      "doc_a": "SP26SE138",
+      "doc_b": "SU26SE030",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.3723,
+      "similarity": 0.3022
+    },
+    {
+      "doc_a": "SU26SE026",
+      "doc_b": "SU26SE063",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 86,
+      "nodes_total": 163,
+      "elapsed_ms": 19.5711,
+      "similarity": 0.3064
+    },
+    {
+      "doc_a": "SU26SE059",
+      "doc_b": "SP26SE048",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 69,
+      "nodes_total": 155,
+      "elapsed_ms": 15.3907,
+      "similarity": 0.2824
+    },
+    {
+      "doc_a": "SP26SE069",
+      "doc_b": "SP26SE091",
+      "label": 0,
+      "nodes_a": 84,
+      "nodes_b": 85,
+      "nodes_total": 169,
+      "elapsed_ms": 18.7434,
+      "similarity": 0.2797
+    },
+    {
+      "doc_a": "SP26SE119",
+      "doc_b": "SU26SE067",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.7787,
+      "similarity": 0.2939
+    },
+    {
+      "doc_a": "SU26SE015",
+      "doc_b": "SP26SE024",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 18.2893,
+      "similarity": 0.2953
+    },
+    {
+      "doc_a": "SP26SE019",
+      "doc_b": "SU26SE079",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 59,
+      "nodes_total": 144,
+      "elapsed_ms": 14.0844,
+      "similarity": 0.3256
+    },
+    {
+      "doc_a": "SU26SE169",
+      "doc_b": "SP26SE069",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 84,
+      "nodes_total": 170,
+      "elapsed_ms": 17.8617,
+      "similarity": 0.286
+    },
+    {
+      "doc_a": "SP26SE042",
+      "doc_b": "SP26SE159",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.2576,
+      "similarity": 0.2941
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SU26SE039",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 19.273,
+      "similarity": 0.2905
+    },
+    {
+      "doc_a": "SP26SE065",
+      "doc_b": "SP26SE120",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.8495,
+      "similarity": 0.2927
+    },
+    {
+      "doc_a": "SP26SE120",
+      "doc_b": "SP26SE123",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.7722,
+      "similarity": 0.2973
+    },
+    {
+      "doc_a": "SP26SE052",
+      "doc_b": "SP26SE078",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 18.1755,
+      "similarity": 0.2931
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SP26SE102",
+      "label": 0,
+      "nodes_a": 67,
+      "nodes_b": 86,
+      "nodes_total": 153,
+      "elapsed_ms": 14.2933,
+      "similarity": 0.3168
+    },
+    {
+      "doc_a": "SP26SE054",
+      "doc_b": "SP26SE099",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 68,
+      "nodes_total": 154,
+      "elapsed_ms": 14.7673,
+      "similarity": 0.3097
+    },
+    {
+      "doc_a": "SP26SE039",
+      "doc_b": "SU26SE165",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 17.9426,
+      "similarity": 0.2897
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SP26SE103",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.2587,
+      "similarity": 0.3047
+    },
+    {
+      "doc_a": "SU26SE168",
+      "doc_b": "SU26SE019",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.6778,
+      "similarity": 0.2927
+    },
+    {
+      "doc_a": "SU26SE029",
+      "doc_b": "SU26SE087",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 20.0486,
+      "similarity": 0.2937
+    },
+    {
+      "doc_a": "SU26SE070",
+      "doc_b": "SP26SE069",
+      "label": 0,
+      "nodes_a": 80,
+      "nodes_b": 84,
+      "nodes_total": 164,
+      "elapsed_ms": 16.9262,
+      "similarity": 0.2823
+    },
+    {
+      "doc_a": "SP26SE134",
+      "doc_b": "SU26SE169",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.0925,
+      "similarity": 0.2987
+    },
+    {
+      "doc_a": "SP26SE055",
+      "doc_b": "SP26SE128",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.4408,
+      "similarity": 0.2904
+    },
+    {
+      "doc_a": "SU26SE094",
+      "doc_b": "SP26SE157",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.4432,
+      "similarity": 0.3077
+    },
+    {
+      "doc_a": "SU26SE166",
+      "doc_b": "SU26SE082",
+      "label": 0,
+      "nodes_a": 81,
+      "nodes_b": 86,
+      "nodes_total": 167,
+      "elapsed_ms": 17.6948,
+      "similarity": 0.2804
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SP26SE052",
+      "label": 0,
+      "nodes_a": 67,
+      "nodes_b": 85,
+      "nodes_total": 152,
+      "elapsed_ms": 13.9949,
+      "similarity": 0.3081
+    },
+    {
+      "doc_a": "SP26SE128",
+      "doc_b": "SU26SE079",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 59,
+      "nodes_total": 145,
+      "elapsed_ms": 11.5369,
+      "similarity": 0.3296
+    },
+    {
+      "doc_a": "SP26SE088",
+      "doc_b": "SP26SE134",
+      "label": 0,
+      "nodes_a": 64,
+      "nodes_b": 86,
+      "nodes_total": 150,
+      "elapsed_ms": 13.2342,
+      "similarity": 0.3041
+    },
+    {
+      "doc_a": "SU26SE087",
+      "doc_b": "SP26SE001",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.7905,
+      "similarity": 0.2914
+    },
+    {
+      "doc_a": "SU26SE061",
+      "doc_b": "SU26SE021",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 77,
+      "nodes_total": 163,
+      "elapsed_ms": 17.087,
+      "similarity": 0.3099
+    },
+    {
+      "doc_a": "SP26SE162",
+      "doc_b": "SP26SE086",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.034,
+      "similarity": 0.2945
+    },
+    {
+      "doc_a": "SP26SE061",
+      "doc_b": "SP26SE049",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.4813,
+      "similarity": 0.2849
+    },
+    {
+      "doc_a": "SP26SE122",
+      "doc_b": "SP26SE055",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.5943,
+      "similarity": 0.2916
+    },
+    {
+      "doc_a": "SP26SE038",
+      "doc_b": "SU26SE109",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.8726,
+      "similarity": 0.2954
+    },
+    {
+      "doc_a": "SP26SE123",
+      "doc_b": "SU26SE063",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.1044,
+      "similarity": 0.2879
+    },
+    {
+      "doc_a": "SP26SE038",
+      "doc_b": "SU26SE023",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.8834,
+      "similarity": 0.303
+    },
+    {
+      "doc_a": "SP26SE098",
+      "doc_b": "SU26SE116",
+      "label": 0,
+      "nodes_a": 84,
+      "nodes_b": 59,
+      "nodes_total": 143,
+      "elapsed_ms": 13.787,
+      "similarity": 0.3193
+    },
+    {
+      "doc_a": "SU26SE022",
+      "doc_b": "SP26SE161",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.6395,
+      "similarity": 0.3046
+    },
+    {
+      "doc_a": "SU26SE045",
+      "doc_b": "SP26SE024",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.5297,
+      "similarity": 0.295
+    },
+    {
+      "doc_a": "SP26SE161",
+      "doc_b": "SP26SE078",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.3947,
+      "similarity": 0.2989
+    },
+    {
+      "doc_a": "SU26SE104",
+      "doc_b": "SP26SE048",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 69,
+      "nodes_total": 155,
+      "elapsed_ms": 14.9626,
+      "similarity": 0.2977
+    },
+    {
+      "doc_a": "SU26SE021",
+      "doc_b": "SP26SE026",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 86,
+      "nodes_total": 163,
+      "elapsed_ms": 22.53,
+      "similarity": 0.2886
+    },
+    {
+      "doc_a": "SP26SE078",
+      "doc_b": "SP26SE011",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.1352,
+      "similarity": 0.3041
+    },
+    {
+      "doc_a": "SU26SE087",
+      "doc_b": "SP26SE087",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 67,
+      "nodes_total": 153,
+      "elapsed_ms": 14.2366,
+      "similarity": 0.3098
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SU26SE091",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.3592,
+      "similarity": 0.3054
+    },
+    {
+      "doc_a": "SU26SE026",
+      "doc_b": "SP26SE029",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 86,
+      "nodes_total": 163,
+      "elapsed_ms": 16.553,
+      "similarity": 0.305
+    },
+    {
+      "doc_a": "SP26SE058",
+      "doc_b": "SU26SE043",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.62,
+      "similarity": 0.2887
+    },
+    {
+      "doc_a": "SP26SE012",
+      "doc_b": "SP26SE058",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.3505,
+      "similarity": 0.2883
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SU26SE166",
+      "label": 0,
+      "nodes_a": 67,
+      "nodes_b": 81,
+      "nodes_total": 148,
+      "elapsed_ms": 13.4294,
+      "similarity": 0.2954
+    },
+    {
+      "doc_a": "SP26SE104",
+      "doc_b": "SU26SE032",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 56.4008,
+      "similarity": 0.2994
+    },
+    {
+      "doc_a": "SU27SE153",
+      "doc_b": "SU26SE030",
+      "label": 0,
+      "nodes_a": 23,
+      "nodes_b": 86,
+      "nodes_total": 109,
+      "elapsed_ms": 5.0678,
+      "similarity": 0.3766
+    },
+    {
+      "doc_a": "SP26SE068",
+      "doc_b": "SU26SE063",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.971,
+      "similarity": 0.2818
+    },
+    {
+      "doc_a": "SP26SE018",
+      "doc_b": "SU26SE048",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.0502,
+      "similarity": 0.29
+    },
+    {
+      "doc_a": "SP26SE162",
+      "doc_b": "SP26SE052",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 85,
+      "nodes_total": 171,
+      "elapsed_ms": 20.0614,
+      "similarity": 0.2825
+    },
+    {
+      "doc_a": "SU26SE044",
+      "doc_b": "SU26SE031",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 86,
+      "nodes_total": 163,
+      "elapsed_ms": 25.514,
+      "similarity": 0.3118
+    },
+    {
+      "doc_a": "SP26SE149",
+      "doc_b": "SP26SE024",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 20.0065,
+      "similarity": 0.2922
+    },
+    {
+      "doc_a": "SP26SE107",
+      "doc_b": "SU26SE019",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.6264,
+      "similarity": 0.3
+    },
+    {
+      "doc_a": "SP26SE128",
+      "doc_b": "SU26SE074",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 66,
+      "nodes_total": 152,
+      "elapsed_ms": 15.9424,
+      "similarity": 0.3062
+    },
+    {
+      "doc_a": "SU26SE029",
+      "doc_b": "SU26SE021",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 77,
+      "nodes_total": 163,
+      "elapsed_ms": 17.6405,
+      "similarity": 0.3025
+    },
+    {
+      "doc_a": "SP26SE129",
+      "doc_b": "SP26SE078",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 19.9699,
+      "similarity": 0.2953
+    },
+    {
+      "doc_a": "SP26SE056",
+      "doc_b": "SP26SE078",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 21.9391,
+      "similarity": 0.3029
+    },
+    {
+      "doc_a": "SP26SE051",
+      "doc_b": "SP26SE070",
+      "label": 0,
+      "nodes_a": 68,
+      "nodes_b": 77,
+      "nodes_total": 145,
+      "elapsed_ms": 13.3696,
+      "similarity": 0.3008
+    },
+    {
+      "doc_a": "SU26SE005",
+      "doc_b": "SP26SE158",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 27.5426,
+      "similarity": 0.2851
+    },
+    {
+      "doc_a": "SP26SE001",
+      "doc_b": "SU26SE022",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 23.9599,
+      "similarity": 0.3068
+    },
+    {
+      "doc_a": "SP26SE034",
+      "doc_b": "SU26SE079",
+      "label": 0,
+      "nodes_a": 77,
+      "nodes_b": 59,
+      "nodes_total": 136,
+      "elapsed_ms": 11.7618,
+      "similarity": 0.3393
+    },
+    {
+      "doc_a": "SP26SE056",
+      "doc_b": "SU26SE063",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 23.4412,
+      "similarity": 0.2933
+    },
+    {
+      "doc_a": "SP26SE033",
+      "doc_b": "SP26SE078",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 30.9177,
+      "similarity": 0.3004
+    },
+    {
+      "doc_a": "SU26SE064",
+      "doc_b": "SU26SE018",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 22.3873,
+      "similarity": 0.3047
+    },
+    {
+      "doc_a": "SP26SE010",
+      "doc_b": "SU26SE031",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 20.2374,
+      "similarity": 0.3041
+    },
+    {
+      "doc_a": "SU26SE015",
+      "doc_b": "SP26SE044",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 21.9678,
+      "similarity": 0.291
+    },
+    {
+      "doc_a": "SP26SE101",
+      "doc_b": "SU26SE083",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 77,
+      "nodes_total": 163,
+      "elapsed_ms": 17.929,
+      "similarity": 0.3122
+    },
+    {
+      "doc_a": "SU26SE094",
+      "doc_b": "SP26SE034",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 77,
+      "nodes_total": 163,
+      "elapsed_ms": 23.178,
+      "similarity": 0.3063
+    },
+    {
+      "doc_a": "SP26SE143",
+      "doc_b": "SP26SE057",
+      "label": 0,
+      "nodes_a": 59,
+      "nodes_b": 85,
+      "nodes_total": 144,
+      "elapsed_ms": 17.826,
+      "similarity": 0.3097
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SU26SE107",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 25.0768,
+      "similarity": 0.2997
+    },
+    {
+      "doc_a": "SP26SE093",
+      "doc_b": "SU27SE153",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 23,
+      "nodes_total": 109,
+      "elapsed_ms": 4.7743,
+      "similarity": 0.3814
+    },
+    {
+      "doc_a": "SU26SE070",
+      "doc_b": "SP26SE052",
+      "label": 0,
+      "nodes_a": 80,
+      "nodes_b": 85,
+      "nodes_total": 165,
+      "elapsed_ms": 17.1929,
+      "similarity": 0.286
+    },
+    {
+      "doc_a": "SU26SE091",
+      "doc_b": "SU26SE032",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 18.9386,
+      "similarity": 0.302
+    },
+    {
+      "doc_a": "SP26SE103",
+      "doc_b": "SU26SE079",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 59,
+      "nodes_total": 145,
+      "elapsed_ms": 12.9027,
+      "similarity": 0.3268
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SP26SE109",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 86,
+      "nodes_total": 172,
+      "elapsed_ms": 20.2559,
+      "similarity": 0.3001
+    },
+    {
+      "doc_a": "SP26SE019",
+      "doc_b": "SU26SE091",
+      "label": 0,
+      "nodes_a": 85,
+      "nodes_b": 86,
+      "nodes_total": 171,
+      "elapsed_ms": 18.8213,
+      "similarity": 0.2956
+    },
+    {
+      "doc_a": "SP26SE158",
+      "doc_b": "SP26SE019",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 85,
+      "nodes_total": 171,
+      "elapsed_ms": 18.4471,
+      "similarity": 0.2965
+    },
+    {
+      "doc_a": "SP26SE133",
+      "doc_b": "SP26SE074",
+      "label": 0,
+      "nodes_a": 86,
+      "nodes_b": 85,
+      "nodes_total": 171,
+      "elapsed_ms": 19.3262,
+      "similarity": 0.2903
+    }
+  ]
+}

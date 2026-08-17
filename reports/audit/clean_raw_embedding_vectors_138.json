@@ -1,0 +1,1396 @@
+{
+  "protocol": {
+    "dataset": "canonical 138-pair real-only input",
+    "pairs_sha256": "d20a34fc8997baa272a6d8f89bf5553922842c6032b11d08b4f831dcb4bc2a56",
+    "text_construction": "tree label + full_texts section values in JSON order",
+    "normalize_embeddings": false,
+    "cosine": "dot(a,b)/(||a||*||b||)",
+    "model_ids": {
+      "SBERT_MiniLM": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--sentence-transformers--all-MiniLM-L6-v2\\snapshots\\c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "BGE_Small_v1.5": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--BAAI--bge-small-en-v1.5\\snapshots\\5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "MPNet_Base_v2": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130"
+    }
+  },
+  "pairs": [
+    {
+      "doc_a": "SU26SE102",
+      "doc_b": "SU26SE102_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 0,
+      "SBERT_MiniLM": 0.8144054412841797,
+      "BGE_Small_v1.5": 0.9181848764419556,
+      "MPNet_Base_v2": 0.9175642728805542
+    },
+    {
+      "doc_a": "SU26SE045",
+      "doc_b": "SU26SE045_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 1,
+      "SBERT_MiniLM": 0.8106613755226135,
+      "BGE_Small_v1.5": 0.915852963924408,
+      "MPNet_Base_v2": 0.9071140289306641
+    },
+    {
+      "doc_a": "SU26SE043",
+      "doc_b": "SU26SE043_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 2,
+      "SBERT_MiniLM": 0.7337571382522583,
+      "BGE_Small_v1.5": 0.8999685645103455,
+      "MPNet_Base_v2": 0.8946430087089539
+    },
+    {
+      "doc_a": "SU26SE047",
+      "doc_b": "SU26SE047_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 3,
+      "SBERT_MiniLM": 0.7542421817779541,
+      "BGE_Small_v1.5": 0.8623719811439514,
+      "MPNet_Base_v2": 0.874758243560791
+    },
+    {
+      "doc_a": "SU26SE063",
+      "doc_b": "SU26SE063_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 4,
+      "SBERT_MiniLM": 0.7588410377502441,
+      "BGE_Small_v1.5": 0.9008165597915649,
+      "MPNet_Base_v2": 0.9250876903533936
+    },
+    {
+      "doc_a": "SU26SE048",
+      "doc_b": "SU26SE048_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 5,
+      "SBERT_MiniLM": 0.8521798253059387,
+      "BGE_Small_v1.5": 0.9290650486946106,
+      "MPNet_Base_v2": 0.9553557634353638
+    },
+    {
+      "doc_a": "SU26SE002",
+      "doc_b": "SU26SE002_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 6,
+      "SBERT_MiniLM": 0.7646867632865906,
+      "BGE_Small_v1.5": 0.896525502204895,
+      "MPNet_Base_v2": 0.9163861870765686
+    },
+    {
+      "doc_a": "SU26SE093",
+      "doc_b": "SU26SE093_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 7,
+      "SBERT_MiniLM": 0.8567343950271606,
+      "BGE_Small_v1.5": 0.9531589150428772,
+      "MPNet_Base_v2": 0.9443411231040955
+    },
+    {
+      "doc_a": "SU26SE057",
+      "doc_b": "SU26SE057_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 8,
+      "SBERT_MiniLM": 0.8062177896499634,
+      "BGE_Small_v1.5": 0.9162558317184448,
+      "MPNet_Base_v2": 0.9210445284843445
+    },
+    {
+      "doc_a": "SU26SE096",
+      "doc_b": "SU26SE096_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 9,
+      "SBERT_MiniLM": 0.7493045926094055,
+      "BGE_Small_v1.5": 0.8784074783325195,
+      "MPNet_Base_v2": 0.9207447171211243
+    },
+    {
+      "doc_a": "SU26SE013",
+      "doc_b": "SU26SE013_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 10,
+      "SBERT_MiniLM": 0.8499148488044739,
+      "BGE_Small_v1.5": 0.9215079545974731,
+      "MPNet_Base_v2": 0.9518226385116577
+    },
+    {
+      "doc_a": "SU26SE021",
+      "doc_b": "SU26SE021_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 11,
+      "SBERT_MiniLM": 0.7849538922309875,
+      "BGE_Small_v1.5": 0.9173175692558289,
+      "MPNet_Base_v2": 0.915683388710022
+    },
+    {
+      "doc_a": "SU26SE088",
+      "doc_b": "SU26SE088_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 12,
+      "SBERT_MiniLM": 0.7936846613883972,
+      "BGE_Small_v1.5": 0.922002911567688,
+      "MPNet_Base_v2": 0.8745043277740479
+    },
+    {
+      "doc_a": "SU26SE106",
+      "doc_b": "SU26SE106_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 13,
+      "SBERT_MiniLM": 0.7554602026939392,
+      "BGE_Small_v1.5": 0.8459286689758301,
+      "MPNet_Base_v2": 0.9239071607589722
+    },
+    {
+      "doc_a": "SU26SE097",
+      "doc_b": "SU26SE097_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 14,
+      "SBERT_MiniLM": 0.7386183738708496,
+      "BGE_Small_v1.5": 0.8723639845848083,
+      "MPNet_Base_v2": 0.9266126751899719
+    },
+    {
+      "doc_a": "SU26SE066",
+      "doc_b": "SU26SE066_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 15,
+      "SBERT_MiniLM": 0.7804851531982422,
+      "BGE_Small_v1.5": 0.928594708442688,
+      "MPNet_Base_v2": 0.9280827045440674
+    },
+    {
+      "doc_a": "SU26SE031",
+      "doc_b": "SU26SE031_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 16,
+      "SBERT_MiniLM": 0.876076877117157,
+      "BGE_Small_v1.5": 0.9219555854797363,
+      "MPNet_Base_v2": 0.9311615824699402
+    },
+    {
+      "doc_a": "SU27SE153",
+      "doc_b": "SU27SE153_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 17,
+      "SBERT_MiniLM": 0.8873251080513,
+      "BGE_Small_v1.5": 0.923039436340332,
+      "MPNet_Base_v2": 0.9686112999916077
+    },
+    {
+      "doc_a": "SU26SE023",
+      "doc_b": "SU26SE023_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 18,
+      "SBERT_MiniLM": 0.9170824885368347,
+      "BGE_Small_v1.5": 0.9310271739959717,
+      "MPNet_Base_v2": 0.9449942111968994
+    },
+    {
+      "doc_a": "SU26SE101",
+      "doc_b": "SU26SE101_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 19,
+      "SBERT_MiniLM": 0.880173921585083,
+      "BGE_Small_v1.5": 0.9582818150520325,
+      "MPNet_Base_v2": 0.9409574270248413
+    },
+    {
+      "doc_a": "SU26SE086",
+      "doc_b": "SU26SE086_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 20,
+      "SBERT_MiniLM": 0.8810229897499084,
+      "BGE_Small_v1.5": 0.9479509592056274,
+      "MPNet_Base_v2": 0.9538147449493408
+    },
+    {
+      "doc_a": "SU26SE034",
+      "doc_b": "SU26SE034_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 21,
+      "SBERT_MiniLM": 0.8524467349052429,
+      "BGE_Small_v1.5": 0.9444078207015991,
+      "MPNet_Base_v2": 0.8732233047485352
+    },
+    {
+      "doc_a": "SU26SE003",
+      "doc_b": "SU26SE003_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 22,
+      "SBERT_MiniLM": 0.7932186126708984,
+      "BGE_Small_v1.5": 0.9049517512321472,
+      "MPNet_Base_v2": 0.9128667712211609
+    },
+    {
+      "doc_a": "SU26SE008",
+      "doc_b": "SU26SE008_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 23,
+      "SBERT_MiniLM": 0.7643252611160278,
+      "BGE_Small_v1.5": 0.9105318784713745,
+      "MPNet_Base_v2": 0.8746122121810913
+    },
+    {
+      "doc_a": "SU26SE041",
+      "doc_b": "SU26SE041_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 24,
+      "SBERT_MiniLM": 0.8378020524978638,
+      "BGE_Small_v1.5": 0.9241330027580261,
+      "MPNet_Base_v2": 0.8977576494216919
+    },
+    {
+      "doc_a": "SU26SE037",
+      "doc_b": "SU26SE037_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 25,
+      "SBERT_MiniLM": 0.8372071385383606,
+      "BGE_Small_v1.5": 0.9292635321617126,
+      "MPNet_Base_v2": 0.8935493230819702
+    },
+    {
+      "doc_a": "SU26SE010",
+      "doc_b": "SU26SE010_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 26,
+      "SBERT_MiniLM": 0.8651826977729797,
+      "BGE_Small_v1.5": 0.9232231974601746,
+      "MPNet_Base_v2": 0.893669068813324
+    },
+    {
+      "doc_a": "SU26SE022",
+      "doc_b": "SU26SE022_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 27,
+      "SBERT_MiniLM": 0.8494340777397156,
+      "BGE_Small_v1.5": 0.9483962059020996,
+      "MPNet_Base_v2": 0.932357907295227
+    },
+    {
+      "doc_a": "SU26SE017",
+      "doc_b": "SU26SE017_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 28,
+      "SBERT_MiniLM": 0.9455811381340027,
+      "BGE_Small_v1.5": 0.9342517256736755,
+      "MPNet_Base_v2": 0.961311936378479
+    },
+    {
+      "doc_a": "SU26SE170",
+      "doc_b": "SU26SE170_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 29,
+      "SBERT_MiniLM": 0.84537273645401,
+      "BGE_Small_v1.5": 0.9342717528343201,
+      "MPNet_Base_v2": 0.920519232749939
+    },
+    {
+      "doc_a": "SU26SE107",
+      "doc_b": "SU26SE107_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 30,
+      "SBERT_MiniLM": 0.8006733059883118,
+      "BGE_Small_v1.5": 0.9436768293380737,
+      "MPNet_Base_v2": 0.9430923461914062
+    },
+    {
+      "doc_a": "SU26SE083",
+      "doc_b": "SU26SE083_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 31,
+      "SBERT_MiniLM": 0.8089619874954224,
+      "BGE_Small_v1.5": 0.9653728008270264,
+      "MPNet_Base_v2": 0.950742244720459
+    },
+    {
+      "doc_a": "SU26SE025",
+      "doc_b": "SU26SE025_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 32,
+      "SBERT_MiniLM": 0.8663305640220642,
+      "BGE_Small_v1.5": 0.9485148191452026,
+      "MPNet_Base_v2": 0.940843403339386
+    },
+    {
+      "doc_a": "SU26SE056",
+      "doc_b": "SU26SE056_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 33,
+      "SBERT_MiniLM": 0.8681215047836304,
+      "BGE_Small_v1.5": 0.9404814839363098,
+      "MPNet_Base_v2": 0.8880268335342407
+    },
+    {
+      "doc_a": "SU26SE001",
+      "doc_b": "SU26SE001_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 34,
+      "SBERT_MiniLM": 0.8775757551193237,
+      "BGE_Small_v1.5": 0.9505279660224915,
+      "MPNet_Base_v2": 0.9034613966941833
+    },
+    {
+      "doc_a": "SU26SE072",
+      "doc_b": "SU26SE072_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 35,
+      "SBERT_MiniLM": 0.699146032333374,
+      "BGE_Small_v1.5": 0.8693501949310303,
+      "MPNet_Base_v2": 0.8765052556991577
+    },
+    {
+      "doc_a": "SU26SE042",
+      "doc_b": "SU26SE042_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 36,
+      "SBERT_MiniLM": 0.8802626729011536,
+      "BGE_Small_v1.5": 0.9338487386703491,
+      "MPNet_Base_v2": 0.9236906170845032
+    },
+    {
+      "doc_a": "SU26SE095",
+      "doc_b": "SU26SE095_plag",
+      "label": "1",
+      "type": "Type_A",
+      "index": 37,
+      "SBERT_MiniLM": 0.9171628355979919,
+      "BGE_Small_v1.5": 0.9370356798171997,
+      "MPNet_Base_v2": 0.9397478103637695
+    },
+    {
+      "doc_a": "SU26SE168",
+      "doc_b": "SP26SE003",
+      "label": "0",
+      "type": "Type_B",
+      "index": 38,
+      "SBERT_MiniLM": 0.28372082114219666,
+      "BGE_Small_v1.5": 0.6567217707633972,
+      "MPNet_Base_v2": 0.37917155027389526
+    },
+    {
+      "doc_a": "SU26SE169",
+      "doc_b": "SP26SE112",
+      "label": "0",
+      "type": "Type_B",
+      "index": 39,
+      "SBERT_MiniLM": 0.3012353479862213,
+      "BGE_Small_v1.5": 0.6900138258934021,
+      "MPNet_Base_v2": 0.422355592250824
+    },
+    {
+      "doc_a": "SP26SE001",
+      "doc_b": "SU26SE004",
+      "label": "0",
+      "type": "Type_B",
+      "index": 40,
+      "SBERT_MiniLM": 0.19580085575580597,
+      "BGE_Small_v1.5": 0.6470680832862854,
+      "MPNet_Base_v2": 0.17621126770973206
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SP26SE092",
+      "label": "0",
+      "type": "Type_B",
+      "index": 41,
+      "SBERT_MiniLM": 0.20209580659866333,
+      "BGE_Small_v1.5": 0.6511930823326111,
+      "MPNet_Base_v2": 0.24437245726585388
+    },
+    {
+      "doc_a": "SP26SE007",
+      "doc_b": "SP26SE098",
+      "label": "0",
+      "type": "Type_B",
+      "index": 42,
+      "SBERT_MiniLM": 0.33924779295921326,
+      "BGE_Small_v1.5": 0.6502068042755127,
+      "MPNet_Base_v2": 0.32617560029029846
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SP26SE055",
+      "label": "0",
+      "type": "Type_B",
+      "index": 43,
+      "SBERT_MiniLM": 0.3374311327934265,
+      "BGE_Small_v1.5": 0.6702532172203064,
+      "MPNet_Base_v2": 0.4088125228881836
+    },
+    {
+      "doc_a": "SP26SE132",
+      "doc_b": "SP26SE157",
+      "label": "0",
+      "type": "Type_B",
+      "index": 44,
+      "SBERT_MiniLM": 0.3599835932254791,
+      "BGE_Small_v1.5": 0.7036725282669067,
+      "MPNet_Base_v2": 0.4012607932090759
+    },
+    {
+      "doc_a": "SP26SE143",
+      "doc_b": "SP26SE062",
+      "label": "0",
+      "type": "Type_B",
+      "index": 45,
+      "SBERT_MiniLM": 0.3971773684024811,
+      "BGE_Small_v1.5": 0.65902179479599,
+      "MPNet_Base_v2": 0.3734099566936493
+    },
+    {
+      "doc_a": "SU26SE063",
+      "doc_b": "SP26SE019",
+      "label": "0",
+      "type": "Type_B",
+      "index": 46,
+      "SBERT_MiniLM": 0.17689859867095947,
+      "BGE_Small_v1.5": 0.6321240663528442,
+      "MPNet_Base_v2": 0.34269848465919495
+    },
+    {
+      "doc_a": "SU26SE088",
+      "doc_b": "SP26SE156",
+      "label": "0",
+      "type": "Type_B",
+      "index": 47,
+      "SBERT_MiniLM": 0.3346709907054901,
+      "BGE_Small_v1.5": 0.6626246571540833,
+      "MPNet_Base_v2": 0.42371246218681335
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SP26SE038",
+      "label": "0",
+      "type": "Type_B",
+      "index": 48,
+      "SBERT_MiniLM": 0.25886261463165283,
+      "BGE_Small_v1.5": 0.6211479306221008,
+      "MPNet_Base_v2": 0.2692278325557709
+    },
+    {
+      "doc_a": "SU26SE080",
+      "doc_b": "SU26SE046",
+      "label": "0",
+      "type": "Type_B",
+      "index": 49,
+      "SBERT_MiniLM": 0.4236748516559601,
+      "BGE_Small_v1.5": 0.6761245131492615,
+      "MPNet_Base_v2": 0.5362407565116882
+    },
+    {
+      "doc_a": "SU26SE033",
+      "doc_b": "SP26SE161",
+      "label": "0",
+      "type": "Type_B",
+      "index": 50,
+      "SBERT_MiniLM": 0.3902001678943634,
+      "BGE_Small_v1.5": 0.6818019151687622,
+      "MPNet_Base_v2": 0.3479435443878174
+    },
+    {
+      "doc_a": "SU26SE048",
+      "doc_b": "SU26SE087",
+      "label": "0",
+      "type": "Type_B",
+      "index": 51,
+      "SBERT_MiniLM": 0.5147178173065186,
+      "BGE_Small_v1.5": 0.7359195351600647,
+      "MPNet_Base_v2": 0.5940805077552795
+    },
+    {
+      "doc_a": "SP26SE048",
+      "doc_b": "SU26SE087",
+      "label": "0",
+      "type": "Type_B",
+      "index": 52,
+      "SBERT_MiniLM": 0.5206124782562256,
+      "BGE_Small_v1.5": 0.7048333287239075,
+      "MPNet_Base_v2": 0.5300703644752502
+    },
+    {
+      "doc_a": "SP26SE047",
+      "doc_b": "SP26SE159",
+      "label": "0",
+      "type": "Type_B",
+      "index": 53,
+      "SBERT_MiniLM": 0.13779757916927338,
+      "BGE_Small_v1.5": 0.47043871879577637,
+      "MPNet_Base_v2": 0.13762792944908142
+    },
+    {
+      "doc_a": "SU26SE097",
+      "doc_b": "SP26SE150",
+      "label": "0",
+      "type": "Type_B",
+      "index": 54,
+      "SBERT_MiniLM": 0.269878089427948,
+      "BGE_Small_v1.5": 0.6572318077087402,
+      "MPNet_Base_v2": 0.414698988199234
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SP26SE042",
+      "label": "0",
+      "type": "Type_B",
+      "index": 55,
+      "SBERT_MiniLM": 0.2016124427318573,
+      "BGE_Small_v1.5": 0.6634963154792786,
+      "MPNet_Base_v2": 0.2792486846446991
+    },
+    {
+      "doc_a": "SU26SE102",
+      "doc_b": "SP26SE034",
+      "label": "0",
+      "type": "Type_B",
+      "index": 56,
+      "SBERT_MiniLM": 0.35588741302490234,
+      "BGE_Small_v1.5": 0.6688635945320129,
+      "MPNet_Base_v2": 0.40764254331588745
+    },
+    {
+      "doc_a": "SP26SE138",
+      "doc_b": "SU26SE030",
+      "label": "0",
+      "type": "Type_B",
+      "index": 57,
+      "SBERT_MiniLM": 0.34504976868629456,
+      "BGE_Small_v1.5": 0.6520699858665466,
+      "MPNet_Base_v2": 0.3125368654727936
+    },
+    {
+      "doc_a": "SU26SE026",
+      "doc_b": "SU26SE063",
+      "label": "0",
+      "type": "Type_B",
+      "index": 58,
+      "SBERT_MiniLM": 0.25254786014556885,
+      "BGE_Small_v1.5": 0.6459640860557556,
+      "MPNet_Base_v2": 0.3322685956954956
+    },
+    {
+      "doc_a": "SU26SE059",
+      "doc_b": "SP26SE048",
+      "label": "0",
+      "type": "Type_B",
+      "index": 59,
+      "SBERT_MiniLM": 0.38548946380615234,
+      "BGE_Small_v1.5": 0.6650670766830444,
+      "MPNet_Base_v2": 0.3593725264072418
+    },
+    {
+      "doc_a": "SP26SE069",
+      "doc_b": "SP26SE091",
+      "label": "0",
+      "type": "Type_B",
+      "index": 60,
+      "SBERT_MiniLM": 0.5663342475891113,
+      "BGE_Small_v1.5": 0.7245859503746033,
+      "MPNet_Base_v2": 0.5870105028152466
+    },
+    {
+      "doc_a": "SP26SE119",
+      "doc_b": "SU26SE067",
+      "label": "0",
+      "type": "Type_B",
+      "index": 61,
+      "SBERT_MiniLM": 0.4794091582298279,
+      "BGE_Small_v1.5": 0.7036064863204956,
+      "MPNet_Base_v2": 0.530164897441864
+    },
+    {
+      "doc_a": "SU26SE015",
+      "doc_b": "SP26SE024",
+      "label": "0",
+      "type": "Type_B",
+      "index": 62,
+      "SBERT_MiniLM": 0.3581143617630005,
+      "BGE_Small_v1.5": 0.6538020372390747,
+      "MPNet_Base_v2": 0.3324498236179352
+    },
+    {
+      "doc_a": "SP26SE019",
+      "doc_b": "SU26SE079",
+      "label": "0",
+      "type": "Type_B",
+      "index": 63,
+      "SBERT_MiniLM": 0.3311554193496704,
+      "BGE_Small_v1.5": 0.656336784362793,
+      "MPNet_Base_v2": 0.3331872820854187
+    },
+    {
+      "doc_a": "SU26SE169",
+      "doc_b": "SP26SE069",
+      "label": "0",
+      "type": "Type_B",
+      "index": 64,
+      "SBERT_MiniLM": 0.5920544862747192,
+      "BGE_Small_v1.5": 0.7305800318717957,
+      "MPNet_Base_v2": 0.6286590695381165
+    },
+    {
+      "doc_a": "SP26SE042",
+      "doc_b": "SP26SE159",
+      "label": "0",
+      "type": "Type_B",
+      "index": 65,
+      "SBERT_MiniLM": 0.3100886642932892,
+      "BGE_Small_v1.5": 0.6190121173858643,
+      "MPNet_Base_v2": 0.4615218937397003
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SU26SE039",
+      "label": "0",
+      "type": "Type_B",
+      "index": 66,
+      "SBERT_MiniLM": 0.12487222254276276,
+      "BGE_Small_v1.5": 0.5670483112335205,
+      "MPNet_Base_v2": 0.2193973809480667
+    },
+    {
+      "doc_a": "SP26SE065",
+      "doc_b": "SP26SE120",
+      "label": "0",
+      "type": "Type_B",
+      "index": 67,
+      "SBERT_MiniLM": 0.32700762152671814,
+      "BGE_Small_v1.5": 0.6305015087127686,
+      "MPNet_Base_v2": 0.31029456853866577
+    },
+    {
+      "doc_a": "SP26SE120",
+      "doc_b": "SP26SE123",
+      "label": "0",
+      "type": "Type_B",
+      "index": 68,
+      "SBERT_MiniLM": 0.2899289131164551,
+      "BGE_Small_v1.5": 0.6452523469924927,
+      "MPNet_Base_v2": 0.29967328906059265
+    },
+    {
+      "doc_a": "SP26SE052",
+      "doc_b": "SP26SE078",
+      "label": "0",
+      "type": "Type_B",
+      "index": 69,
+      "SBERT_MiniLM": 0.2730717957019806,
+      "BGE_Small_v1.5": 0.6157029867172241,
+      "MPNet_Base_v2": 0.2810928523540497
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SP26SE102",
+      "label": "0",
+      "type": "Type_B",
+      "index": 70,
+      "SBERT_MiniLM": 0.3216634690761566,
+      "BGE_Small_v1.5": 0.6465237736701965,
+      "MPNet_Base_v2": 0.4188239872455597
+    },
+    {
+      "doc_a": "SP26SE054",
+      "doc_b": "SP26SE099",
+      "label": "0",
+      "type": "Type_B",
+      "index": 71,
+      "SBERT_MiniLM": 0.21350279450416565,
+      "BGE_Small_v1.5": 0.6406983733177185,
+      "MPNet_Base_v2": 0.2119591236114502
+    },
+    {
+      "doc_a": "SP26SE039",
+      "doc_b": "SU26SE165",
+      "label": "0",
+      "type": "Type_B",
+      "index": 72,
+      "SBERT_MiniLM": 0.1494026631116867,
+      "BGE_Small_v1.5": 0.5773450136184692,
+      "MPNet_Base_v2": 0.25709205865859985
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SP26SE103",
+      "label": "0",
+      "type": "Type_B",
+      "index": 73,
+      "SBERT_MiniLM": 0.280164897441864,
+      "BGE_Small_v1.5": 0.6829933524131775,
+      "MPNet_Base_v2": 0.328801691532135
+    },
+    {
+      "doc_a": "SU26SE168",
+      "doc_b": "SU26SE019",
+      "label": "0",
+      "type": "Type_B",
+      "index": 74,
+      "SBERT_MiniLM": 0.31605780124664307,
+      "BGE_Small_v1.5": 0.6331624984741211,
+      "MPNet_Base_v2": 0.3846466839313507
+    },
+    {
+      "doc_a": "SU26SE029",
+      "doc_b": "SU26SE087",
+      "label": "0",
+      "type": "Type_B",
+      "index": 75,
+      "SBERT_MiniLM": 0.35157644748687744,
+      "BGE_Small_v1.5": 0.661029040813446,
+      "MPNet_Base_v2": 0.36473381519317627
+    },
+    {
+      "doc_a": "SU26SE070",
+      "doc_b": "SP26SE069",
+      "label": "0",
+      "type": "Type_B",
+      "index": 76,
+      "SBERT_MiniLM": 0.2412225902080536,
+      "BGE_Small_v1.5": 0.5692024230957031,
+      "MPNet_Base_v2": 0.27602264285087585
+    },
+    {
+      "doc_a": "SP26SE134",
+      "doc_b": "SU26SE169",
+      "label": "0",
+      "type": "Type_B",
+      "index": 77,
+      "SBERT_MiniLM": 0.35931631922721863,
+      "BGE_Small_v1.5": 0.7123935222625732,
+      "MPNet_Base_v2": 0.36545008420944214
+    },
+    {
+      "doc_a": "SP26SE055",
+      "doc_b": "SP26SE128",
+      "label": "0",
+      "type": "Type_B",
+      "index": 78,
+      "SBERT_MiniLM": 0.27868956327438354,
+      "BGE_Small_v1.5": 0.6141475439071655,
+      "MPNet_Base_v2": 0.22651328146457672
+    },
+    {
+      "doc_a": "SU26SE094",
+      "doc_b": "SP26SE157",
+      "label": "0",
+      "type": "Type_B",
+      "index": 79,
+      "SBERT_MiniLM": 0.5030040740966797,
+      "BGE_Small_v1.5": 0.7401633262634277,
+      "MPNet_Base_v2": 0.4541108310222626
+    },
+    {
+      "doc_a": "SU26SE166",
+      "doc_b": "SU26SE082",
+      "label": "0",
+      "type": "Type_B",
+      "index": 80,
+      "SBERT_MiniLM": 0.17835330963134766,
+      "BGE_Small_v1.5": 0.6481401920318604,
+      "MPNet_Base_v2": 0.295762836933136
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SP26SE052",
+      "label": "0",
+      "type": "Type_B",
+      "index": 81,
+      "SBERT_MiniLM": 0.3261759877204895,
+      "BGE_Small_v1.5": 0.5994304418563843,
+      "MPNet_Base_v2": 0.2838485836982727
+    },
+    {
+      "doc_a": "SP26SE128",
+      "doc_b": "SU26SE079",
+      "label": "0",
+      "type": "Type_B",
+      "index": 82,
+      "SBERT_MiniLM": 0.2674495279788971,
+      "BGE_Small_v1.5": 0.6372487545013428,
+      "MPNet_Base_v2": 0.22555696964263916
+    },
+    {
+      "doc_a": "SP26SE088",
+      "doc_b": "SP26SE134",
+      "label": "0",
+      "type": "Type_B",
+      "index": 83,
+      "SBERT_MiniLM": 0.23234570026397705,
+      "BGE_Small_v1.5": 0.5695652365684509,
+      "MPNet_Base_v2": 0.18169377744197845
+    },
+    {
+      "doc_a": "SU26SE087",
+      "doc_b": "SP26SE001",
+      "label": "0",
+      "type": "Type_B",
+      "index": 84,
+      "SBERT_MiniLM": 0.5151844620704651,
+      "BGE_Small_v1.5": 0.7650423049926758,
+      "MPNet_Base_v2": 0.6619883179664612
+    },
+    {
+      "doc_a": "SU26SE061",
+      "doc_b": "SU26SE021",
+      "label": "0",
+      "type": "Type_B",
+      "index": 85,
+      "SBERT_MiniLM": 0.10764624178409576,
+      "BGE_Small_v1.5": 0.5392165184020996,
+      "MPNet_Base_v2": 0.1820090413093567
+    },
+    {
+      "doc_a": "SP26SE162",
+      "doc_b": "SP26SE086",
+      "label": "0",
+      "type": "Type_B",
+      "index": 86,
+      "SBERT_MiniLM": 0.3541601896286011,
+      "BGE_Small_v1.5": 0.7142964601516724,
+      "MPNet_Base_v2": 0.32097840309143066
+    },
+    {
+      "doc_a": "SP26SE061",
+      "doc_b": "SP26SE049",
+      "label": "0",
+      "type": "Type_B",
+      "index": 87,
+      "SBERT_MiniLM": 0.2830250859260559,
+      "BGE_Small_v1.5": 0.6345847249031067,
+      "MPNet_Base_v2": 0.29208889603614807
+    },
+    {
+      "doc_a": "SP26SE122",
+      "doc_b": "SP26SE055",
+      "label": "0",
+      "type": "Type_C",
+      "index": 88,
+      "SBERT_MiniLM": 0.3229586184024811,
+      "BGE_Small_v1.5": 0.6939977407455444,
+      "MPNet_Base_v2": 0.37227916717529297
+    },
+    {
+      "doc_a": "SP26SE038",
+      "doc_b": "SU26SE109",
+      "label": "0",
+      "type": "Type_C",
+      "index": 89,
+      "SBERT_MiniLM": 0.3506404161453247,
+      "BGE_Small_v1.5": 0.6727878451347351,
+      "MPNet_Base_v2": 0.4625697433948517
+    },
+    {
+      "doc_a": "SP26SE123",
+      "doc_b": "SU26SE063",
+      "label": "0",
+      "type": "Type_C",
+      "index": 90,
+      "SBERT_MiniLM": 0.22379454970359802,
+      "BGE_Small_v1.5": 0.6343756318092346,
+      "MPNet_Base_v2": 0.3241102993488312
+    },
+    {
+      "doc_a": "SP26SE038",
+      "doc_b": "SU26SE023",
+      "label": "0",
+      "type": "Type_C",
+      "index": 91,
+      "SBERT_MiniLM": 0.15859355032444,
+      "BGE_Small_v1.5": 0.5641325116157532,
+      "MPNet_Base_v2": 0.1648460328578949
+    },
+    {
+      "doc_a": "SP26SE098",
+      "doc_b": "SU26SE116",
+      "label": "0",
+      "type": "Type_C",
+      "index": 92,
+      "SBERT_MiniLM": 0.30043211579322815,
+      "BGE_Small_v1.5": 0.6262925267219543,
+      "MPNet_Base_v2": 0.29421931505203247
+    },
+    {
+      "doc_a": "SU26SE022",
+      "doc_b": "SP26SE161",
+      "label": "0",
+      "type": "Type_C",
+      "index": 93,
+      "SBERT_MiniLM": 0.33236637711524963,
+      "BGE_Small_v1.5": 0.663534939289093,
+      "MPNet_Base_v2": 0.3489670157432556
+    },
+    {
+      "doc_a": "SU26SE045",
+      "doc_b": "SP26SE024",
+      "label": "0",
+      "type": "Type_C",
+      "index": 94,
+      "SBERT_MiniLM": 0.2962146997451782,
+      "BGE_Small_v1.5": 0.6840482354164124,
+      "MPNet_Base_v2": 0.3803938329219818
+    },
+    {
+      "doc_a": "SP26SE161",
+      "doc_b": "SP26SE078",
+      "label": "0",
+      "type": "Type_C",
+      "index": 95,
+      "SBERT_MiniLM": 0.19007083773612976,
+      "BGE_Small_v1.5": 0.5266056060791016,
+      "MPNet_Base_v2": 0.18739092350006104
+    },
+    {
+      "doc_a": "SU26SE104",
+      "doc_b": "SP26SE048",
+      "label": "0",
+      "type": "Type_C",
+      "index": 96,
+      "SBERT_MiniLM": 0.19565458595752716,
+      "BGE_Small_v1.5": 0.5629827976226807,
+      "MPNet_Base_v2": 0.24083761870861053
+    },
+    {
+      "doc_a": "SU26SE021",
+      "doc_b": "SP26SE026",
+      "label": "0",
+      "type": "Type_C",
+      "index": 97,
+      "SBERT_MiniLM": 0.3461593687534332,
+      "BGE_Small_v1.5": 0.6520429849624634,
+      "MPNet_Base_v2": 0.27237874269485474
+    },
+    {
+      "doc_a": "SP26SE078",
+      "doc_b": "SP26SE011",
+      "label": "0",
+      "type": "Type_C",
+      "index": 98,
+      "SBERT_MiniLM": 0.1781505048274994,
+      "BGE_Small_v1.5": 0.5728865265846252,
+      "MPNet_Base_v2": 0.11807318776845932
+    },
+    {
+      "doc_a": "SU26SE087",
+      "doc_b": "SP26SE087",
+      "label": "0",
+      "type": "Type_C",
+      "index": 99,
+      "SBERT_MiniLM": 0.33823102712631226,
+      "BGE_Small_v1.5": 0.6548142433166504,
+      "MPNet_Base_v2": 0.4498001039028168
+    },
+    {
+      "doc_a": "SP26SE110",
+      "doc_b": "SU26SE091",
+      "label": "0",
+      "type": "Type_C",
+      "index": 100,
+      "SBERT_MiniLM": 0.1416747123003006,
+      "BGE_Small_v1.5": 0.596492350101471,
+      "MPNet_Base_v2": 0.18330734968185425
+    },
+    {
+      "doc_a": "SU26SE026",
+      "doc_b": "SP26SE029",
+      "label": "0",
+      "type": "Type_C",
+      "index": 101,
+      "SBERT_MiniLM": 0.1409076750278473,
+      "BGE_Small_v1.5": 0.6206910014152527,
+      "MPNet_Base_v2": 0.13875195384025574
+    },
+    {
+      "doc_a": "SP26SE058",
+      "doc_b": "SU26SE043",
+      "label": "0",
+      "type": "Type_C",
+      "index": 102,
+      "SBERT_MiniLM": 0.2869357168674469,
+      "BGE_Small_v1.5": 0.6089285612106323,
+      "MPNet_Base_v2": 0.18566660583019257
+    },
+    {
+      "doc_a": "SP26SE012",
+      "doc_b": "SP26SE058",
+      "label": "0",
+      "type": "Type_C",
+      "index": 103,
+      "SBERT_MiniLM": 0.4272899031639099,
+      "BGE_Small_v1.5": 0.6285877823829651,
+      "MPNet_Base_v2": 0.35986313223838806
+    },
+    {
+      "doc_a": "SP26SE087",
+      "doc_b": "SU26SE166",
+      "label": "0",
+      "type": "Type_C",
+      "index": 104,
+      "SBERT_MiniLM": 0.46191835403442383,
+      "BGE_Small_v1.5": 0.6595464944839478,
+      "MPNet_Base_v2": 0.4421686828136444
+    },
+    {
+      "doc_a": "SP26SE104",
+      "doc_b": "SU26SE032",
+      "label": "0",
+      "type": "Type_C",
+      "index": 105,
+      "SBERT_MiniLM": 0.3748107850551605,
+      "BGE_Small_v1.5": 0.6413576006889343,
+      "MPNet_Base_v2": 0.3594188094139099
+    },
+    {
+      "doc_a": "SU27SE153",
+      "doc_b": "SU26SE030",
+      "label": "0",
+      "type": "Type_C",
+      "index": 106,
+      "SBERT_MiniLM": 0.376884400844574,
+      "BGE_Small_v1.5": 0.722470760345459,
+      "MPNet_Base_v2": 0.3970383107662201
+    },
+    {
+      "doc_a": "SP26SE068",
+      "doc_b": "SU26SE063",
+      "label": "0",
+      "type": "Type_C",
+      "index": 107,
+      "SBERT_MiniLM": 0.5978018045425415,
+      "BGE_Small_v1.5": 0.7250048518180847,
+      "MPNet_Base_v2": 0.6367183327674866
+    },
+    {
+      "doc_a": "SP26SE018",
+      "doc_b": "SU26SE048",
+      "label": "0",
+      "type": "Type_C",
+      "index": 108,
+      "SBERT_MiniLM": 0.4061022102832794,
+      "BGE_Small_v1.5": 0.6923623085021973,
+      "MPNet_Base_v2": 0.3601752817630768
+    },
+    {
+      "doc_a": "SP26SE162",
+      "doc_b": "SP26SE052",
+      "label": "0",
+      "type": "Type_C",
+      "index": 109,
+      "SBERT_MiniLM": 0.39010998606681824,
+      "BGE_Small_v1.5": 0.683646559715271,
+      "MPNet_Base_v2": 0.490206241607666
+    },
+    {
+      "doc_a": "SU26SE044",
+      "doc_b": "SU26SE031",
+      "label": "0",
+      "type": "Type_C",
+      "index": 110,
+      "SBERT_MiniLM": 0.2896534204483032,
+      "BGE_Small_v1.5": 0.6757734417915344,
+      "MPNet_Base_v2": 0.39192429184913635
+    },
+    {
+      "doc_a": "SP26SE149",
+      "doc_b": "SP26SE024",
+      "label": "0",
+      "type": "Type_C",
+      "index": 111,
+      "SBERT_MiniLM": 0.3440215289592743,
+      "BGE_Small_v1.5": 0.6340911984443665,
+      "MPNet_Base_v2": 0.3441747725009918
+    },
+    {
+      "doc_a": "SP26SE107",
+      "doc_b": "SU26SE019",
+      "label": "0",
+      "type": "Type_C",
+      "index": 112,
+      "SBERT_MiniLM": 0.2928082048892975,
+      "BGE_Small_v1.5": 0.6150578856468201,
+      "MPNet_Base_v2": 0.2671299874782562
+    },
+    {
+      "doc_a": "SP26SE128",
+      "doc_b": "SU26SE074",
+      "label": "0",
+      "type": "Type_C",
+      "index": 113,
+      "SBERT_MiniLM": 0.32692012190818787,
+      "BGE_Small_v1.5": 0.6849082708358765,
+      "MPNet_Base_v2": 0.3195854127407074
+    },
+    {
+      "doc_a": "SU26SE029",
+      "doc_b": "SU26SE021",
+      "label": "0",
+      "type": "Type_C",
+      "index": 114,
+      "SBERT_MiniLM": 0.2862982153892517,
+      "BGE_Small_v1.5": 0.652826189994812,
+      "MPNet_Base_v2": 0.3584688603878021
+    },
+    {
+      "doc_a": "SP26SE129",
+      "doc_b": "SP26SE078",
+      "label": "0",
+      "type": "Type_C",
+      "index": 115,
+      "SBERT_MiniLM": 0.3883356750011444,
+      "BGE_Small_v1.5": 0.635755717754364,
+      "MPNet_Base_v2": 0.32109320163726807
+    },
+    {
+      "doc_a": "SP26SE056",
+      "doc_b": "SP26SE078",
+      "label": "0",
+      "type": "Type_C",
+      "index": 116,
+      "SBERT_MiniLM": 0.2218369096517563,
+      "BGE_Small_v1.5": 0.6140804290771484,
+      "MPNet_Base_v2": 0.2771680951118469
+    },
+    {
+      "doc_a": "SP26SE051",
+      "doc_b": "SP26SE070",
+      "label": "0",
+      "type": "Type_C",
+      "index": 117,
+      "SBERT_MiniLM": 0.29845350980758667,
+      "BGE_Small_v1.5": 0.6194337606430054,
+      "MPNet_Base_v2": 0.288753867149353
+    },
+    {
+      "doc_a": "SU26SE005",
+      "doc_b": "SP26SE158",
+      "label": "0",
+      "type": "Type_C",
+      "index": 118,
+      "SBERT_MiniLM": 0.3049298822879791,
+      "BGE_Small_v1.5": 0.5852827429771423,
+      "MPNet_Base_v2": 0.25591105222702026
+    },
+    {
+      "doc_a": "SP26SE001",
+      "doc_b": "SU26SE022",
+      "label": "0",
+      "type": "Type_C",
+      "index": 119,
+      "SBERT_MiniLM": 0.21447406709194183,
+      "BGE_Small_v1.5": 0.6494585871696472,
+      "MPNet_Base_v2": 0.30129244923591614
+    },
+    {
+      "doc_a": "SP26SE034",
+      "doc_b": "SU26SE079",
+      "label": "0",
+      "type": "Type_C",
+      "index": 120,
+      "SBERT_MiniLM": 0.46071693301200867,
+      "BGE_Small_v1.5": 0.7260186076164246,
+      "MPNet_Base_v2": 0.458858460187912
+    },
+    {
+      "doc_a": "SP26SE056",
+      "doc_b": "SU26SE063",
+      "label": "0",
+      "type": "Type_C",
+      "index": 121,
+      "SBERT_MiniLM": 0.49044397473335266,
+      "BGE_Small_v1.5": 0.6745163202285767,
+      "MPNet_Base_v2": 0.44592344760894775
+    },
+    {
+      "doc_a": "SP26SE033",
+      "doc_b": "SP26SE078",
+      "label": "0",
+      "type": "Type_C",
+      "index": 122,
+      "SBERT_MiniLM": 0.18088386952877045,
+      "BGE_Small_v1.5": 0.5925081968307495,
+      "MPNet_Base_v2": 0.15918274223804474
+    },
+    {
+      "doc_a": "SU26SE064",
+      "doc_b": "SU26SE018",
+      "label": "0",
+      "type": "Type_C",
+      "index": 123,
+      "SBERT_MiniLM": 0.41289037466049194,
+      "BGE_Small_v1.5": 0.7366377115249634,
+      "MPNet_Base_v2": 0.2369312345981598
+    },
+    {
+      "doc_a": "SP26SE010",
+      "doc_b": "SU26SE031",
+      "label": "0",
+      "type": "Type_C",
+      "index": 124,
+      "SBERT_MiniLM": 0.4271812438964844,
+      "BGE_Small_v1.5": 0.7469232082366943,
+      "MPNet_Base_v2": 0.49242326617240906
+    },
+    {
+      "doc_a": "SU26SE015",
+      "doc_b": "SP26SE044",
+      "label": "0",
+      "type": "Type_C",
+      "index": 125,
+      "SBERT_MiniLM": 0.11262819170951843,
+      "BGE_Small_v1.5": 0.530749499797821,
+      "MPNet_Base_v2": 0.09525562822818756
+    },
+    {
+      "doc_a": "SP26SE101",
+      "doc_b": "SU26SE083",
+      "label": "0",
+      "type": "Type_C",
+      "index": 126,
+      "SBERT_MiniLM": 0.14567801356315613,
+      "BGE_Small_v1.5": 0.5962973833084106,
+      "MPNet_Base_v2": 0.2507745325565338
+    },
+    {
+      "doc_a": "SU26SE094",
+      "doc_b": "SP26SE034",
+      "label": "0",
+      "type": "Type_C",
+      "index": 127,
+      "SBERT_MiniLM": 0.2660145163536072,
+      "BGE_Small_v1.5": 0.6134724617004395,
+      "MPNet_Base_v2": 0.22040122747421265
+    },
+    {
+      "doc_a": "SP26SE143",
+      "doc_b": "SP26SE057",
+      "label": "0",
+      "type": "Type_C",
+      "index": 128,
+      "SBERT_MiniLM": 0.28534382581710815,
+      "BGE_Small_v1.5": 0.6366987824440002,
+      "MPNet_Base_v2": 0.33179351687431335
+    },
+    {
+      "doc_a": "SP26SE150",
+      "doc_b": "SU26SE107",
+      "label": "0",
+      "type": "Type_C",
+      "index": 129,
+      "SBERT_MiniLM": 0.22459040582180023,
+      "BGE_Small_v1.5": 0.6806141138076782,
+      "MPNet_Base_v2": 0.41439592838287354
+    },
+    {
+      "doc_a": "SP26SE093",
+      "doc_b": "SU27SE153",
+      "label": "0",
+      "type": "Type_C",
+      "index": 130,
+      "SBERT_MiniLM": 0.31664296984672546,
+      "BGE_Small_v1.5": 0.6714009642601013,
+      "MPNet_Base_v2": 0.325588583946228
+    },
+    {
+      "doc_a": "SU26SE070",
+      "doc_b": "SP26SE052",
+      "label": "0",
+      "type": "Type_C",
+      "index": 131,
+      "SBERT_MiniLM": 0.3693212568759918,
+      "BGE_Small_v1.5": 0.6572288870811462,
+      "MPNet_Base_v2": 0.43388572335243225
+    },
+    {
+      "doc_a": "SU26SE091",
+      "doc_b": "SU26SE032",
+      "label": "0",
+      "type": "Type_C",
+      "index": 132,
+      "SBERT_MiniLM": 0.28234079480171204,
+      "BGE_Small_v1.5": 0.6441737413406372,
+      "MPNet_Base_v2": 0.2582174241542816
+    },
+    {
+      "doc_a": "SP26SE103",
+      "doc_b": "SU26SE079",
+      "label": "0",
+      "type": "Type_C",
+      "index": 133,
+      "SBERT_MiniLM": 0.327908992767334,
+      "BGE_Small_v1.5": 0.6557215452194214,
+      "MPNet_Base_v2": 0.26522961258888245
+    },
+    {
+      "doc_a": "SP26SE102",
+      "doc_b": "SP26SE109",
+      "label": "0",
+      "type": "Type_C",
+      "index": 134,
+      "SBERT_MiniLM": 0.28458791971206665,
+      "BGE_Small_v1.5": 0.6325469613075256,
+      "MPNet_Base_v2": 0.34267014265060425
+    },
+    {
+      "doc_a": "SP26SE019",
+      "doc_b": "SU26SE091",
+      "label": "0",
+      "type": "Type_C",
+      "index": 135,
+      "SBERT_MiniLM": 0.12266115099191666,
+      "BGE_Small_v1.5": 0.5947265028953552,
+      "MPNet_Base_v2": 0.20791098475456238
+    },
+    {
+      "doc_a": "SP26SE158",
+      "doc_b": "SP26SE019",
+      "label": "0",
+      "type": "Type_C",
+      "index": 136,
+      "SBERT_MiniLM": 0.4063001573085785,
+      "BGE_Small_v1.5": 0.6413034200668335,
+      "MPNet_Base_v2": 0.3005158305168152
+    },
+    {
+      "doc_a": "SP26SE133",
+      "doc_b": "SP26SE074",
+      "label": "0",
+      "type": "Type_C",
+      "index": 137,
+      "SBERT_MiniLM": 0.19436658918857574,
+      "BGE_Small_v1.5": 0.5977602005004883,
+      "MPNet_Base_v2": 0.1054324358701706
+    }
+  ]
+}

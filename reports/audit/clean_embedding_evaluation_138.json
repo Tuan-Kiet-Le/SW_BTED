@@ -1,0 +1,222 @@
+{
+  "input": "D:\\FPT\\Semester_8\\SW_BTED_v2\\reports\\audit\\clean_raw_embedding_vectors_138.json",
+  "protocol": {
+    "folds": 5,
+    "shuffle": true,
+    "random_state": 42,
+    "threshold_grid_step": 0.005,
+    "threshold_selection": "train fold only"
+  },
+  "results": [
+    {
+      "model": "SBERT_MiniLM",
+      "n": 138,
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 2,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 3,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 4,
+          "threshold": 0.6,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 27
+        },
+        {
+          "fold": 5,
+          "threshold": 0.595,
+          "f1": 0.9333333333333333,
+          "precision": 0.875,
+          "recall": 1.0,
+          "n_test": 27
+        }
+      ],
+      "mean_f1": 0.9866666666666667,
+      "std_f1": 0.02666666666666666,
+      "mean_precision": 0.975,
+      "mean_recall": 1.0,
+      "pooled_oof_f1": 0.987012987012987,
+      "pooled_oof_precision": 0.9743589743589743,
+      "pooled_oof_recall": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix_order_TP_FP_TN_FN": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "errors": [
+        {
+          "index": 107,
+          "doc_a": "SP26SE068",
+          "doc_b": "SU26SE063",
+          "label": 0,
+          "score": 0.5978018045425415,
+          "prediction": 1
+        }
+      ]
+    },
+    {
+      "model": "BGE_Small_v1.5",
+      "n": 138,
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 2,
+          "threshold": 0.75,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 3,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 4,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 27
+        },
+        {
+          "fold": 5,
+          "threshold": 0.77,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 27
+        }
+      ],
+      "mean_f1": 0.9882352941176471,
+      "std_f1": 0.02352941176470589,
+      "mean_precision": 0.9777777777777779,
+      "mean_recall": 1.0,
+      "pooled_oof_f1": 0.987012987012987,
+      "pooled_oof_precision": 0.9743589743589743,
+      "pooled_oof_recall": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix_order_TP_FP_TN_FN": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "errors": [
+        {
+          "index": 84,
+          "doc_a": "SU26SE087",
+          "doc_b": "SP26SE001",
+          "label": 0,
+          "score": 0.7650423049926758,
+          "prediction": 1
+        }
+      ]
+    },
+    {
+      "model": "MPNet_Base_v2",
+      "n": 138,
+      "folds": [
+        {
+          "fold": 1,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 2,
+          "threshold": 0.64,
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 3,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 28
+        },
+        {
+          "fold": 4,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 27
+        },
+        {
+          "fold": 5,
+          "threshold": 0.665,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "n_test": 27
+        }
+      ],
+      "mean_f1": 0.9882352941176471,
+      "std_f1": 0.02352941176470589,
+      "mean_precision": 0.9777777777777779,
+      "mean_recall": 1.0,
+      "pooled_oof_f1": 0.987012987012987,
+      "pooled_oof_precision": 0.9743589743589743,
+      "pooled_oof_recall": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix_order_TP_FP_TN_FN": [
+        38,
+        1,
+        99,
+        0
+      ],
+      "errors": [
+        {
+          "index": 84,
+          "doc_a": "SU26SE087",
+          "doc_b": "SP26SE001",
+          "label": 0,
+          "score": 0.6619883179664612,
+          "prediction": 1
+        }
+      ]
+    }
+  ]
+}

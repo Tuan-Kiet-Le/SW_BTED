@@ -1,0 +1,479 @@
+{
+  "cases": [
+    {
+      "case": "A",
+      "doc_a": "SU26SE102",
+      "doc_b": "SU26SE102_plag",
+      "label": 1,
+      "role": "positive plagiarism pair",
+      "trace": {
+        "total_distance": 18.663400000000003,
+        "max_possible_cost": 36.775999999999996,
+        "normalized_cost": 0.5074885795083751,
+        "structural_similarity": 0.36563927561453113,
+        "domains": [
+          {
+            "domain": "D1_BUSINESS_CONTEXT",
+            "distance": 6.4185000000000025,
+            "max_cost": 11.084,
+            "normalized_similarity": 0.4209220498015155,
+            "mapping_count": 29,
+            "replacements": 7,
+            "deletions": 19,
+            "insertions": 1,
+            "examples": [
+              {
+                "a": "IQGS – AI-Powered Interview Question Generation System Using RAG and LLM",
+                "b": "IQGS – AI-Powered Interview Question Generation System Using RAG and LLM IQGS – Hệ thống Sinh Câu hỏi Phỏng vấn sử dụng RAG và LLM The contemporary recruitment landscape is characterized by a significant demand for high quality, role specific interview questions, a task that often burdens human resources professionals and interviewers. In response to this growing challenge, over 60% of enterprises resort to leveraging outdated question compilations or rely heavily on the individualized approache",
+                "depth": 3
+              },
+              {
+                "a": "interview question",
+                "b": "interview",
+                "depth": 4
+              },
+              {
+                "a": "question generation",
+                "b": "interviewers",
+                "depth": 4
+              },
+              {
+                "a": "rag llm",
+                "b": "interview questions",
+                "depth": 4
+              },
+              {
+                "a": "powered interview",
+                "b": "candidates",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D2_FUNCTIONAL",
+            "distance": 5.2545,
+            "max_cost": 9.822000000000001,
+            "normalized_similarity": 0.46502748930971294,
+            "mapping_count": 32,
+            "replacements": 1,
+            "deletions": 22,
+            "insertions": 4,
+            "examples": [
+              {
+                "a": "1. User Roles and Access Control 1.1 User Roles The system shall support three primary user roles: \tAdministrator ● Manage users and roles ● Manage knowledge base and system configuration ● Monitor system performance, analytics, and transactions \tHR Manager / Recruiter ● Input job descriptions ● Generate interview questions using AI (RAG-based) ● Review, edit, and publish question sets ● View analytics and candidate interactions ● Manage subscription and feature access \tJob Seeker / Candidate",
+                "b": "The proposed system, referred to as the Intelligent Interview Framework (IIF), will accommodate three fundamental user roles: The Administrator will be responsible for user and role management , overseeing the knowledge repository and system settings , 1.1 User Roles tracking system performance , analytics , and transactions . HR Manager / Recruiter The HR Manager or Recruiter will be able to input job descriptions , utilize artificial intelligence to formulate interview questions based on Retri",
+                "depth": 3
+              }
+            ]
+          },
+          {
+            "domain": "D3_TECHNICAL_REALIZATION",
+            "distance": 4.418000000000001,
+            "max_cost": 8.9045,
+            "normalized_similarity": 0.5038463698130158,
+            "mapping_count": 19,
+            "replacements": 9,
+            "deletions": 9,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "● Usability: The system shall provide an intuitive interface ● Maintainability: The system shall be modular and easy to extend (*) 3.2. Main proposal content (including result and product)",
+                "b": "The proposed framework, dubbed QueryConstruct, leverages the power of Retrieval Augmented Generation (RAG) in conjunction with Large Language Models (LLMs) to facilitate the automation of question generation tasks. This approach is further enhanced by the application of advanced Natural Language Processing (NLP) methodologies, which serve pivotal roles in document analysis, the extraction of pertinent information, and enabling semantic search capabilities. 4. Detailed Design Document In addition",
+                "depth": 3
+              },
+              {
+                "a": "interface maintainability",
+                "b": "queryconstruct",
+                "depth": 4
+              },
+              {
+                "a": "extend main",
+                "b": "requirements document",
+                "depth": 4
+              },
+              {
+                "a": "easy extend",
+                "b": "process facilitated",
+                "depth": 4
+              },
+              {
+                "a": "shall",
+                "b": "python additional",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D4_EXECUTION_PLANNING",
+            "distance": 2.5724,
+            "max_cost": 6.9655000000000005,
+            "normalized_similarity": 0.6306941353815232,
+            "mapping_count": 10,
+            "replacements": 9,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "● Task 1: Requirement analysis, knowledge base source collection and system architecture design. ● Task 2: Knowledge base preparation (document ingestion, chunking, embedding, vector indexing) and database setup. ● Task 3: RAG pipeline implementation (embedding, semantic retrieval, LLM generation, output validation, async background job infrastructure). ● Task 4: Backend REST API development — all endpoints for HR, Job Seeker, marketplace, analytics, and RAG evaluation experiment. ● Task 5: HR p",
+                "b": "Phase 1: Needs Assessment and System Blueprint Development The initial phase will focus on the identification of user requirements and the collection of relevant knowledge resources, culminating in a comprehensive architectural design for the system, referred to as JobLinker. Sprint 2: Knowledge Resource Configuration and Database Initialization This stage will encompass the preparation of the knowledge base through processes such as document ingestion, segmentation, embedding, and the establish",
+                "depth": 3
+              },
+              {
+                "a": "evaluation experiment",
+                "b": "job seekers",
+                "depth": 4
+              },
+              {
+                "a": "task rag",
+                "b": "phase focus",
+                "depth": 4
+              },
+              {
+                "a": "job seeker",
+                "b": "human resources",
+                "depth": 4
+              },
+              {
+                "a": "shot",
+                "b": "semantic retrieval",
+                "depth": 4
+              }
+            ]
+          }
+        ],
+        "nodes_a": 86,
+        "nodes_b": 41
+      }
+    },
+    {
+      "case": "B",
+      "doc_a": "SP26SE068",
+      "doc_b": "SU26SE063",
+      "label": 0,
+      "role": "SBERT false positive; SW-BTED correct",
+      "trace": {
+        "total_distance": 28.0284,
+        "max_possible_cost": 48.7855,
+        "normalized_cost": 0.5745231677445143,
+        "structural_similarity": 0.2818460403193572,
+        "domains": [
+          {
+            "domain": "D1_BUSINESS_CONTEXT",
+            "distance": 9.9572,
+            "max_cost": 15.6965,
+            "normalized_similarity": 0.36564202210683905,
+            "mapping_count": 28,
+            "replacements": 27,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "In the context of the increasing demand for organizing home parties, company parties, and internal events, individuals and businesses often have difficulty finding reputable service providers, comparing prices, and booking services quickly. Many service providers (restaurants, mobile catering, event organization services) do not have a convenient online channel to reach customers.\nThe Home and Company Party Booking Platform project was built to connect customers with party services in a convenie",
+                "b": "Board game cafes currently face difficulties in managing revenue across complex time slots and controlling the risk of losing thousands of small game components. For players, they often struggle with a lack of teammates and difficulty finding groups with similar interests and skill levels (Elo) in their vicinity. These issues lead to operational inefficiencies for cafe owners and a fragmented experience for the board game community.",
+                "depth": 3
+              },
+              {
+                "a": "services convenient",
+                "b": "board game",
+                "depth": 4
+              },
+              {
+                "a": "parties",
+                "b": "game",
+                "depth": 4
+              },
+              {
+                "a": "convenient",
+                "b": "board",
+                "depth": 4
+              },
+              {
+                "a": "party",
+                "b": "players struggle",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D2_FUNCTIONAL",
+            "distance": 9.268,
+            "max_cost": 14.835,
+            "normalized_similarity": 0.37526120660599926,
+            "mapping_count": 28,
+            "replacements": 27,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "o\tWeb application for Owner\n\tOwner role:\n•\tLogin/Logout\n•\tManage user accounts (enable/disable, view list)\n•\tProvide all kinds of services for buffet parties\n•\tView raw material inventory information\n•\tCreate groups by job type\n•\tAssign order to groups\n•\tManage Order\n•\tChat with customer\n•\tView order history\n•\tView Feedback\n•\tView statistics \no\tMobile & Web application for Group Leader, Staff and Customer\n\tGroup Leader role:\n•\tLogin/Logout\n•\tView orders and create corresponding work lists\n•\tAs",
+                "b": "Player Mobile App: ● Authentication: Users can register, login, and manage personal profiles (interests, Elo rating, Karma points). ● Discovery: Users can search for partner cafes, view real-time table availability, and browse the available game list of each cafe. ● Matchmaking: Users can create a Lobby with specific conditions: game type, search radius, minimum skill level, and desired time slot. ● Notifications: The system automatically suggests and sends Push Notifications to suitable players",
+                "depth": 3
+              },
+              {
+                "a": "role login",
+                "b": "cafe",
+                "depth": 4
+              },
+              {
+                "a": "group leader",
+                "b": "karma",
+                "depth": 4
+              },
+              {
+                "a": "view order",
+                "b": "elo",
+                "depth": 4
+              },
+              {
+                "a": "order",
+                "b": "partner cafes",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D3_TECHNICAL_REALIZATION",
+            "distance": 5.816,
+            "max_cost": 10.77,
+            "normalized_similarity": 0.4599814298978644,
+            "mapping_count": 19,
+            "replacements": 18,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "•\tThe system shall support at least 100 concurrent users with an average response time under 2 seconds per request.\n•\tGUI must be simple, friendly, and easy to use.\n•\tThe system must be scalable to a chain of stores.\n•\tThe language used in the application is Vietnamese.\n•\tWeb applications send requests to the server through HTTPS protocol.\n•\tThe recommendation system will be implemented using the best suitable for lower setting server.",
+                "b": "● Performance: The system API response time must be less than 500ms. ● Availability: The system guarantees 99.9% uptime with an auto-failover mechanism. ● Security: All sensitive data and user passwords must be encrypted using high-security hashing algorithms. ● Usability: The POS and Management Web apps must be responsive, optimizing operations on Tablets and Mobile devices. (*) 3.2. Main proposal content (including result and product)",
+                "depth": 3
+              },
+              {
+                "a": "scalable chain",
+                "b": "usability pos",
+                "depth": 4
+              },
+              {
+                "a": "using best",
+                "b": "responsive optimizing",
+                "depth": 4
+              },
+              {
+                "a": "lower setting",
+                "b": "high security",
+                "depth": 4
+              },
+              {
+                "a": "use scalable",
+                "b": "mechanism security",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D4_EXECUTION_PLANNING",
+            "distance": 2.9872,
+            "max_cost": 7.484,
+            "normalized_similarity": 0.6008551576696953,
+            "mapping_count": 10,
+            "replacements": 9,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "o\tTask package 1: Design UI Elements for the Web Application\no\tTask package 2: Develop API for the System\no\tTask package 3: Develop the Web Application\no\tTask package 4: Develop the Mobile Application\no\tTask package 5: Build, Deploy, and Test the System\no\tTask package 6: Prepare Required Documents:\no\tSystem Analysis and Design\no\tTest Plan\no\tInstallation Manual\no\tUser Manual\no\tEach work group may have many students participating but there will be one member responsible for the main responsibility",
+                "b": "● Task 1: Develop the Web applications for Admin, Cafe Partners, and Event Organizers. ● Task 2: Develop the Core API for Matchmaking, Dynamic Inventory, and Billing systems. ● Task 3: Develop the Mobile App for Players. ● Task 4: Build, Deploy, and Test the entire system. ● Task 5: Prepare technical documents: System Analysis and Design, Test Plan, Installation Manual, and User Manual.",
+                "depth": 3
+              },
+              {
+                "a": "application task",
+                "b": "task develop",
+                "depth": 4
+              },
+              {
+                "a": "ui elements",
+                "b": "billing systems",
+                "depth": 4
+              },
+              {
+                "a": "elements web",
+                "b": "app players",
+                "depth": 4
+              },
+              {
+                "a": "package develop",
+                "b": "api matchmaking",
+                "depth": 4
+              }
+            ]
+          }
+        ],
+        "nodes_a": 86,
+        "nodes_b": 86
+      }
+    },
+    {
+      "case": "C",
+      "doc_a": "SP26SE122",
+      "doc_b": "SP26SE055",
+      "label": 0,
+      "role": "negative Type_C pair; both correct",
+      "trace": {
+        "total_distance": 26.720000000000002,
+        "max_possible_cost": 47.150000000000006,
+        "normalized_cost": 0.5667020148462354,
+        "structural_similarity": 0.2916224814422058,
+        "domains": [
+          {
+            "domain": "D1_BUSINESS_CONTEXT",
+            "distance": 9.902800000000001,
+            "max_cost": 15.628499999999999,
+            "normalized_similarity": 0.36636273474741643,
+            "mapping_count": 28,
+            "replacements": 27,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "This project focuses on the development of a Manufacturing Execution System (MES) module, specialized for companies operating in the Paper Packaging and Offset Printing Industry. The core objective is to automate the entire production management lifecycle in a Make-to-Order (MTO) environment, dramatically improving planning efficiency and material control.\n\nThe system is designed to transform complex, multi-stage workflows—including ten distinct production steps (e.g., Ralo/Slitting, Printing, L",
+                "b": "The rapid expansion of urban populations continues to increase the demand for long-term rental housing such as mini apartments and serviced residential units. Modern tenants, especially students and young professionals, expect a professional, transparent, and standardized living experience—including accurate billing, timely maintenance, stable contracts, and predictable living costs.\n\nHowever, the majority of landlords still rely on manual or semi-digital management through spreadsheets, messagi",
+                "depth": 3
+              },
+              {
+                "a": "printing",
+                "b": "pain points",
+                "depth": 4
+              },
+              {
+                "a": "steps ralo",
+                "b": "serviced",
+                "depth": 4
+              },
+              {
+                "a": "gluing",
+                "b": "living",
+                "depth": 4
+              },
+              {
+                "a": "execution mes",
+                "b": "pain",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D2_FUNCTIONAL",
+            "distance": 8.3,
+            "max_cost": 13.625,
+            "normalized_similarity": 0.39082568807339446,
+            "mapping_count": 28,
+            "replacements": 27,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "Based on user requirements, the system is implemented as follows:\n-\tDevelopment of Customer & Sales Application: Allows Customers to submit specifications for quotations and track order status in real time; allows Sales staff to manage requests and fulfill orders.\n-\tBuild order approval management interface: Real-time approves customer orders and raw material purchase requests from the automated system.\n-\tImplementation of Automated MRP Event: System handler to automatically analyze Bill of Mate",
+                "b": "Tenant (Mobile App)\nAccount & Profile\nRegister, log in/out\nUpdate personal profile\nRental Management\nSearch and view available serviced apartments\nSubmit rental applications\nView contract details and lifecycle\nRequest contract extension or termination\nBilling & Payments\nView rental and service invoices\nPay online\nSee transaction history\nReceive due/overdue reminders\nMaintenance\nCreate maintenance requests with images\nTrack repair progress\nReview and rate completed work\nIoT Utility Usage\nView rea",
+                "depth": 3
+              },
+              {
+                "a": "purchase requests",
+                "b": "tenant",
+                "depth": 4
+              },
+              {
+                "a": "material",
+                "b": "appraisal",
+                "depth": 4
+              },
+              {
+                "a": "sales application",
+                "b": "water usage",
+                "depth": 4
+              },
+              {
+                "a": "event handler",
+                "b": "rental applications",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D3_TECHNICAL_REALIZATION",
+            "distance": 5.5372,
+            "max_cost": 10.4215,
+            "normalized_similarity": 0.4686753346447248,
+            "mapping_count": 19,
+            "replacements": 18,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "-\tSome limitations are:\n●\tMulti-plant Support: The system is designed for a single factory location and does not support multi-site inventory synchronization or inter-branch transfers.\n●\tStatic Scheduling Only: The production schedule is based on fixed capacity planning. It does not support dynamic, AI-driven rescheduling in real-time based on unexpected machine breakdowns or sensor data.\n●\tEstimated Wastage Calculation: Material wastage is calculated based on a fixed percentage or predefined ru",
+                "b": "Supports multiple digital payment methods\nMobile app available on iOS and Android\nWeb application compatible across major browsers and devices\nReal-time alerts and monitoring for critical operations\nScalable architecture capable of handling multiple properties and high data volume",
+                "depth": 3
+              },
+              {
+                "a": "does support",
+                "b": "methods mobile",
+                "depth": 4
+              },
+              {
+                "a": "wastage",
+                "b": "browsers devices",
+                "depth": 4
+              },
+              {
+                "a": "assumed",
+                "b": "data volume",
+                "depth": 4
+              },
+              {
+                "a": "supplier",
+                "b": "multiple digital",
+                "depth": 4
+              }
+            ]
+          },
+          {
+            "domain": "D4_EXECUTION_PLANNING",
+            "distance": 2.9800000000000004,
+            "max_cost": 7.475,
+            "normalized_similarity": 0.6013377926421404,
+            "mapping_count": 10,
+            "replacements": 9,
+            "deletions": 0,
+            "insertions": 0,
+            "examples": [
+              {
+                "a": "-\tThe first student: Should implement the Base Architecture using .NET Core, Database Design (SQL Server, MySQL, ...), Authentication & Authorization, and Master Data Management APIs. This student is also responsible for integrating third-party services for file storage.\n-\tThe second student: Should implement the complex MRP Logic APIs (BOM explosion, Wastage calculation), the Task Assignment and Notification systems, and the System Handler background services for auto-triggering Inventory Check",
+                "b": "Requirement Analysis & UI/UX Design\nDatabase & System Architecture Design\nWeb Application Development\nMobile Application Development\nIoT Integration Module\nSystem Testing (Unit, Integration, UAT)\nDeployment & Release\nDocumentation & Final Presentation",
+                "depth": 3
+              },
+              {
+                "a": "meeting client",
+                "b": "development iot",
+                "depth": 4
+              },
+              {
+                "a": "week meeting",
+                "b": "release documentation",
+                "depth": 4
+              },
+              {
+                "a": "continue implementing",
+                "b": "analysis ui",
+                "depth": 4
+              },
+              {
+                "a": "client continue",
+                "b": "deployment release",
+                "depth": 4
+              }
+            ]
+          }
+        ],
+        "nodes_a": 86,
+        "nodes_b": 86
+      }
+    }
+  ]
+}
