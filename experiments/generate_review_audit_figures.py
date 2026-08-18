@@ -46,7 +46,7 @@ def cross_domain() -> None:
     x = np.arange(len(methods))
     width = 0.36
     fig, ax = plt.subplots(figsize=(9, 5.6))
-    ax.bar(x - width / 2, out_of_box, width, label="Out-of-the-box", color="#94a3b8")
+    ax.bar(x - width / 2, out_of_box, width, label="Before domain adaptation", color="#94a3b8")
     ax.bar(x + width / 2, adapted, width, label="After adaptation", color="#16a34a")
     ax.set_ylim(0, 1.08)
     ax.set_ylabel("F1")

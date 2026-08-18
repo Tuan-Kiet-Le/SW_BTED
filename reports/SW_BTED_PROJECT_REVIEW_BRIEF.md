@@ -179,7 +179,7 @@ is a stricter generalization check and does not replace the primary protocol.
 
 The second dataset evaluates duplicate bug-report detection and is reported as
 a separate transfer experiment, not as part of the primary 138-pair benchmark.
-Structural-only SW-BTED improves from F1 `0.50` out of the box to `0.6725`
+Structural-only SW-BTED improves from F1 `0.50` before domain adaptation to `0.6725`
 after hyperparameter adaptation. Hybrid improves from `0.9026` to `0.9141`,
 compared with `0.9074` for the SBERT reference (statistical tie). The result
 supports transferability of the framework, while also showing that a new genre
