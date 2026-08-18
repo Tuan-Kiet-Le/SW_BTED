@@ -170,6 +170,11 @@ split, but it remains a separate robustness result rather than a replacement
 for the frozen primary protocol. Full details are in
 `reports/DOCUMENT_DISJOINT_ROBUSTNESS_138.md`.
 
+![Document-disjoint robustness comparison](../docs/submission_figures/figure_6_document_disjoint_robustness.png)
+
+**Figure 6.** Primary pair-level versus document-disjoint pooled F1. The audit
+is a stricter generalization check and does not replace the primary protocol.
+
 ### Cross-domain evaluation: duplicate bug reports
 
 The second dataset evaluates duplicate bug-report detection and is reported as
@@ -179,6 +184,10 @@ after hyperparameter adaptation. Hybrid improves from `0.9026` to `0.9141`,
 compared with `0.9074` for the SBERT reference (statistical tie). The result
 supports transferability of the framework, while also showing that a new genre
 requires its own taxonomy and parameter adaptation.
+
+![Cross-domain duplicate bug-report evaluation](../docs/submission_figures/figure_7_cross_domain_evaluation.png)
+
+**Figure 7.** Cross-domain duplicate bug-report F1 before and after adaptation.
 
 ### Beta-weight ablation
 
