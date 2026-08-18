@@ -1,0 +1,666 @@
+========================================================================
+ĐỐI CHIẾU VĂN BẢN ĐỀ TÀI GỐC & PARAPHRASE (GPT-4o-mini)
+========================================================================
+
+========================================================================
+ĐỀ TÀI: SU26SE102
+========================================================================
+
+------------------------------------------------------------------------
+CHƯƠNG: Context
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE102]:
+Designing good, role-specific interview questions takes a lot of time for HR and interviewers. Because of that, many companies reuse old question lists or depend on each interviewer’s personal style. This often leads to inconsistent coverage of skills and questions that don’t fully match the actual job requirements.
+This project introduces IQGS, a platform with two main sides. On one side, it helps HR managers use AI to create high-quality interview question sets tailored to specific roles and publish them under their company brand. On the other side, job seekers can find these question sets, practice in timed simulations, get AI feedback, and even share their results with HR when applying.
+The goal is to create a continuous loop: better questions from companies lead to better-prepared candidates, and better candidates help companies improve their hiring process
+
+[BẢN PARAPHRASE - SU26SE102_plag]:
+In the contemporary landscape of talent acquisition, organizations face the dual challenge of ensuring effective candidate evaluation while optimizing their hiring processes. This complexity often results in over 60% of enterprises resorting to recycled interview questions or relying on the subjective preferences of individual interviewers. Consequently, the evaluation of applicants frequently lacks uniformity, leading to skill assessments that may not align accurately with the specific requirements of the roles in question.
+
+In light of this challenge, the proposed initiative, TalentQuest, emerges as a solution that innovatively addresses these issues. The platform is designed with dual functionality: it empowers HR professionals to leverage artificial intelligence in crafting high-caliber interview question sets that are meticulously tailored to distinct job roles, all while allowing these materials to be branded according to the organization's identity. Simultaneously, it provides job seekers with access to these curated question sets, enabling them to engage in timed practice simulations, receive insightful feedback from AI, and share their performance metrics with hiring managers during the application process.
+
+The overarching aim of TalentQuest is to establish a cyclical enhancement mechanism: as organizations refine their questions, they cultivate a pool of better-prepared candidates, and in turn, these well-equipped candidates contribute to the continuous improvement of the hiring frameworks employed by companies.
+
+------------------------------------------------------------------------
+CHƯƠNG: Solution
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE102]:
+The project proposes IQGS, a multi-sided platform integrating Retrieval-Augmented Generation (RAG) and LLMs to automate technical interview generation. The solution focuses on: 
+• RAG-Enhanced Context: Integrating a Knowledge Base from industry standards to provide precise context, ensuring AI-generated questions are technically accurate and aligned with Job Descriptions. 
+• Asynchronous Processing: Implementing Asynchronous Task Handling to run intensive AI generation in the background, ensuring a responsive user interface and a seamless experience. 
+• Dual-Sided Value Loop: Creating a workflow where HR publishes AI-curated question sets and Job Seekers engage in timed simulations with real-time AI feedback. 
+• Scientific Validation: Conducting a Baseline Experiment to compare RAG against standard prompting, providing empirical evidence of the system's effectiveness and c. Functional Requirements
+
+[BẢN PARAPHRASE - SU26SE102_plag]:
+The initiative introduces TalentGen, a multi-faceted platform designed to leverage Retrieval-Augmented Generation (RAG) and large language models (LLMs) to streamline the creation of technical interview questions. The proposed solution emphasizes several key aspects: 
+
+1. Contextual Enhancement through RAG: Incorporating a comprehensive Knowledge Repository based on industry benchmarks to guarantee that the AI-generated questions maintain technical precision and are in alignment with specific job descriptions.
+
+2. Background Processing Capabilities: Employing Asynchronous Task Management to execute resource-intensive AI generation processes behind the scenes, thereby ensuring an interactive user interface and an uninterrupted user experience.
+
+3. Bidirectional Value Creation: Establishing a workflow where human resources professionals disseminate AI-assembled question collections, while candidates participate in timed simulations that incorporate real-time AI feedback.
+
+4. Empirical Assessment: Implementing a Baseline Experiment to evaluate the performance of RAG against conventional prompting methods, thereby supplying quantitative data that substantiates the efficacy of the system.
+
+------------------------------------------------------------------------
+CHƯƠNG: Theory
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE102]:
+•	Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) for automated question generation.
+•	Natural Language Processing (NLP) techniques for document parsing, information extraction, and semantic search.
+•	Interview design principles and competency-based assessment frameworks.
+•	Software engineering practices for full-stack system design, RESTful API development, authentication, deployment, and monitoring.
+Documents to be produced:
+	User Requirement
+	Software Requirement Specification (SRS)
+	Architecture Design
+	Detail Design
+	System Implementation
+	Testing Document
+	Installation Guide
+	User Guide
+	Source Code
+	Deployable Software Packages
+Server-side:
+	ASP.NET Core Web API (.NET 8) / Python
+	PostgreSQL for database
+	Hangfire for async background job processing
+	Redis for caching
+	Azure Blob Storage for file storage
+	Docker for containerization
+Client-side:
+	React.js / Next.js 
+	Tailwind CSS + shadcn/ui 
+	Recharts for analytics visualization
+
+[BẢN PARAPHRASE - SU26SE102_plag]:
+•	Enhanced Retrieval-Augmented Generation (eRAG) and Extensive Language Models (ELMs) for automated inquiry formulation.  
+•	Computational Linguistics (CL) methodologies for document analysis, data extraction, and contextual searching.  
+•	Principles of interview structuring and frameworks for competency-centered evaluation.  
+•	Software development methodologies for comprehensive system architecture, RESTful web service creation, user authentication, deployment strategies, and performance monitoring.  
+
+The documents to be produced include:  
+1. User Requirements Document  
+2. Software Requirements Document  
+3. Architectural Blueprint  
+4. Detailed Design Document  
+5. System Deployment Plan  
+6. Testing Documentation  
+7. Installation Manual  
+8. User Manual  
+9. Code Repository  
+10. Deployable Application Packages  
+
+For the server-side architecture, the following technologies will be utilized:  
+1. ASP.NET Core Web API (version 8) / Python  
+2. PostgreSQL as the database solution  
+3. Hangfire for asynchronous job processing  
+4. Redis for in-memory data caching  
+5. Azure Blob Storage for file management  
+6. Docker for container orchestration  
+7. Nginx as a reverse proxy  
+
+On the client-side, the system will leverage:  
+1. React.js / Next.js  
+2. Tailwind CSS combined with shadcn/ui  
+3. Recharts for data visualization analytics
+
+------------------------------------------------------------------------
+CHƯƠNG: Deliverables
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE102]:
+•	Develop a RESTful API for all system operations.
+•	Implement the RAG pipeline for AI-powered question generation.
+•	Build the HR portal for JD input, question management, publishing, analytics, and candidate contact.
+•	Build the Job Seeker marketplace for browsing, practice sessions, AI feedback, and HR contact.
+•	Implement subscription and payment logic for feature access control.
+
+[BẢN PARAPHRASE - SU26SE102_plag]:
+1. A fully operational backend service will be established to support all functionalities of the platform, ensuring secure and efficient interactions across various system operations.  
+2. An innovative pipeline will be integrated for generating AI-driven inquiries, enhancing the user experience through automated question formulation.  
+3. A comprehensive HR portal will be designed to streamline job description input, manage questions, facilitate publishing, provide analytical insights, and enable candidate communication.  
+4. A dynamic marketplace will be created for job seekers, allowing them to explore opportunities, engage in practice sessions, receive feedback from AI, and connect with HR representatives.  
+5. Robust subscription and payment mechanisms will be implemented to manage access to premium features effectively, ensuring a seamless user experience.
+
+------------------------------------------------------------------------
+CHƯƠNG: Timeline
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE102]:
+•	Task 1: Requirement analysis, knowledge base source collection and system architecture design.
+•	Task 2: Knowledge base preparation (document ingestion, chunking, embedding, vector indexing) and database setup.
+•	Task 3: RAG pipeline implementation (embedding, semantic retrieval, LLM generation, output validation, async background job infrastructure).
+•	Task 4: Backend REST API development — all endpoints for HR, Job Seeker, marketplace, analytics, and RAG evaluation experiment.
+•	Task 5: HR portal frontend (JD input, generation polling, question review, publishing, analytics dashboard, contact inbox).
+•	Task 6: Job Seeker marketplace frontend (search, company profile, timed practice session, AI feedback results, contact HR flow, practice history).
+•	Task 7: RAG quality evaluation experiment (RAG vs. zero-shot vs. few-shot, blinded HR reviewers), integration testing, Docker deployment, and project documentation.
+
+[BẢN PARAPHRASE - SU26SE102_plag]:
+1. Phase 1: Initial assessment of functionalities, compilation of knowledge resources, and architectural framework development.  
+2. Phase 2: Preparation of the knowledge repository (document input, segmentation, embedding, and vector cataloging) alongside the establishment of the database infrastructure.  
+3. Stage 3: Execution of the RAG workflow (embedding, semantic search, model generation, result validation, and asynchronous job management).  
+4. Sprint 4: Development of the backend API services — including endpoints for Human Resources, Job Seekers, the marketplace, analytics, and evaluations related to the RAG framework.  
+5. Phase 5: Creation of the Job Seeker interface (position description submission, generation monitoring, question analysis, content dissemination, analytics dashboard, and communication hub).  
+6. Stage 6: Conduct of the RAG performance assessment (comparison of RAG with zero-shot and few-shot methodologies, utilizing masked reviewer evaluations), followed by integration testing, container deployment, and comprehensive project documentation.
+
+
+
+========================================================================
+ĐỀ TÀI: SP26SE163
+========================================================================
+
+------------------------------------------------------------------------
+CHƯƠNG: Context
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE163]:
+The custom mechanical keyboard community is growing rapidly, but faces two major challenges. First, beginners struggle with the steep learning curve of component compatibility, budget optimization, and predicting the acoustic profile (sound signature) of complex custom builds before purchasing expensive parts. Second, the C2C (Customer-to-Customer) service market relies heavily on blind trust. Customers face the risk of modders absconding with high-value components, while modders risk unpaid labor if customers abandon orders. There is a critical need for a centralized platform that bridges this knowledge and visualization gap through data-driven AI tools, and provides a secure, zero-risk transaction environment for custom mechanical keyboard services
+
+[BẢN PARAPHRASE - SP26SE163_plag]:
+The landscape of the custom mechanical keyboard industry is witnessing significant growth, with a burgeoning community of enthusiasts and new entrants. However, this expansion is coupled with substantial obstacles that hinder its progress. A primary issue is the overwhelming complexity for novices, who find it challenging to navigate the intricacies of component compatibility, optimize their budgets effectively, and accurately anticipate the acoustic properties of sophisticated custom builds before investing in costly parts. Additionally, the customer-to-customer (C2C) service sector is plagued by a reliance on unwarranted trust, which poses risks for both parties involved. Customers are vulnerable to modders who may abscond with high-value components, while modders face the potential of rendering unpaid services if clients fail to fulfill their orders. This scenario underscores an urgent demand for an integrated platform, such as KeyFusion, which can effectively address these knowledge and visualization deficits through advanced data-centric AI tools, while also ensuring a secure, zero-risk transaction environment for services related to custom mechanical keyboards.
+
+------------------------------------------------------------------------
+CHƯƠNG: Solution
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE163]:
+-	Intelligent Component Configurator featuring an advanced compatibility constraint engine and a budget-based auto-completion algorithm.
+-	AI-powered Smart Assistant capable of natural language processing for component suggestions and Multimodal Sound Reverse-Engineering (analyzing YouTube audio streams to predict physical components).
+-	Zero-Advance Escrow payment system and Component Collateral mechanism to secure funds and physical assets.
+-	Curated community showcase with a "One-click order" conversion feature.
+- Freemium subscription model providing tiered access to the advanced AI Sound Analyzer, auto-completer algorithms, and priority portfolio visibility for modders.
+
+[BẢN PARAPHRASE - SP26SE163_plag]:
+The proposed solution, designated as "ConfigSmart," leverages a sophisticated architectural framework aimed at facilitating seamless component configuration while ensuring user engagement and financial security.
+
+1. The core of ConfigSmart resides in an Intelligent Component Organizer, which integrates a robust compatibility constraint engine and a budget-driven auto-completion mechanism. This system enables users to efficiently identify and select suitable components that align with their predefined criteria.
+
+2. Complementing this, the AI-driven Assistant integrates advanced natural language processing capabilities, allowing for intuitive component recommendations. Additionally, the system employs Multimodal Audio Analysis to interpret online streaming audio, such as that from YouTube, in order to generate predictive insights regarding physical component requirements.
+
+3. To ensure financial safety, ConfigSmart implements a Zero-Advance Payment Framework alongside a Component Security Asset system. This innovative approach safeguards both monetary transactions and physical assets throughout the procurement process.
+
+4. Furthermore, a meticulously curated community showcase allows users to display their configurations, enhanced by a streamlined "One-click Order" functionality that simplifies the purchasing process.
+
+5. ConfigSmart adopts a Freemium subscription framework, offering tiered access to premium features such as the advanced AI Audio Analyzer, the auto-completion algorithms, and enhanced visibility within the community portfolio for creators and modders alike.
+
+
+
+========================================================================
+ĐỀ TÀI: SP26SE045
+========================================================================
+
+------------------------------------------------------------------------
+CHƯƠNG: Context
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE045]:
+Why does this project exist?
+Vietnamese students and young professionals lack clear career direction, real practical skills, and access to mentors.
+Current platforms like Coursera, Udemy, or MindX are mostly theoretical and not personalized, causing learners to finish courses but still fail to apply skills in real jobs.
+Skillverse exists to close this gap.
+ 
+Why is it worth doing now?
+•	AI is transforming how people learn and work.
+•	The World Economic Forum predicts 1 billion people must reskill/upskill by 2030.
+•	Vietnam’s EdTech market is growing 15%+ annually, especially in micro-learning and practical training.
+→ This is the perfect moment to build an AI-powered, job-oriented learning ecosystem.
+ 
+Who faces this problem?
+1.	University students (Year 2+) lacking practical and soft skills.
+2.	Fresh graduates & career changers unsure where to start.
+3.	Mentors & industry experts needing a structured platform to teach and earn.
+4.	SMEs & startups struggling to find young talent with verified skills and portfolios.
+ 
+What makes this opportunity promising?
+•	Personalized AI learning is becoming a global standard.
+•	Gen Z demands short, practical, job-ready learning.
+•	Vietnam has 1M+ students and nearly 1M SMEs—a massive user base.
+•	National digital education policies encourage innovative EdTech solutions.
+ Skillverse positions itself as an AI-driven “Learn – Practice – Work” ecosystem:
+AI-powered learning paths → practical projects → mentor guidance → micro-jobs → digital portfolio → employment.
+
+[BẢN PARAPHRASE - SP26SE045_plag]:
+What prompts the development of this initiative? 
+
+The landscape of Vietnam's workforce is evolving rapidly, characterized by a significant need for skilled professionals equipped with practical abilities and guided by experienced mentors. Yet, numerous students and emerging professionals find themselves adrift, lacking the distinct career pathways essential for their success. Existing digital platforms, such as LearningHub, primarily offer theoretical content that fails to cater to individual needs, leaving users with a sense of unpreparedness when attempting to transfer learned skills to the workplace. In response to this challenge, LearningHub aims to bridge the existent chasm.
+
+Why is this an opportune time for this initiative?
+
+The integration of artificial intelligence is revolutionizing educational and professional environments. Insights from the Global Skills Forum indicate that approximately 1.2 billion individuals will need to engage in reskilling or upskilling initiatives by 2030. Furthermore, the Vietnamese EdTech sector is witnessing an annual growth rate exceeding 18%, particularly in areas such as micro-learning and hands-on training. This convergence of factors creates an ideal scenario for establishing an AI-enhanced, career-focused learning ecosystem.
+
+Who encounters this challenge?
+
+A diverse group faces this dilemma, including: 
+1. University students (sophomore year and beyond) who require both practical and interpersonal skills.
+2. Recent graduates and individuals contemplating career transitions who are uncertain about initiating their journeys.
+3. Mentors and industry veterans who require a systematic platform for imparting knowledge while generating income.
+4. Small and medium enterprises, alongside startups, that struggle to identify young talents with verified competencies and robust portfolios.
+
+What renders this opportunity significant?
+
+The demand for tailored AI-driven learning solutions is increasingly becoming a global norm. Generation Z exhibits a strong preference for concise, practical education that prepares them for the workforce. Vietnam boasts over 1.2 million students and a similar number of SMEs, indicating a substantial potential user base. Furthermore, national policies promoting digital education are paving the way for pioneering EdTech innovations. LearningHub strategically positions itself as an AI-empowered ecosystem that seamlessly integrates "Learn – Apply – Succeed," encompassing personalized learning pathways, hands-on projects, expert mentorship, micro-job opportunities, digital portfolios, and pathways to employment.
+
+------------------------------------------------------------------------
+CHƯƠNG: Solution
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE045]:
+Skillverse delivers an AI-driven learning, mentorship, and career ecosystem that connects learners, mentors, and businesses on one integrated platform.
+The system uses Artificial Intelligence, Gamification, and Cloud Technology to create a personalized, engaging, and job-ready learning experience.
+1. AI Personalization & Smart Roadmap
+•	AI analyzes user goals and skill gaps to generate a personalized learning path.
+•	Roadmap updates dynamically using learning analytics.
+•	Recommends micro-courses, mentors, and real projects.
+•	Dashboard shows progress, weekly goals, and milestones.
+2. AI Virtual Assistant – Meowl
+•	Guides learners, answers questions, and gives study recommendations.
+•	Sends reminders, motivation, and progress reports.
+•	Tracks focus and engagement through Meowl Supper.
+•	Provides weekly summaries and suggested next steps.
+3. Mentorship & Booking System
+•	Book mentors for 1:1 or group sessions (online or offline).
+•	AI matches learners with the right mentors.
+•	Mentors manage schedules, earnings, and session notes.
+•	Workshop and bootcamp hosting integrated.
+4. Gamification & Motivation
+•	XP, badges, coins, streaks, daily missions, weekly challenges.
+•	Leaderboards for individuals, groups, or universities.
+•	Reward Store for redeeming coins.
+ 
+5. AI Learning Tools
+•	AI auto-grading for assignments with structured feedback.
+•	AI Quiz Generator for instant adaptive quizzes.
+•	AI Career Chat for job-oriented guidance.
+•	AI Portfolio Builder (Skill Wallet) compiles certificates, projects, and feedback.
+ 
+6. Community & Social Learning
+•	Discussion boards, resource sharing, and project showcases.
+•	Study groups, events, and mentor announcements.
+•	AI moderation maintains a safe and productive environment.
+7. Business & Job Integration
+•	SMEs post freelance tasks or internships.
+•	AI recommends candidates based on Skill Wallet data.
+•	Completed projects automatically update portfolios.
+•	Business Dashboard manages posts, applicants, and analytics.
+8. Infrastructure & Deployment
+•	Web (React) + Mobile App (Flutter).
+•	Backend: Spring Boot + PostgreSQL + Redis.
+•	Cloudinary for file storage; VPS + Docker for scalable deployment.
+•	PayOS/Momo for payments; JWT for secure authentication.
+•	Admin Dashboard for system monitoring and analytics.
+Expected Deliverables
+•	Web platform + mobile app (iOS/Android).
+•	AI systems fully integrated (roadmap, quiz, portfolio, Meowl).
+•	Business & mentor modules.
+•	Cloud-hosted MVP with PayOS & Cloudinary.
+•	Full documentation: SRS, UML, testing, installation.
+Expected Impact
+•	Personalized learning and verified digital portfolios for learners.
+•	Smart tools and income opportunities for mentors.
+•	Faster, cheaper access to skilled young talent for SMEs.
+•	A gamified, community-driven learning culture.
+•	Support Vietnam’s digital education and workforce development in the AI era.
+
+[BẢN PARAPHRASE - SP26SE045_plag]:
+SkillSphere presents an AI-enhanced educational, mentorship, and professional ecosystem that integrates learners, advisors, and enterprises within a unified platform. This system harnesses advanced technologies, including Artificial Intelligence, interactive gaming elements, and cloud computing, to foster a customized, engaging, and employment-ready educational journey.
+
+The architecture of SkillSphere consists of several interrelated components:
+
+1. **AI-Driven Personalization and Dynamic Pathway**
+   The system employs AI to evaluate individual objectives and identify skill deficiencies, thus crafting customized learning trajectories. These pathways are adaptable, continually refined through learning analytics. The application suggests mini-courses, mentors, and practical projects to facilitate growth. A comprehensive dashboard provides users with insights into their progress, weekly targets, and significant achievements.
+
+2. **Virtual Assistant – Assistant Owl**
+   This feature assists learners by responding to inquiries and offering study guidance. It sends motivational reminders and progress updates while monitoring concentration and engagement through Assistant Owl's focus tracker. Weekly summaries and recommendations for subsequent actions are also provided.
+
+3. **Mentorship and Scheduling Interface**
+   Learners can arrange meetings with mentors for either individual or group sessions, both virtually and in-person. The AI component effectively pairs learners with suitable mentors. Mentors can oversee their calendars, income, and notes from sessions, while integrated functionalities enable the hosting of workshops and boot camps.
+
+4. **Engagement through Gamification**
+   The system incorporates experience points, badges, currency, activity streaks, daily tasks, and weekly challenges. Leaderboards are available for individuals, teams, or educational institutions, and a rewards store allows users to exchange currency for various incentives.
+
+5. **AI-Powered Educational Tools**
+   Automatic grading of assignments is facilitated by AI, accompanied by structured feedback. An AI Quiz Generator enables the creation of adaptive quizzes on demand. Career guidance is available through an AI Career Advisor, while the AI Portfolio Creator compiles certificates, projects, and constructive feedback into a consolidated skill wallet.
+
+6. **Community Interaction and Collaborative Learning**
+   The platform features discussion forums, resource sharing, and showcases of user projects. It promotes study groups, events, and mentor notifications. AI moderation ensures a safe and fruitful community environment.
+
+7. **Business Integration and Job Facilitation**
+   Small and medium enterprises can post freelance opportunities or internship offers. AI tools recommend candidates based on skill wallet data. Projects that learners complete automatically enhance their portfolios. A Business Dashboard enables the management of postings, applicants, and relevant analytics.
+
+8. **System Infrastructure and Deployment**
+   The platform is developed with a web interface (utilizing Angular) and a mobile application (using React Native). The backend is structured with FastAPI, MySQL, and Memcached. For file storage, Cloudinary is integrated, while a VPS with Podman provides a scalable deployment environment. Payment processing is handled through PayPal and JWT provides secure authentication mechanisms. An Admin Dashboard is available for system oversight and analytical reporting.
+
+**Expected Deliverables**
+The project will culminate in a web platform alongside a mobile application compatible with both iOS and Android systems. Comprehensive integration of AI functionalities (pathways, quizzes, portfolio, Assistant Owl) will be achieved, along with dedicated modules for businesses and mentors. The MVP will be cloud-hosted with PayPal and Cloudinary integrations, accompanied by thorough documentation, including Software Requirements Specification (SRS), UML diagrams, testing protocols, and installation guides.
+
+**Expected Impact**
+The initiative aims to provide personalized learning experiences and validated digital portfolios for learners. It offers innovative tools and earning prospects for mentors while facilitating quicker and more cost-effective access to skilled young professionals for small and medium-sized enterprises. Ultimately, SkillSphere aspires to foster a gamified, community-oriented educational culture and contribute to the advancement of Vietnam's digital education and workforce in the age of Artificial Intelligence.
+
+
+
+========================================================================
+ĐỀ TÀI: SP26SE071
+========================================================================
+
+------------------------------------------------------------------------
+CHƯƠNG: Context
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE071]:
+This project creates a comprehensive application for the complete electronic waste collecting process. The system includes a mobile application that allows users to input device information, utilizing automatically identifying things and moderate content. An intelligent methodology groups orders and creates streamlined routes for collectors. Collectors attach QR codes to things for tracking during pickup. Warehouse administrators assess item conditions to store into database, then the system automatically allocates incentive points to users. Ultimately, authenticated items are packaged and dispatched to recycling partners. The application seeks to streamline electronic trash disposal and promote sustainable recycling practices within the community.
+
+[BẢN PARAPHRASE - SP26SE071_plag]:
+The proposed initiative, titled EcoTrack, aims to revolutionize the management of electronic waste collection through a sophisticated technological framework. The landscape of electronic waste disposal is evolving, with a significant number of businesses now recognizing the environmental impact of improper e-waste management. Over 60% of enterprises are grappling with the challenge of effectively handling discarded electronics, which necessitates a systematic approach to facilitate responsible recycling practices.
+
+Central to EcoTrack is a user-friendly mobile application designed to capture and process information related to electronic devices. Users can effortlessly input details about their devices, while the application employs advanced identification techniques to ensure accuracy and user engagement. In this context, an intelligent algorithm organizes collection requests and formulates optimized routes for waste collectors, effectively enhancing operational efficiency.
+
+During the collection phase, waste collectors employ QR codes affixed to devices, enabling meticulous tracking throughout the pickup process. Following collection, warehouse managers evaluate the condition of the items before entering them into the database, where the system dynamically allocates reward points to users as an incentive for their participation. This incentivization not only motivates users to contribute but also fosters a culture of responsible e-waste disposal.
+
+Ultimately, the process culminates in the secure packaging of verified items, which are subsequently dispatched to approved recycling partners. With EcoTrack, the initiative seeks not only to simplify the disposal of electronic waste but also to cultivate sustainable recycling habits within the community, paving the way for a greener future.
+
+------------------------------------------------------------------------
+CHƯƠNG: Solution
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SP26SE071]:
+Deployment Place: CÔNG TY TNHH GIẢI PHÁP TRUYỀN THÔNG HỢP NHẤT - 249 Bình Quới, Phường Bình Quới, TP Hồ Chí Minh, Việt Nam
+The client has provided the following detailed workflow:
+1.	Full workflow (Overall Operational Process)
+The overall operation lifecycle of the platform involves sequential stages among the participating actors:
+a.	Initialization Phase (User): The User accesses the mobile application to Submit a Request, providing details and images of the electronic waste.
+b.	Dispatch Phase (System): The System receives the request, processes the data, and automatically executes Route Planning to assign the task to an appropriate Collector.
+c.	Collection Phase (Collector): The Collector accepts the task, travels to the user's location to perform the Pickup, and transports the collected items to the warehouse.
+d.	Warehousing Phase (Warehouse Staff): The Warehouse Staff receives items from the Collector, performs inspection, and executes Check-in/Storage.
+e.	Recycling Phase (Recycler): The Warehouse initiates the Transfer of batched waste to the Recycler for final processing.
+2.	Pickup Request Submission (User Request Creation Process)
+Detailed steps for a user to create a new collection request:
+a.	Start: The User logs into the application and selects the "Create Collection Request" function.
+b.	Photo Authentication: The User captures a photo of the device intended for disposal.
+c.	AI Verification: The AI system analyzes the captured image:
+d.	Invalid Case: The system displays an error (e.g., "non-e-waste detected" or "Unclear image"). The User is required to retake the photo.
+e.	Valid Case: The system approves the image and proceeds to the next step.
+f.	Input Details: The User provides specific details: Pickup Address, Device Category, and Preferred Time Slot.
+g.	Completion: The User clicks "Submit." The system saves the request with a "Pending" status and notifies the user of success.
+3.	Collection & Routing (System Dispatch & Collector Process)
+The process for route optimization and on-site collection:
+a.	Route Optimization (System): The system aggregates Pending Requests and executes a routing algorithm to batch orders and generate the optimal path for the Collector.
+b.	Task Assignment: The system sends the route and pick-up list to the Collector via the mobile app.
+c.	Travel & Verification (Collector):
+d.	The Collector navigates the user’s address using the map integration.
+e.	On-site, the Collector verifies the physical device against the request details.
+f.	Collection Decision:
+g.	Match: The Collector confirms the application, collects the item, and loads it onto the vehicle. The status updates to "Collected."
+h.	Mismatch: The Collector rejects the collection or updates the correct information on the system before acceptance.
+i.	End Route: Upon completing the route, the Collector transports all collected items to the central warehouse.
+4.	Inventory & Recycling Transfer (Warehouse Entry & Transfer to Recycler Process)
+The workflow for managing inventory from check-in to export:
+a.	Inventory Check-in: Upon the Collector's arrival at the warehouse, the Warehouse Staff scans the code (QR Code/Barcode) on each device to confirm entry.
+b.	Categorization & Storage: The system updates the status to "In Stock." Devices are categorized and placed in their respective storage zones.
+c.	Batch Creation: When a sufficient quantity is accumulated, the Warehouse Staff groups devices into a Batch for export.
+d.	Handover: The Warehouse Staff generates an export slip and physically hands over the batch to the Recycler.
+e.	Confirmation: The Recycler confirms receipt. The system updates the final status of the devices to "Transferred to Recycler."
+5.	Direct Drop-In (User Drop-off Process)
+The process for users who bring waste directly to the collection point:
+a.	User Arrival: The User brings the electronic waste directly to the System’s Warehouse or Collection Hub.
+b.	Reception (Staff): The Staff inspects the physical condition of the device.
+c.	System Logging: The Staff uses Admin Portal to log a new request on behalf of the User.
+d.	Completion:
+o	The device is immediately checked into the inventory (skipping the transportation phase).
+o	The system records the successful transaction and awards Points to the User's account.
+The system recognizes the following key actors:
+1.	User: Posts device details, schedules collections, and tracks collection status.
+2.	Collector: Follows assigned routes, collects items, and attaches QR codes.
+3.	Warehouse Admin: Verifies item conditions, confirms user rewards, and prepares packages.
+4.	Collection Company Admin: Manages collectors, coordinates vehicles, and oversees collection hubs.
+5.	System Admin: Moderates posts and oversees platform operations.
+6.	Recycler: Receives packages and processes items for recycling.
+7.	System Handler: Coordinates all automated processes.
+
+[BẢN PARAPHRASE - SP26SE071_plag]:
+Deployment Location: INTEGRATED MEDIA SOLUTIONS LLC - 249 Binh Quoi, Binh Quoi Ward, Ho Chi Minh City, Vietnam
+
+The client has outlined the following comprehensive workflow:
+
+1. Overall Operational Lifecycle
+The platform's operational lifecycle encompasses a series of stages involving various stakeholders:
+   a. User Initialization Phase: Users engage with the mobile application to submit a collection request, including relevant details and images of the electronic waste.
+   b. System Dispatch Phase: The system receives the request, processes the necessary data, and automatically conducts Route Planning to designate the task to a suitable Collector.
+   c. Collector Collection Phase: The Collector accepts the assignment, travels to the user's location to carry out the Pickup, and conveys the collected items to the designated warehouse.
+   d. Warehouse Processing Phase: Warehouse personnel receive the items from the Collector, conduct an inspection, and manage the Check-in/Storage process.
+   e. Recycling Transfer Phase: The warehouse staff initiates the Transfer of collected waste batches to the Recycler for final processing.
+
+2. User Request Creation Process
+The detailed steps for a user to initiate a new collection request include:
+   a. Initiation: The user logs into the application and selects the "Initiate Collection Request" feature.
+   b. Image Capture: The user takes a photograph of the device intended for disposal.
+   c. AI Assessment: The AI component evaluates the captured image.
+   d. Invalid Outcome: Should the system identify an error (e.g., "not an e-waste item" or "image unclear"), the user must retake the photo.
+   e. Valid Outcome: The system validates the image and advances to the subsequent step.
+   f. Detail Entry: The user inputs specific information including Pickup Address, Device Type, and Preferred Collection Time.
+   g. Finalization: The user clicks "Submit," and the system saves the request status as "Pending," while notifying the user of success.
+
+3. System Dispatch and Collector Procedure
+The method for optimizing routes and executing on-site collections is as follows:
+   a. Route Optimization: The system consolidates pending requests and applies a routing algorithm to cluster orders and devise the most efficient path for the Collector.
+   b. Task Notification: The system relays the optimized route and pickup details to the Collector via the mobile application.
+   c. Collector Navigation and Verification: The Collector utilizes integrated mapping to navigate to the user's address.
+   d. On-Site Verification: Upon arrival, the Collector confirms the physical device against the details specified in the request.
+   e. Collection Decision-Making:
+      - Matched Scenario: The Collector verifies the application, collects the item, and loads it into the vehicle, updating the status to "Collected."
+      - Mismatched Scenario: The Collector declines the collection or amends the information in the system prior to accepting the item.
+   f. Route Completion: After all pickups, the Collector transports the items to the central warehouse.
+
+4. Inventory Management and Recycler Transfer Process
+The workflow for handling inventory from check-in through export is as follows:
+   a. Inventory Check-in: Upon the Collector's arrival, the Warehouse staff scans the QR Code/Barcode for each device to verify entry.
+   b. Categorization and Storage: The system updates the status to "In Stock," categorizing devices and placing them in designated storage areas.
+   c. Batch Assembly: Once a sufficient quantity is accrued, Warehouse staff consolidate devices into a Batch for transfer.
+   d. Handover Procedure: Warehouse personnel create an export slip and physically transfer the batch to the Recycler.
+   e. Receipt Confirmation: The Recycler acknowledges receipt, prompting the system to update the status of the devices to "Transferred to Recycler."
+
+5. User Drop-off Process
+This process accommodates users who deliver waste directly to the collection site:
+   a. User Check-in: The User presents the electronic waste at the System’s Warehouse or Collection Hub.
+   b. Staff Reception: Staff members inspect the physical condition of the device.
+   c. System Logging: Staff utilize the Admin Interface to log a new request on behalf of the User.
+   d. Completion: 
+      - The device is promptly checked into inventory (bypassing the transportation phase).
+      - The system records the transaction's success and awards Points to the User's account.
+
+The system identifies several key participants:
+1. User: Submits device information, schedules pickups, and monitors collection status.
+2. Collector: Adheres to designated routes, retrieves items, and affixes QR codes.
+3. Warehouse Personnel: Assesses item conditions, validates user rewards, and organizes packages.
+4. Collection Company Administrator: Supervises collectors, coordinates vehicles, and manages collection hubs.
+5. System Administrator: Oversees posts and monitors platform functionality.
+6. Recycler: Accepts packages and processes items for recycling.
+7. System Coordinator: Orchestrates all automated operations.
+
+
+
+========================================================================
+ĐỀ TÀI: SU26SE043
+========================================================================
+
+------------------------------------------------------------------------
+CHƯƠNG: Context
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE043]:
+The job market is increasingly competitive, yet many candidates struggle not with technical skills, but with interview performance. While B2C users need a private environment to practice, B2B entities (Employers) require automated tools to screen candidates efficiently. Current solutions are either too expensive or lack deep personalization. ISAS leverages Large Language Models (LLMs) to bridge this gap, providing a dual-sided platform for both individual growth and corporate recruitment optimization.
+
+[BẢN PARAPHRASE - SU26SE043_plag]:
+The landscape of employment has grown significantly more challenging, with a notable emphasis on the nuances of candidate assessment, particularly during interviews. In this context, businesses face the pressing need for advanced mechanisms that facilitate the selection process, while job seekers often seek an intimate space to hone their interview capabilities. It has been observed that over 60% of organizations find existing tools to be prohibitively costly or insufficiently tailored to meet their specific needs. 
+
+In response to these challenges, TalentBridge harnesses the power of advanced Artificial Intelligence models to create a comprehensive solution that addresses the requirements of both job applicants and hiring firms. This innovative platform is designed to promote personal development for candidates while simultaneously enhancing the efficiency of recruitment processes for employers, effectively bridging the divide within this competitive marketplace.
+
+------------------------------------------------------------------------
+CHƯƠNG: Solution
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE043]:
+We build an AI platform that works on both web and mobile. 
+The system supports two main groups of users: 
+
+Candidates: 
+They can practice interviews with AI, receive instant feedback, analyze their CV or GitHub repo. 
+
+Employers: 
+They can create automated interview campaigns, use AI to evaluate candidates, track rankings through a “Matching Score,” and ensure fairness with anti-cheating features.  
+
+Key constraints & Scope limits (To ensure feasibility within 1 semester): 
+
+Hybrid Interview Experience: The platform primarily focuses on Text-based Q&A for deep technical analysis. Audio (Speech-to-Text) is implemented specifically for fluency and confidence scoring, while Video (Camera) is used strictly for Anti-cheating monitoring (not for emotion/video AI analysis) to optimize API costs and latency. 
+
+Two Target Users (B2C & B2B): We are building two distinct interfaces. One is for Candidates to practice mock interviews. The other is a professional dashboard for Employers to create testing links, invite candidates, and view ranking scores. 
+
+Scalable Career Domains: Supports 3 popular career domains (Frontend, Backend, BA) with pre-configured AI prompts to ensure high-quality question generation. 
+
+Prompt Engineering over Custom Training: Utilizes state-of-the-art pre-trained LLM APIs via Prompt Engineering and RAG (Retrieval-Augmented Generation) techniques rather than training a custom AI model from scratch. 
+
+Transaction Management: Payment integration is limited to Sandbox/Test environments of popular gateways (PayOS) to demonstrate the billing flow without real financial liability.
+
+[BẢN PARAPHRASE - SU26SE043_plag]:
+We propose the development of an advanced AI-driven platform designed for deployment on both web and mobile interfaces. This architecture caters to two primary user demographics:
+
+Job Seekers: Individuals in this category will have the opportunity to engage in mock interviews facilitated by AI technology, receive immediate critique, and evaluate their resumes or project portfolios.
+
+Recruiters: This group will benefit from features that allow them to orchestrate automated interview operations, leverage AI for candidate assessments, monitor performance metrics through a “Candidate Fit Score,” and implement integrity measures to prevent malpractice during evaluations.
+
+Important limitations and boundaries (aligned with a one-semester timeline):
+
+Integrated Interview Methodology: The application will predominantly focus on text-based question-and-answer sessions to conduct thorough technical evaluations. Audio capabilities (Speech Recognition) will be incorporated to assess fluency and confidence levels, while video functionalities will serve exclusively for integrity checks (not for emotion detection or video analysis) in order to minimize API expenses and reduce latency.
+
+Diverse User Interfaces (B2C & B2B): We are creating two distinct user interfaces. One will be tailored for job seekers to engage in practice interviews, while the other will be a comprehensive dashboard for recruiters to generate testing links, invite participants, and monitor performance metrics.
+
+Expandable Career Fields: The platform is designed to accommodate three key professional sectors (Frontend Development, Backend Development, Business Analysis) with predefined AI prompts to guarantee the generation of quality interview questions.
+
+Prompt Optimization over Personalized Training: This approach will harness cutting-edge pre-trained large language model APIs through prompt optimization and retrieval-augmented generation methods, rather than developing a bespoke AI model from the ground up.
+
+Payment Handling: Transaction functionalities will be confined to sandbox/test environments of renowned payment processors (PayGate) to illustrate the billing procedure without incurring actual financial risks.
+
+------------------------------------------------------------------------
+CHƯƠNG: Theory
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE043]:
+Prompt Engineering techniques for LLMs and document parsing. 
+
+Interview of evaluation rubrics and HR assessment criteria. 
+
+Produce documents including:  
+
+Project Introduction 
+
+Software Project Management Plan (SPMP) 
+
+Software Requirements Specifications (SRS) 
+
+Software Design Description (SDD) 
+
+Software Test Documentation (STD) 
+
+Software User Guides (SUG) 
+
+Software Product (SP) 
+
+Source code 
+
+Final Project Report 
+
+Server-side technologies: 
+
+Server: ASP.NET 10 
+
+Database System: Postgres SQL 
+
+AI Integration 
+
+Redis for caching 
+
+Docker for containerization. 
+
+Client-side technologies:  
+
+ReactJS Tailwind for the web application. 
+
+React Native for mobile integration. 
+
+Web Client: HTML5, CSS3, JavaScript, React
+
+[BẢN PARAPHRASE - SU26SE043_plag]:
+Techniques for prompt optimization in large language models and document analysis.
+
+Evaluation criteria for interviews and human resources assessments.
+
+The following documentation will be generated:
+
+1. Project Overview
+2. Software Development Management Plan 
+3. Software Requirements Document 
+4. System Design Specification 
+5. Test Plan Document 
+6. User Manual 
+7. Software Product 
+8. Source Code 
+9. Final Project Report 
+
+Technologies utilized for the server-side include:
+
+- Server: .NET 6
+- Database Management System: MySQL
+- AI Integration
+- Redis for caching
+- Docker for containerization
+- Nginx as reverse proxy
+
+For the client-side, the employed technologies consist of:
+
+- ReactJS with Tailwind for the web application
+- React Native for mobile app integration
+- Web Client: HTML5, CSS3, JavaScript, React
+
+------------------------------------------------------------------------
+CHƯƠNG: Deliverables
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE043]:
+evelop a RESTful API for system operations and AI integrations. 
+
+Web application for candidates to practice mock interviews. 
+
+Mobile application for candidates to easily practice mock interviews on the go.
+
+[BẢN PARAPHRASE - SU26SE043_plag]:
+1. A fully operational backend service that exposes standardized endpoints to seamlessly facilitate all functionalities within the platform, including system operations and AI integrations. 
+
+2. An intuitive web application that allows candidates to engage in mock interview simulations, enhancing their preparation and interview skills.
+
+3. A user-friendly mobile application designed for candidates to conveniently practice mock interviews anytime and anywhere, promoting flexible learning and skill development.
+
+------------------------------------------------------------------------
+CHƯƠNG: Timeline
+------------------------------------------------------------------------
+[VĂN BẢN GỐC - SU26SE043]:
+Task package 1: Project Initiation & Planning. Define scope and schedule 
+
+Task package 2: Requirement Analysis. Define user requirements, use cases, and product backlog. 
+
+Task package 3: System & Database Design. Define UI/UX, software architecture, and setup .NET 10 code frame. 
+
+Task package 4: Coding Iterations (Packages 1, 2, 3). Develop Core API, React UI, Mobile App UI, AI Prompt integration, and CV parsing. 
+
+Task package 5: System Testing & Transition. Conduct Integration/System testing and write user manuals. 
+
+Task Package 6: Finalization & Defense. Consolidate all artifacts   
+
+Each work group may have many students participating, but there will be 1 member responsible for the main responsibility. 
+
+Notice: All students are required to understand the reference documents thoroughly and may need to explain to the viva committee
+
+[BẢN PARAPHRASE - SU26SE043_plag]:
+Phase 1: Project Commencement & Strategy Formulation. Establish the project's scope, objectives, and timeline.
+
+Phase 2: User Needs Assessment. Identify end-user needs, develop use case scenarios, and create a prioritized product backlog.
+
+Phase 3: Architectural & Interface Blueprinting. Design the user interface and experience, outline software architecture, and implement the Java Framework structure.
+
+Phase 4: Development Cycles. Construct the Essential API, Angular UI, Mobile Interface, integrate AI prompts, and implement document parsing capabilities.
+
+Phase 5: Quality Assurance & Deployment. Execute system validation procedures and produce comprehensive user documentation.
+
+Each collaborative team may encompass multiple students, with a designated lead assuming primary accountability.
+
+Note: All participants must thoroughly review essential reference materials and be prepared to articulate their understanding to the evaluation panel.
+
+
+

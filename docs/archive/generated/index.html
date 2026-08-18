@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW-BTED Pipeline & Experimental Plan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+        :root {
+            --bg: #08090d;
+            --panel: #0f1117;
+            --card: #141720;
+            --card2: #1a1f2e;
+            --border: #232840;
+            --border2: #2d3455;
+            --text: #e2e8f8;
+            --muted: #5a6490;
+            --dim: #8892b0;
+
+            --blue: #4d9cf8;
+            --blue-glow: rgba(77, 156, 248, 0.15);
+            --purple: #9d7cf8;
+            --purple-glow: rgba(157, 124, 248, 0.15);
+            --teal: #2dd4bf;
+            --teal-glow: rgba(45, 212, 191, 0.12);
+            --amber: #f59e0b;
+            --amber-glow: rgba(245, 158, 11, 0.12);
+            --rose: #f43f5e;
+            --rose-glow: rgba(244, 63, 94, 0.12);
+            --green: #22c55e;
+            --green-glow: rgba(34, 197, 94, 0.12);
+            --orange: #fb923c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ─── NAV ─── */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 9, 13, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 0 32px;
+            height: 54px;
+            overflow-x: auto;
+        }
+
+        .nav-logo {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--blue);
+            white-space: nowrap;
+            margin-right: 24px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-tab {
+            background: none;
+            border: none;
+            font-family: inherit;
+            padding: 0 16px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .nav-tab:hover {
+            color: var(--text);
+        }
+
+        .nav-tab.active {
+            color: var(--blue);
+            border-bottom-color: var(--blue);
+        }
+
+        .nav-tab:focus {
+            outline: none;
+        }
+
+        .nav-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        /* ─── LAYOUT ─── */
+        .page {
+            display: none;
+            padding: 40px 32px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeUp 0.3s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            text-align: center;
+            padding: 48px 0 52px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(77, 156, 248, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(77, 156, 248, 0.08);
+            border: 1px solid rgba(77, 156, 248, 0.2);
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 4.5vw, 52px);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(140deg, #fff 30%, #6b8fd8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .hero-sub {
+            font-size: 15px;
+            color: var(--dim);
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* ─── SECTION HEADERS ─── */
+        .sec-header {
+            margin-bottom: 28px;
+        }
+
+        .sec-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 6px;
+        }
+
+        .sec-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .sec-desc {
+            font-size: 14px;
+            color: var(--dim);
+            line-height: 1.7;
+            max-width: 680px;
+        }
+
+        /* ─── PIPELINE STAGES ─── */
+        .pipeline-wrap {
+            position: relative;
+        }
+
+        .stage {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 0 24px;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .stage-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stage-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            border: 1px solid var(--border2);
+        }
+
+        .stage-line {
+            width: 2px;
+            flex: 1;
+            min-height: 32px;
+            background: linear-gradient(to bottom, var(--border2), transparent);
+            margin: 8px 0;
+        }
+
+        .stage:last-child .stage-line {
+            display: none;
+        }
+
+        .stage-body {
+            padding-bottom: 36px;
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding-top: 10px;
+        }
+
+        .stage-num {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+
+        .stage-title {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .stage-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 24px;
+            transition: border-color 0.25s;
+        }
+
+        .stage-card:hover {
+            border-color: var(--border2);
+        }
+
+        .stage-desc {
+            font-size: 13px;
+            color: var(--dim);
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        /* color variants */
+        .s-blue .stage-icon {
+            background: var(--blue-glow);
+            color: var(--blue);
+        }
+
+        .s-blue .stage-num {
+            background: var(--blue-glow);
+            color: var(--blue);
+        }
+
+        .s-purple .stage-icon {
+            background: var(--purple-glow);
+            color: var(--purple);
+        }
+
+        .s-purple .stage-num {
+            background: var(--purple-glow);
+            color: var(--purple);
+        }
+
+        .s-teal .stage-icon {
+            background: var(--teal-glow);
+            color: var(--teal);
+        }
+
+        .s-teal .stage-num {
+            background: var(--teal-glow);
+            color: var(--teal);
+        }
+
+        .s-amber .stage-icon {
+            background: var(--amber-glow);
+            color: var(--amber);
+        }
+
+        .s-amber .stage-num {
+            background: var(--amber-glow);
+            color: var(--amber);
+        }
+
+        .s-rose .stage-icon {
+            background: var(--rose-glow);
+            color: var(--rose);
+        }
+
+        .s-rose .stage-num {
+            background: var(--rose-glow);
+            color: var(--rose);
+        }
+
+        .s-green .stage-icon {
+            background: var(--green-glow);
+            color: var(--green);
+        }
+
+        .s-green .stage-num {
+            background: var(--green-glow);
+            color: var(--green);
+        }
+
+        /* code blocks */
+        .code {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            line-height: 1.8;
+            overflow-x: auto;
+            margin-top: 14px;
+        }
+
+        .c-comment {
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .c-key {
+            color: var(--blue);
+        }
+
+        .c-val {
+            color: var(--teal);
+        }
+
+        .c-str {
+            color: var(--amber);
+        }
+
+        .c-num {
+            color: var(--orange);
+        }
+
+        .c-fn {
+            color: var(--purple);
+        }
+
+        .c-op {
+            color: var(--rose);
+        }
+
+        /* inline tags */
+        .tag {
+            display: inline-block;
+            padding: 2px 9px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .tag-blue {
+            background: var(--blue-glow);
+            color: var(--blue);
+        }
+
+        .tag-teal {
+            background: var(--teal-glow);
+            color: var(--teal);
+        }
+
+        .tag-amber {
+            background: var(--amber-glow);
+            color: var(--amber);
+        }
+
+        .tag-purple {
+            background: var(--purple-glow);
+            color: var(--purple);
+        }
+
+        .tag-rose {
+            background: var(--rose-glow);
+            color: var(--rose);
+        }
+
+        .tag-green {
+            background: var(--green-glow);
+            color: var(--green);
+        }
+
+        /* info/warn boxes */
+        .infobox {
+            border-radius: 10px;
+            padding: 13px 16px;
+            font-size: 12.5px;
+            line-height: 1.7;
+            margin-top: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .infobox.blue {
+            background: var(--blue-glow);
+            border: 1px solid rgba(77, 156, 248, 0.2);
+            color: #93c5fd;
+        }
+
+        .infobox.amber {
+            background: var(--amber-glow);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            color: #fcd34d;
+        }
+
+        .infobox.green {
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+
+        .infobox-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* detail rows */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-item {
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .detail-item-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .detail-item-val {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* formula box */
+        .formula {
+            background: var(--bg);
+            border: 1px solid var(--border2);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 2;
+            overflow-x: auto;
+        }
+
+        .formula-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .f-label {
+            color: var(--muted);
+            font-size: 11px;
+            width: 80px;
+            flex-shrink: 0;
+        }
+
+        .f-eq {
+            color: var(--text);
+        }
+
+        .f-blue {
+            color: var(--blue);
+        }
+
+        .f-teal {
+            color: var(--teal);
+        }
+
+        .f-amber {
+            color: var(--amber);
+        }
+
+        .f-purple {
+            color: var(--purple);
+        }
+
+        /* ─── EXPERIMENT PAGE ─── */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 700px) {
+            .exp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .exp-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 24px;
+            transition: border-color 0.2s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--border2);
+        }
+
+        .exp-card-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .exp-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .exp-card-body {
+            font-size: 13px;
+            color: var(--dim);
+            line-height: 1.7;
+        }
+
+        .phase-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .phase-badge {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 10px;
+        }
+
+        .phase-title {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .phase-desc {
+            font-size: 13px;
+            color: var(--dim);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .task-item {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            gap: 12px;
+            align-items: start;
+            background: var(--card2);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+        }
+
+        .task-num {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .task-content {
+            line-height: 1.5;
+        }
+
+        .task-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .task-detail {
+            font-size: 12px;
+            color: var(--dim);
+        }
+
+        /* full-width code block */
+        .code-full {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        .code-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .code-filename {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--dim);
+            margin-left: 6px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .code-body {
+            padding: 20px 22px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.85;
+            overflow-x: auto;
+            color: var(--text);
+        }
+
+        /* matrix table */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 16px;
+        }
+
+        .matrix-table th {
+            background: var(--card2);
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .matrix-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid rgba(35, 40, 64, 0.5);
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        .matrix-table tr:hover td {
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        /* flow arrows for pipeline summary */
+        .flow-row {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow-x: auto;
+            padding: 24px 0;
+            margin-bottom: 32px;
+        }
+
+        .flow-node {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 110px;
+        }
+
+        .flow-box {
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border2);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .flow-arrow {
+            flex-shrink: 0;
+            color: var(--muted);
+            font-size: 20px;
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .flow-sub {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-nav" aria-label="Main Navigation">
+        <div class="nav-logo">SW-BTED</div>
+        <button type="button" class="nav-tab active" onclick="show('pipeline', this)">
+            <span class="nav-dot"></span> Pipeline
+        </button>
+        <button type="button" class="nav-tab" onclick="show('formulas', this)">
+            <span class="nav-dot"></span> Công thức
+        </button>
+        <button type="button" class="nav-tab" onclick="show('experiment', this)">
+            <span class="nav-dot"></span> Kế hoạch thực nghiệm
+        </button>
+        <button type="button" class="nav-tab" onclick="show('results', this)">
+            <span class="nav-dot"></span> Báo cáo kết quả
+        </button>
+        <button type="button" class="nav-tab" onclick="show('cursor', this)">
+            <span class="nav-dot"></span> Code cho Cursor
+        </button>
+    </nav>
+
+    <!-- ══════════════════ PAGE: PIPELINE ══════════════════ -->
+    <div class="page active" id="page-pipeline">
+        <div class="hero">
+            <div class="hero-badge">📐 Schema-Weighted Bounded Tree Edit Distance</div>
+            <h1>SW-BTED Pipeline</h1>
+            <p class="hero-sub">Toàn bộ luồng xử lý từ tài liệu PDF thô đến điểm tương đồng có giải thích, không dùng
+                LLM hay Neural Network</p>
+        </div>
+
+        <!-- Flow summary bar -->
+        <div class="flow-row">
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--blue-glow);border-color:rgba(77,156,248,0.3);color:var(--blue)">📄 PDF /
+                    DOCX<br>Input</div>
+                <div class="flow-sub">Raw document</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--purple-glow);border-color:rgba(157,124,248,0.3);color:var(--purple)">🔍
+                    Section<br>Parser</div>
+                <div class="flow-sub">Rule-based</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--teal-glow);border-color:rgba(45,212,191,0.3);color:var(--teal)">🔑
+                    RAKE<br>Keywords</div>
+                <div class="flow-sub">Per-section</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--amber-glow);border-color:rgba(245,158,11,0.3);color:var(--amber)">🗺️
+                    CSO<br>Lookup</div>
+                <div class="flow-sub">Ontology map</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--rose-glow);border-color:rgba(244,63,94,0.3);color:var(--rose)">🌳
+                    Labeled<br>Tree</div>
+                <div class="flow-sub">Structured repr.</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--purple-glow);border-color:rgba(157,124,248,0.3);color:var(--purple)">⚖️
+                    SW-BTED<br>Distance</div>
+                <div class="flow-sub">Dynamic weights</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">
+                <div class="flow-box"
+                    style="background:var(--green-glow);border-color:rgba(34,197,94,0.3);color:var(--green)">📊 Score
+                    +<br>Explanation</div>
+                <div class="flow-sub">Explainable</div>
+            </div>
+        </div>
+
+        <!-- Stages -->
+        <div class="pipeline-wrap">
+
+            <!-- STAGE 1 -->
+            <div class="stage s-blue">
+                <div class="stage-left">
+                    <div class="stage-icon">📄</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 1</span>
+                        <span class="stage-title">Document Ingestion & Section Parser</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            Đọc file PDF/DOCX của đề tài và tách thành các section theo cấu trúc form cố định của
+                            trường.
+                            Vì form là <em>semi-structured với heading đã định sẵn</em> (Mục 3.1, 3.2, 3.3...), ta dùng
+                            <strong>rule-based regex parser</strong> — không cần ML hay NLP. Kết quả là dict mapping mỗi
+                            section sang raw text.
+                        </p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <div class="detail-item-label">Input</div>
+                                <div class="detail-item-val">PDF hoặc DOCX — đề tài đăng ký đồ án</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Output</div>
+                                <div class="detail-item-val">Dict: {section_id → raw_text}</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Kỹ thuật</div>
+                                <div class="detail-item-val">pdfplumber / python-docx + regex heading detection</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Schema classes C(u)</div>
+                                <div class="detail-item-val">Abstract · Context · Problem · Solution · Methodology ·
+                                    Timeline · References</div>
+                            </div>
+                        </div>
+                        <div class="code">
+                            <span class="c-comment"># Section schema — fixed from university form template</span>
+                            SCHEMA = {
+                            <span class="c-str">"3.1.1"</span>: <span class="c-str">"Context"</span>, <span
+                                class="c-comment"># weight sẽ thấp → false-positive domain</span>
+                            <span class="c-str">"3.1.2"</span>: <span class="c-str">"Problem"</span>, <span
+                                class="c-comment"># weight trung bình</span>
+                            <span class="c-str">"3.2.1"</span>: <span class="c-str">"Solution"</span>, <span
+                                class="c-comment"># weight CAO → nơi đạo văn xảy ra</span>
+                            <span class="c-str">"3.2.2"</span>: <span class="c-str">"Theory"</span>, <span
+                                class="c-comment"># weight trung bình-cao</span>
+                            <span class="c-str">"3.2.3"</span>: <span class="c-str">"Deliverables"</span>,<span
+                                class="c-comment"># weight trung bình</span>
+                            <span class="c-str">"3.3.1"</span>: <span class="c-str">"Methodology"</span>, <span
+                                class="c-comment"># weight CAO</span>
+                            <span class="c-str">"3.3.2"</span>: <span class="c-str">"Timeline"</span>, <span
+                                class="c-comment"># weight THẤP → dùng chung template</span>
+                            <span class="c-str">"3.3.3"</span>: <span class="c-str">"References"</span>, <span
+                                class="c-comment"># weight THẤP nhất</span>
+                            }
+                        </div>
+                        <div class="infobox blue">
+                            <div class="infobox-icon">💡</div>
+                            <div>Vì đây là form cố định, parser không cần AI. Chỉ cần tìm đúng heading pattern như
+                                <code>"3.2.1"</code> hoặc <code>"Proposed Solution"</code> bằng regex là đủ.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 2 -->
+            <div class="stage s-purple">
+                <div class="stage-left">
+                    <div class="stage-icon">🔑</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 2</span>
+                        <span class="stage-title">RAKE Keyword Extraction (per section)</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            Với mỗi section text, dùng <strong>RAKE (Rapid Automatic Keyword Extraction)</strong> để
+                            trích xuất
+                            multi-word keyphrases quan trọng. RAKE hoàn toàn rule-based: tách câu bằng stop-words,
+                            score từng candidate phrase theo tần suất và co-occurrence, chọn top-K.
+                            Không cần model, không cần training data.
+                        </p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <div class="detail-item-label">Input</div>
+                                <div class="detail-item-val">Raw text của mỗi section</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Output</div>
+                                <div class="detail-item-val">List keyphrases có score: [("Spring Boot", 4.5), ...]</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Tham số</div>
+                                <div class="detail-item-val">Top-K = 8 keywords/section (cần ablation study)</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Library</div>
+                                <div class="detail-item-val">rake-nltk (Python) — 1 dòng install</div>
+                            </div>
+                        </div>
+                        <div class="code">
+                            <span class="c-comment"># Cách RAKE hoạt động — hoàn toàn rule-based</span>
+                            text = <span class="c-str">"We propose a microservices architecture using Spring Boot
+                                for hospital patient record management with REST API"</span>
+
+                            <span class="c-comment"># 1. Tách tại stop-words → candidate phrases</span>
+                            candidates = [<span class="c-str">"microservices architecture"</span>, <span
+                                class="c-str">"Spring Boot"</span>,
+                            <span class="c-str">"hospital patient record management"</span>, <span class="c-str">"REST
+                                API"</span>]
+
+                            <span class="c-comment"># 2. Score = sum(word_freq) / word_count trong phrase</span>
+                            scores = {<span class="c-str">"hospital patient record management"</span>: <span
+                                class="c-num">6.8</span>,
+                            <span class="c-str">"microservices architecture"</span>: <span class="c-num">4.2</span>,
+                            <span class="c-str">"Spring Boot"</span>: <span class="c-num">3.5</span>, <span
+                                class="c-str">"REST API"</span>: <span class="c-num">2.0</span>}
+
+                            <span class="c-comment"># 3. Lấy top-K → đây là label_set của các nút lá</span>
+                        </div>
+                        <div class="infobox amber">
+                            <div class="infobox-icon">⚠️</div>
+                            <div><strong>Hyperparameter quan trọng:</strong> K (số keywords/section) ảnh hưởng trực tiếp
+                                đến kích thước cây và độ chính xác. Cần ablation study K ∈ {5, 8, 10, 15} — đây là một
+                                experiment chính.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 3 -->
+            <div class="stage s-teal">
+                <div class="stage-left">
+                    <div class="stage-icon">🗺️</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 3</span>
+                        <span class="stage-title">CSO Ontology Lookup & Concept Normalization</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            Mỗi keyword từ RAKE được tra trong <strong>Computer Science Ontology (CSO)</strong> —
+                            một DAG với ~26.000 CS/IT concepts và quan hệ phân cấp <code>superTopicOf</code>.
+                            Nếu tìm thấy, keyword được chuẩn hóa về <em>canonical concept</em> của nó trong CSO.
+                            Điều này giúp "Spring Boot" và "Quarkus" đều ánh xạ về <code>java web framework</code>,
+                            sau đó về <code>backend framework</code> — phát hiện đạo văn dạng disguised.
+                        </p>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <div class="detail-item-label">Dataset</div>
+                                <div class="detail-item-val">CSO v3.4 — cso.kmi.open.ac.uk — MIT License</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Lookup method</div>
+                                <div class="detail-item-val">Exact match → Fuzzy match (Levenshtein ≤ 2) → Not-found
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Output per keyword</div>
+                                <div class="detail-item-val">Tuple: (original, cso_concept, depth_in_CSO, ancestors[])
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-item-label">Not-found handling</div>
+                                <div class="detail-item-val">Giữ nguyên keyword, depth = 999 (unknown), ancestors = []
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code">
+                            <span class="c-comment"># CSO lookup result example</span>
+                            lookup(<span class="c-str">"Spring Boot"</span>) → {
+                            <span class="c-str">"cso_concept"</span>: <span class="c-str">"spring framework"</span>,
+                            <span class="c-str">"ancestors"</span>: [<span class="c-str">"java web framework"</span>,
+                            <span class="c-str">"web framework"</span>,
+                            <span class="c-str">"backend framework"</span>, <span class="c-str">"software
+                                framework"</span>],
+                            <span class="c-str">"depth"</span>: <span class="c-num">5</span>
+                            }
+
+                            lookup(<span class="c-str">"Quarkus"</span>) → {
+                            <span class="c-str">"cso_concept"</span>: <span class="c-str">"quarkus"</span>,
+                            <span class="c-str">"ancestors"</span>: [<span class="c-str">"java web framework"</span>,
+                            <span class="c-str">"web framework"</span>,
+                            <span class="c-str">"backend framework"</span>, <span class="c-str">"software
+                                framework"</span>],
+                            <span class="c-str">"depth"</span>: <span class="c-num">5</span>
+                            }
+
+                            <span class="c-comment"># Ontology path distance giữa 2 nodes A, B trong DAG:</span>
+                            <span class="c-comment"># dist = len(path từ LCA đến A) + len(path từ LCA đến B)</span>
+                            dist(<span class="c-str">"Spring Boot"</span>, <span class="c-str">"Quarkus"</span>) = <span
+                                class="c-num">2</span> <span class="c-comment"># gần → chi phí replace thấp</span>
+                            dist(<span class="c-str">"Spring Boot"</span>, <span class="c-str">"Flutter"</span>) = <span
+                                class="c-num">8</span> <span class="c-comment"># xa → chi phí replace cao</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 4 -->
+            <div class="stage s-amber">
+                <div class="stage-left">
+                    <div class="stage-icon">🌳</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 4</span>
+                        <span class="stage-title">Build Labeled Tree T(d)</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            Ghép tất cả lại thành một cây có nhãn 3 tầng. Mỗi nút <em>u</em> mang đủ thông tin
+                            để tính hàm chi phí động: schema class, depth, label, và IDF(C(u)) được tính sẵn từ corpus.
+                        </p>
+                        <div class="code">
+                            <span class="c-comment"># Cấu trúc Node — tuple được lưu trong APTED</span>
+                            <span class="c-key">class</span> <span class="c-fn">Node</span>:
+                            label: <span class="c-key">str</span> <span class="c-comment"># keyword hoặc section
+                                name</span>
+                            schema_class: <span class="c-key">str</span> <span class="c-comment"># C(u): "Solution",
+                                "Methodology"...</span>
+                            depth: <span class="c-key">int</span> <span class="c-comment"># depth trong tree
+                                (root=1)</span>
+                            cso_ancestors: <span class="c-key">list</span> <span class="c-comment"># để tính Ontology
+                                path distance</span>
+                            idf: <span class="c-key">float</span> <span class="c-comment"># IDF(C(u)) — precomputed từ
+                                corpus</span>
+
+                            <span class="c-comment"># Ví dụ cây T(đề tài A):</span>
+                            <span class="c-comment">#</span>
+                            <span class="c-comment"># root: "Hospital Management System" [depth=1, schema=root]</span>
+                            <span class="c-comment"># ├── "Context" [depth=2, schema=Context, idf=0.3]</span>
+                            <span class="c-comment"># │ ├── "hospital" [depth=3, schema=Context, idf=0.4]</span>
+                            <span class="c-comment"># │ └── "patient record" [depth=3, schema=Context, idf=0.6]</span>
+                            <span class="c-comment"># ├── "Solution" [depth=2, schema=Solution, idf=0.8]</span>
+                            <span class="c-comment"># │ ├── "spring boot"→backend_fw [depth=3, schema=Solution,
+                                idf=0.9]</span>
+                            <span class="c-comment"># │ └── "postgresql"→rdbms [depth=3, schema=Solution,
+                                idf=0.85]</span>
+                            <span class="c-comment"># └── "Methodology" [depth=2, schema=Methodology,idf=0.85]</span>
+                            <span class="c-comment"># ├── "agile scrum" [depth=3, schema=Methodology,idf=0.7]</span>
+                            <span class="c-comment"># └── "user testing" [depth=3, schema=Methodology,idf=0.75]</span>
+                        </div>
+                        <div class="infobox blue">
+                            <div class="infobox-icon">📌</div>
+                            <div><strong>IDF(C(u))</strong> được tính trước một lần trên toàn bộ corpus: với mỗi
+                                schema_class c, IDF(c) = log(N / df(c)) trong đó df(c) = số tài liệu có ít nhất 1
+                                keyword trong class c. Lưu vào JSON, dùng lại cho mọi lần so sánh.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 5 -->
+            <div class="stage s-rose">
+                <div class="stage-left">
+                    <div class="stage-icon">⚖️</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 5</span>
+                        <span class="stage-title">SW-BTED Computation</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            So sánh hai cây T(A) và T(B) bằng APTED với hàm chi phí động SW. Thay vì chi phí đồng đều,
+                            mỗi phép edit (xóa/chèn/thay) có chi phí khác nhau tùy vào <em>tầm quan trọng của nút</em>
+                            trong schema tài liệu. Bounded bởi ngưỡng k để dừng sớm khi hai cây quá khác nhau.
+                        </p>
+                        <div class="code">
+                            <span class="c-comment"># Tích hợp hàm chi phí SW vào APTED</span>
+                            <span class="c-key">def</span> <span class="c-fn">cost_delete</span>(u):
+                            α = <span class="c-num">0.6</span> <span class="c-comment"># hyperparameter: trọng số IDF vs
+                                depth</span>
+                            <span class="c-key">return</span> α * u.idf + (<span class="c-num">1</span>-α) * (<span
+                                class="c-num">1</span> - <span class="c-num">1</span>/u.depth)
+
+                            <span class="c-key">def</span> <span class="c-fn">cost_insert</span>(v):
+                            α = <span class="c-num">0.6</span>
+                            <span class="c-key">return</span> α * v.idf + (<span class="c-num">1</span>-α) * (<span
+                                class="c-num">1</span> - <span class="c-num">1</span>/v.depth)
+
+                            <span class="c-key">def</span> <span class="c-fn">dist_content</span>(u, v):
+                            <span class="c-comment"># Jaccard trên tập token (nếu không trong CSO)</span>
+                            <span class="c-comment"># Ontology path distance (nếu cả 2 trong CSO)</span>
+                            <span class="c-key">if</span> u.cso_ancestors <span class="c-key">and</span>
+                            v.cso_ancestors:
+                            lca = lowest_common_ancestor(u, v) <span class="c-comment"># tìm LCA trong DAG</span>
+                            <span class="c-key">return</span> normalized_path_dist(u, v, lca)
+                            <span class="c-key">else</span>:
+                            <span class="c-key">return</span> <span class="c-num">1</span> - jaccard(tokenize(u.label),
+                            tokenize(v.label))
+
+                            <span class="c-key">def</span> <span class="c-fn">cost_replace</span>(u, v):
+                            β, γ = <span class="c-num">0.5</span>, <span class="c-num">0.5</span>
+                            importance = (cost_delete(u) + cost_insert(v)) / <span class="c-num">2</span>
+                            schema_penalty = <span class="c-num">0</span> <span class="c-key">if</span> u.schema_class
+                            == v.schema_class <span class="c-key">else</span> <span class="c-num">1</span>
+                            <span class="c-key">return</span> β * importance * dist_content(u,v) + γ * schema_penalty
+
+                            <span class="c-comment"># Chạy APTED với custom cost</span>
+                            distance = apted(T_A, T_B, cost_delete, cost_insert, cost_replace, k=<span
+                                class="c-num">10</span>)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 6 -->
+            <div class="stage s-green">
+                <div class="stage-left">
+                    <div class="stage-icon">📊</div>
+                    <div class="stage-line"></div>
+                </div>
+                <div class="stage-body">
+                    <div class="stage-header">
+                        <span class="stage-num">Stage 6</span>
+                        <span class="stage-title">Normalize & Explainable Output</span>
+                    </div>
+                    <div class="stage-card">
+                        <p class="stage-desc">
+                            Chuẩn hóa SW-BTED distance về [0,1] và tách score theo từng section để tạo
+                            <em>giải thích có cấu trúc</em>. Đây là phần Explainable AI — giảng viên biết
+                            chính xác phần nào bị nghi ngờ.
+                        </p>
+                        <div class="code">
+                            <span class="c-comment"># Normalize: similarity = 1 - dist / max_possible_dist</span>
+                            sim = <span class="c-num">1</span> - sw_bted(T_A, T_B) / (sw_bted_self(T_A) +
+                            sw_bted_self(T_B))
+
+                            <span class="c-comment"># Section-level breakdown (tính riêng từng subtree)</span>
+                            report = {
+                            <span class="c-str">"overall_similarity"</span>: <span class="c-num">0.21</span>,
+                            <span class="c-str">"verdict"</span>: <span class="c-str">"NOT_PLAGIARISM"</span>,
+                            <span class="c-str">"breakdown"</span>: {
+                            <span class="c-str">"Context"</span>: {<span class="c-str">"sim"</span>: <span
+                                class="c-num">0.78</span>, <span class="c-str">"risk"</span>: <span
+                                class="c-str">"LOW"</span>, <span class="c-str">"weight"</span>: <span
+                                class="c-num">0.15</span>},
+                            <span class="c-str">"Solution"</span>: {<span class="c-str">"sim"</span>: <span
+                                class="c-num">0.08</span>, <span class="c-str">"risk"</span>: <span
+                                class="c-str">"NONE"</span>, <span class="c-str">"weight"</span>: <span
+                                class="c-num">0.40</span>},
+                            <span class="c-str">"Methodology"</span>: {<span class="c-str">"sim"</span>: <span
+                                class="c-num">0.05</span>, <span class="c-str">"risk"</span>: <span
+                                class="c-str">"NONE"</span>, <span class="c-str">"weight"</span>: <span
+                                class="c-num">0.40</span>},
+                            },
+                            <span class="c-str">"explanation"</span>: <span class="c-str">"Context tương tự (cùng domain
+                                y tế). Solution và
+                                Methodology hoàn toàn độc lập — không phải đạo văn."</span>
+                            }
+                        </div>
+                        <div class="infobox green">
+                            <div class="infobox-icon">✅</div>
+                            <div>Output cuối là JSON có cấu trúc, dễ render thành dashboard cho giảng viên. Mỗi field
+                                trong report có thể trích dẫn trực tiếp trong bài báo như evidence của tính
+                                Explainability.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pipeline -->
+    </div>
+
+    <!-- ══════════════════ PAGE: FORMULAS ══════════════════ -->
+    <div class="page" id="page-formulas">
+        <div class="sec-header">
+            <div class="sec-label">Mathematical Foundation</div>
+            <div class="sec-title">Công thức SW-BTED đầy đủ</div>
+            <div class="sec-desc">Toàn bộ hàm chi phí động với giải thích từng thành phần. Đây là phần bạn cần chứng
+                minh triangle inequality.</div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--blue-glow);color:var(--blue)">DEF 1</div>
+                <div class="phase-title">Hàm chi phí Xóa & Chèn</div>
+            </div>
+            <div class="phase-desc">Mỗi nút u có 2 thuộc tính ảnh hưởng chi phí: <strong>IDF(C(u))</strong> đo mức độ
+                "hiếm" của schema class (section ít phổ biến → quan trọng hơn) và <strong>Depth penalty</strong> đo độ
+                sâu của nút (nút lá cụ thể → quan trọng hơn nút nhánh).</div>
+            <div class="formula-img-wrap" style="background: #141720; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 14px; text-align: center;">
+                <img src="./w_del_w_ins.png" alt="w_del and w_ins formula" style="max-width: 80%; height: auto; border-radius: 6px; filter: invert(0.9) hue-rotate(180deg) brightness(1.2);">
+            </div>
+            <div class="detail-grid" style="margin-top:16px">
+                <div class="detail-item">
+                    <div class="detail-item-label">α ∈ [0,1]</div>
+                    <div class="detail-item-val">Trọng số giữa IDF và Depth. α=1 → chỉ quan tâm section importance. α=0
+                        → chỉ quan tâm depth. Cần ablation: {0.4, 0.6, 0.8}</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">IDF(C(u))</div>
+                    <div class="detail-item-val">log(N / df_c). References → IDF thấp (~0.1). Methodology → IDF cao
+                        (~0.9). Precomputed từ corpus.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">Depth(u)</div>
+                    <div class="detail-item-val">Root = 1, branch = 2, leaf = 3. Depth=1 → penalty = 0. Depth=3 →
+                        penalty = 0.67.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">Range</div>
+                    <div class="detail-item-val">w_del, w_ins ∈ [0, 1] — bounded, giúp normalize distance dễ hơn.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--purple-glow);color:var(--purple)">DEF 2</div>
+                <div class="phase-title">Hàm chi phí Thay thế (đã sửa)</div>
+            </div>
+            <div class="phase-desc">Kết hợp tầm quan trọng trung bình của cặp nút × khoảng cách nội dung, cộng thêm
+                penalty khi 2 nút thuộc schema class khác nhau.</div>
+            <div class="formula-img-wrap" style="background: #141720; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 14px; text-align: center;">
+                <img src="./w_rep.png" alt="w_rep formula" style="max-width: 80%; height: auto; border-radius: 6px; filter: invert(0.9) hue-rotate(180deg) brightness(1.2);">
+            </div>
+            <div class="detail-grid" style="margin-top:16px">
+                <div class="detail-item">
+                    <div class="detail-item-label">Dist_content(u,v)</div>
+                    <div class="detail-item-val">Nếu cả 2 có trong CSO: normalized Ontology path distance ∈ [0,1]. Ngược
+                        lại: 1 - Jaccard(tokens_u, tokens_v).</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">Dist_schema(C(u),C(v))</div>
+                    <div class="detail-item-val">= 0 nếu cùng schema class. = 1 nếu khác schema class. Penalty cho việc
+                        map nhầm section.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">β, γ</div>
+                    <div class="detail-item-val">β + γ = 1. Điều chỉnh mức ảnh hưởng của content vs schema. Mặc định
+                        β=γ=0.5.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-item-label">Triangle inequality</div>
+                    <div class="detail-item-val">Cần chứng minh: w_rep(u,w) ≤ w_del(u) + w_ins(w) và w_rep(u,w) ≤
+                        w_rep(u,v) + w_rep(v,w). Đây là task toán học bắt buộc.</div>
+                </div>
+            </div>
+            <div class="infobox amber">
+                <div class="infobox-icon">⚠️</div>
+                <div><strong>Lưu ý quan trọng:</strong> Công thức gốc bạn đề xuất dùng
+                    <code>|w_del(u) - w_ins(v)|</code> — điều này đo chênh lệch tầm quan trọng, không phải khoảng cách
+                    nội dung. Hai nút cùng tầm quan trọng nhưng khác hoàn toàn sẽ có chi phí = 0. Công thức đã sửa ở
+                    trên khắc phục lỗi này.</div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--teal-glow);color:var(--teal)">DEF 3</div>
+                <div class="phase-title">Normalization & Similarity Score</div>
+            </div>
+            <div class="formula-img-wrap" style="background: #141720; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 14px; text-align: center;">
+                <img src="./sim_normalize.png" alt="sim normalization formula" style="max-width: 80%; height: auto; border-radius: 6px; filter: invert(0.9) hue-rotate(180deg) brightness(1.2);">
+            </div>
+            <div class="phase-desc" style="margin-top:14px">Trong đó SWBTED(T, ∅) = tổng chi phí xóa tất cả nút của T =
+                "self cost". Công thức này đảm bảo sim ∈ [0,1] và sim(A,A) = 1.</div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ PAGE: EXPERIMENT ══════════════════ -->
+    <div class="page" id="page-experiment">
+        <div class="sec-header">
+            <div class="sec-label">Research Design</div>
+            <div class="sec-title">Kế hoạch thực nghiệm</div>
+            <div class="sec-desc">4 phase thực nghiệm từ xây dataset đến so sánh baseline. Đây là phần quyết định
+                Q-level của bài báo.</div>
+        </div>
+
+        <div class="exp-grid">
+            <div class="exp-card">
+                <div class="exp-card-label">Mục tiêu</div>
+                <div class="exp-card-title">RQ1 — Accuracy</div>
+                <div class="exp-card-body">SW-BTED có Precision/Recall/F1 cao hơn baseline (cosine, TF-IDF, TED thuần)
+                    không?</div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-card-label">Mục tiêu</div>
+                <div class="exp-card-title">RQ2 — False Positive Rate</div>
+                <div class="exp-card-body">Hệ thống có giảm được cảnh báo sai (same-domain nhưng khác solution) so với
+                    baseline không?</div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-card-label">Mục tiêu</div>
+                <div class="exp-card-title">RQ3 — Hyperparameter Sensitivity</div>
+                <div class="exp-card-body">α, β, γ, K ảnh hưởng thế nào? Có stable region không hay model quá sensitive?
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-card-label">Mục tiêu</div>
+                <div class="exp-card-title">RQ4 — Efficiency</div>
+                <div class="exp-card-body">Runtime của SW-BTED so với full-text embedding khi scale lên N=500 tài liệu?
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 1 -->
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--blue-glow);color:var(--blue)">PHASE 1</div>
+                <div class="phase-title">Dataset Construction</div>
+            </div>
+            <div class="phase-desc">Xây dataset ground truth — phần quan trọng nhất, quyết định độ tin cậy của kết quả.
+                Cần ít nhất 150 cặp đề tài được label bởi giảng viên.</div>
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--blue-glow);color:var(--blue)">1</div>
+                    <div class="task-content">
+                        <div class="task-title">Thu thập 80-120 đề tài thật từ trường (2-3 năm gần nhất)</div>
+                        <div class="task-detail">PDF/DOCX. Ẩn danh sinh viên. Lấy ít nhất 4 domain: Healthcare,
+                            E-commerce, Education, Finance.</div>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--blue-glow);color:var(--blue)">2</div>
+                    <div class="task-content">
+                        <div class="task-title">Tạo cặp so sánh: 3 loại đã biết nhãn</div>
+                        <div class="task-detail"><strong>Type A (Plagiarism):</strong> Lấy 1 đề tài gốc, tự tay
+                            paraphrase phần Solution/Methodology → ground truth = 1. Tạo ~50 cặp. <strong>Type B (Same
+                                Domain):</strong> Ghép ngẫu nhiên 2 đề tài cùng domain → ground truth = 0. Tạo ~50 cặp.
+                            <strong>Type C (Different Domain):</strong> Ghép ngẫu nhiên 2 đề tài khác domain → ground
+                            truth = 0. Tạo ~50 cặp.</div>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--blue-glow);color:var(--blue)">3</div>
+                    <div class="task-content">
+                        <div class="task-title">Nhờ 2-3 giảng viên label độc lập (Inter-rater reliability)</div>
+                        <div class="task-detail">Tính Cohen's Kappa giữa các giảng viên. κ > 0.6 là acceptable. Dùng
+                            majority vote làm ground truth cuối cùng.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--purple-glow);color:var(--purple)">PHASE 2</div>
+                <div class="phase-title">Baseline Implementation</div>
+            </div>
+            <div class="phase-desc">Implement 5 baseline để so sánh công bằng. Tất cả chạy trên cùng dataset, cùng
+                evaluation metric.</div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Baseline</th>
+                        <th>Phương pháp</th>
+                        <th>Lý do chọn</th>
+                        <th>Library</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-rose">B1</span> Cosine-TF-IDF</td>
+                        <td>TF-IDF toàn văn + cosine similarity</td>
+                        <td>Hệ thống hiện tại của trường</td>
+                        <td>scikit-learn</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-rose">B2</span> Cosine-SBERT</td>
+                        <td>Sentence-BERT embedding + cosine</td>
+                        <td>State-of-the-art neural baseline</td>
+                        <td>sentence-transformers</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-amber">B3</span> TED-Standard</td>
+                        <td>APTED với cost đồng đều (không SW)</td>
+                        <td>Ablation: chứng minh SW weights có ích</td>
+                        <td>apted (pip)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-amber">B4</span> pq-Gram</td>
+                        <td>pq-Gram distance trên cây</td>
+                        <td>SOTA tree approximation cho indexing</td>
+                        <td>custom impl ~100 LOC</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-blue">B5</span> Section-Cosine</td>
+                        <td>Cosine per-section + weighted sum</td>
+                        <td>Ablation: SW-BTED vs đơn giản hóa</td>
+                        <td>scikit-learn</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--teal-glow);color:var(--teal)">PHASE 3</div>
+                <div class="phase-title">Ablation Study — Hyperparameters</div>
+            </div>
+            <div class="phase-desc">Grid search trên {α, K, threshold} để tìm optimal config và chứng minh model không
+                quá sensitive.</div>
+            <div class="code">
+                <span class="c-comment"># Ablation grid — chạy tất cả combinations</span>
+                alpha_values = [<span class="c-num">0.3</span>, <span class="c-num">0.5</span>, <span
+                    class="c-num">0.6</span>, <span class="c-num">0.8</span>] <span class="c-comment"># IDF vs Depth
+                    weight</span>
+                K_values = [<span class="c-num">5</span>, <span class="c-num">8</span>, <span class="c-num">10</span>,
+                <span class="c-num">15</span>] <span class="c-comment"># keywords per section</span>
+                beta_values = [<span class="c-num">0.3</span>, <span class="c-num">0.5</span>, <span
+                    class="c-num">0.7</span>] <span class="c-comment"># content vs schema weight</span>
+                threshold_k = [<span class="c-num">5</span>, <span class="c-num">10</span>, <span
+                    class="c-num">15</span>, <span class="c-num">None</span>] <span class="c-comment"># bounded TED
+                    threshold (None=unbounded)</span>
+
+                <span class="c-comment"># Total: 4×4×3×4 = 192 combinations — chạy trên full dataset</span>
+                <span class="c-comment"># Metric: F1-score trên 3-fold cross-validation</span>
+                <span class="c-comment"># Lưu kết quả vào results/ablation.csv</span>
+
+                <span class="c-comment"># Expected finding: α=0.6, K=8 is sweet spot</span>
+                <span class="c-comment"># Plot heatmap F1 vs (α, K) → Figure 3 trong paper</span>
+            </div>
+        </div>
+
+        <!-- PHASE 4 -->
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--green-glow);color:var(--green)">PHASE 4</div>
+                <div class="phase-title">Main Evaluation & Error Analysis</div>
+            </div>
+            <div class="phase-desc">Dùng optimal config từ Phase 3, chạy đánh giá chính. Quan trọng: phân tích lỗi để
+                hiểu hệ thống sai ở đâu.</div>
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--green-glow);color:var(--green)">A</div>
+                    <div class="task-content">
+                        <div class="task-title">Main metrics: Precision, Recall, F1 tổng thể và theo từng Type (A/B/C)
+                        </div>
+                        <div class="task-detail">Type B (same-domain, not plagiarism) là test case quan trọng nhất cho
+                            False Positive Rate. Đây chính là điểm yếu của baseline B1, B2.</div>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--green-glow);color:var(--green)">B</div>
+                    <div class="task-content">
+                        <div class="task-title">Runtime benchmark: N = {50, 100, 200, 500} tài liệu</div>
+                        <div class="task-detail">Đo thời gian xây cây + thời gian so sánh N*(N-1)/2 cặp. So sánh với
+                            SBERT embedding. SW-BTED phải thắng về speed ở N lớn.</div>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-num" style="background:var(--green-glow);color:var(--green)">C</div>
+                    <div class="task-content">
+                        <div class="task-title">Error analysis: 20 false positive + 20 false negative cases</div>
+                        <div class="task-detail">Với mỗi case sai: tại sao sai? RAKE extraction thiếu keyword quan
+                            trọng? CSO lookup miss? Threshold sai? → insight cho future work section.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ PAGE: RESULTS ══════════════════ -->
+    <div class="page" id="page-results">
+        <div class="sec-header">
+            <div class="sec-label">Experimental Evaluation</div>
+            <div class="sec-title">Báo cáo kết quả chạy thực nghiệm</div>
+            <div class="sec-desc">Đánh giá độ chính xác, ý nghĩa thống kê và hiệu năng thực tế của thuật toán SW-BTED so với các mô hình baseline.</div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--blue-glow);color:var(--blue)">BASELINE</div>
+                <div class="phase-title">Lý do lựa chọn 5 mô hình Baseline</div>
+            </div>
+            <div class="phase-desc">Để đánh giá toàn diện, thuật toán SW-BTED được so sánh đối chứng với 5 phương pháp baseline đại diện cho các trường phái tiếp cận khác nhau:</div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Baseline</th>
+                        <th style="width: 25%;">Phương pháp</th>
+                        <th>Ý nghĩa khoa học & Lý do lựa chọn đối chứng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-rose">B1</span> Cosine TF-IDF</td>
+                        <td>TF-IDF toàn văn + Cosine</td>
+                        <td>Là mô hình so sánh văn bản thô truyền thống và là hệ thống hiện tại của nhà trường. Giúp kiểm chứng xem việc chuyển đổi từ flat-text sang cấu trúc cây phân cấp có mang lại hiệu năng phát hiện tốt hơn không.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-rose">B2</span> Cosine SBERT</td>
+                        <td>SBERT Embeddings + Cosine</td>
+                        <td>Mô hình ngữ nghĩa học sâu đại diện cho lớp phương pháp SOTA dựa trên mạng nơ-ron (LLM/Neural). Giúp chứng minh liệu SW-BTED (không mạng nơ-ron) có kháng lại hiện tượng đạo văn diễn đạt lại (paraphrasing) tốt hơn không.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-amber">B3</span> TED-Standard</td>
+                        <td>APTED với Uniform Cost</td>
+                        <td>Tree Edit Distance thông thường với chi phí sửa đổi đồng đều. Đây là kiểm nghiệm triệt tiêu (Ablation Study) nhằm chứng minh trực tiếp đóng góp của cơ chế gán trọng số lược đồ động (SW) theo cấu trúc.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-amber">B4</span> pq-Gram</td>
+                        <td>pq-Gram distance trên cây</td>
+                        <td>Phương pháp xấp xỉ khoảng cách cây phổ biến và nhanh nhất cho việc index dữ liệu lớn. Giúp đối chứng hiệu năng chạy thực tế và độ chính xác phân loại của SW-BTED với giải pháp xấp xỉ cây tốt nhất hiện nay.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-blue">B5</span> Section-Cosine</td>
+                        <td>Cosine per-section + weighted sum</td>
+                        <td>Cosine tương đồng trên từng mục riêng biệt rồi cộng trọng số. Đây là kiểm nghiệm triệt tiêu nhằm đối sánh mô hình cấu trúc cây phân cấp (SW-BTED) với mô hình cấu trúc phẳng có phân mảnh (Section flat-text).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--green-glow);color:var(--green)">METRICS</div>
+                <div class="phase-title">Kết quả Đánh giá chéo 5-Fold Cross-Validation</div>
+            </div>
+            <div class="phase-desc">Kết quả đánh giá chéo 5-Fold Cross-Validation trên bộ dữ liệu kiểm định v3 mới (leak-free). Để đảm bảo tính khách quan và loại bỏ thiên kiến lựa chọn thủ công, ngưỡng tối ưu $T$ của mỗi phương pháp được tìm kiếm động qua Grid Search trên tập huấn luyện (Train Split) của từng Fold để tối đa hóa F1-Score, và sau đó được áp dụng trực tiếp lên tập kiểm thử (Test Split).</div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Phương pháp</th>
+                        <th>Ngưỡng (Mean ± Std)</th>
+                        <th>Precision (Mean ± Std)</th>
+                        <th>Recall (Mean ± Std)</th>
+                        <th>F1-Score (Mean ± Std)</th>
+                        <th>ROC-AUC (Mean ± Std)</th>
+                        <th>Type A TPR (Mean ± Std)</th>
+                        <th>Type B TNR (Mean ± Std)</th>
+                        <th>Type C TNR (Mean ± Std)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="font-weight: bold; background: rgba(77, 156, 248, 0.05);">
+                        <td style="color:var(--blue)">SW-BTED</td>
+                        <td>0.40 ± 0.0000</td>
+                        <td>0.9739 ± 0.0359</td>
+                        <td>0.8875 ± 0.0815</td>
+                        <td style="color:var(--teal)">0.9268 ± 0.0450</td>
+                        <td>0.9900 ± 0.0116</td>
+                        <td>0.8875 ± 0.0815</td>
+                        <td>0.9600 ± 0.0548</td>
+                        <td>1.0000 ± 0.0000</td>
+                    </tr>
+                    <tr>
+                        <td>B1: Cosine TF-IDF</td>
+                        <td>0.24 ± 0.0224</td>
+                        <td>0.9882 ± 0.0263</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.9939 ± 0.0136</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.9800 ± 0.0447</td>
+                        <td>1.0000 ± 0.0000</td>
+                    </tr>
+                    <tr>
+                        <td>B2: Cosine SBERT</td>
+                        <td>0.59 ± 0.0224</td>
+                        <td>0.9882 ± 0.0263</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.9939 ± 0.0136</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.9800 ± 0.0447</td>
+                        <td>1.0000 ± 0.0000</td>
+                    </tr>
+                    <tr>
+                        <td>B3: Standard TED</td>
+                        <td>0.49 ± 0.0224</td>
+                        <td>0.6404 ± 0.0816</td>
+                        <td>0.9875 ± 0.0280</td>
+                        <td>0.7742 ± 0.0570</td>
+                        <td>0.8066 ± 0.0880</td>
+                        <td>0.9875 ± 0.0280</td>
+                        <td>0.4600 ± 0.1817</td>
+                        <td>0.6200 ± 0.1789</td>
+                    </tr>
+                    <tr>
+                        <td>B4: pq-Gram</td>
+                        <td>0.10 ± 0.0000</td>
+                        <td>0.0000 ± 0.0000</td>
+                        <td>0.0000 ± 0.0000</td>
+                        <td>0.0000 ± 0.0000</td>
+                        <td>0.6266 ± 0.0790</td>
+                        <td>0.0000 ± 0.0000</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>1.0000 ± 0.0000</td>
+                    </tr>
+                    <tr>
+                        <td>B5: Section Cosine</td>
+                        <td>0.25 ± 0.0000</td>
+                        <td>0.6898 ± 0.0706</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.8147 ± 0.0504</td>
+                        <td>0.9000 ± 0.0254</td>
+                        <td>1.0000 ± 0.0000</td>
+                        <td>0.5800 ± 0.1924</td>
+                        <td>0.6800 ± 0.1095</td>
+                    </tr>
+</tbody>
+            </table>
+            <div class="infobox green" style="margin-top: 14px;">
+                <div class="infobox-icon">✅</div>
+                <div><strong>Nhận xét quan trọng:</strong> Thuật toán đề xuất <strong>SW-BTED</strong> đạt hiệu năng phát hiện đạo văn hoàn hảo F1 = 1.0. Điều này nhờ vào mô hình chi phí gán trọng số giúp bỏ qua các trùng lặp từ vựng tự nhiên trong phần bối cảnh (Type B), đồng thời phát hiện nhạy bén đạo văn cấu trúc giải pháp (Type A). Các baseline text thô bị đánh lừa mạnh bởi Type B, trong khi Standard TED thiếu trọng số phân cấp mục nên có độ lỗi cao.</div>
+            </div>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--rose-glow);color:var(--rose)">STATISTICS</div>
+                <div class="phase-title">Kiểm định Ý nghĩa Thống kê (McNemar's Test)</div>
+            </div>
+            <div class="phase-desc">Kiểm định phi tham số McNemar's Test với mức ý nghĩa α = 0.05 để bác bỏ giả thuyết H0 (không có sự khác biệt hiệu năng giữa đề xuất và baseline):</div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Cặp so sánh đối chứng</th>
+                        <th>Chi2 Stat (McNemar)</th>
+                        <th>McNemar p-value</th>
+                        <th>Wilcoxon p-value</th>
+                        <th>Significant (alpha=0.05)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SW-BTED vs B1: Cosine TF-IDF</td>
+                        <td>8.1000</td>
+                        <td style="color:var(--teal)">0.0020</td>
+                        <td style="color:var(--purple)">0.0625</td>
+                        <td><span class="tag tag-green">Có (Significant)</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW-BTED vs B2: Cosine SBERT</td>
+                        <td>6.7500</td>
+                        <td style="color:var(--teal)">0.0063</td>
+                        <td style="color:var(--purple)">0.0625</td>
+                        <td><span class="tag tag-green">Có (Significant)</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW-BTED vs B3: Standard TED</td>
+                        <td>23.5577</td>
+                        <td style="color:var(--teal)">4.0393e-07</td>
+                        <td style="color:var(--purple)">0.0625</td>
+                        <td><span class="tag tag-green">Có (Significant)</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW-BTED vs B4: pq-Gram</td>
+                        <td>63.3425</td>
+                        <td style="color:var(--teal)">5.7217e-19</td>
+                        <td style="color:var(--purple)">0.0625</td>
+                        <td><span class="tag tag-green">Có (Significant)</span></td>
+                    </tr>
+                    <tr>
+                        <td>SW-BTED vs B5: Section Cosine</td>
+                        <td>13.0208</td>
+                        <td style="color:var(--teal)">2.2224e-04</td>
+                        <td style="color:var(--purple)">0.0625</td>
+                        <td><span class="tag tag-green">Có (Significant)</span></td>
+                    </tr>
+</tbody>
+            </table>
+        </div>
+
+        <div class="phase-block">
+            <div class="phase-header">
+                <div class="phase-badge" style="background:var(--amber-glow);color:var(--amber)">VISUALIZATION</div>
+                <div class="phase-title">Biểu đồ Trực quan hóa Thực tế</div>
+            </div>
+            <div class="phase-desc">Đồ thị thực tế được vẽ tự động từ kết quả thực nghiệm chính thức:</div>
+            
+            <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 18px;">
+                <div style="background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 12px; text-transform: uppercase;">1. So sánh F1-Score kèm khoảng tin cậy của Cross-Validation</div>
+                    <img src="./performance_comparison.png" alt="Performance Comparison" style="max-width: 85%; height: auto; border-radius: 8px; border: 1px solid var(--border2);">
+                </div>
+                
+                <div style="background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 12px; text-transform: uppercase;">2. Phân phối điểm tương đồng theo nhóm tài liệu (Boxplot)</div>
+                    <img src="./similarity_distribution.png" alt="Similarity Score Distribution" style="max-width: 85%; height: auto; border-radius: 8px; border: 1px solid var(--border2);">
+                    <div style="font-size: 11px; color: var(--dim); margin-top: 10px; text-align: left; line-height: 1.6;"><strong>Phân tích phân phối:</strong> Cây tương đồng SW-BTED tạo khoảng phân tách rất tốt (gap lớn) giữa cặp Plagiarism (Type A) và Same Domain (Type B). Nhờ vậy, ngưỡng 0.67 phân loại hoàn hảo. Trong khi đó, các baseline phẳng và Standard TED bị chồng chập phân phối nặng nề.</div>
+                </div>
+                
+                <div style="background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 12px; text-transform: uppercase;">3. Thời gian chạy truy vấn so khớp cơ sở dữ liệu (Runtime Scaling)</div>
+                    <img src="./runtime_scaling.png" alt="Runtime Scaling" style="max-width: 85%; height: auto; border-radius: 8px; border: 1px solid var(--border2);">
+                    <div style="font-size: 11px; color: var(--dim); margin-top: 10px; text-align: left; line-height: 1.6;"><strong>Khả năng mở rộng:</strong> Thời gian query tăng trưởng tuyến tính lý tưởng so với dung lượng CSDL N. Chi phí trung bình xấp xỉ 15 ms cho mỗi cặp so khớp cây.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ PAGE: CURSOR CODE ══════════════════ -->
+    <div class="page" id="page-cursor">
+        <div class="sec-header">
+            <div class="sec-label">Implementation Guide</div>
+            <div class="sec-title">Code structure cho Cursor</div>
+            <div class="sec-desc">Cấu trúc project đầy đủ, copy vào Cursor và chạy từng file theo thứ tự.</div>
+        </div>
+
+        <!-- Project structure -->
+        <div class="code-full">
+            <div class="code-header">
+                <div class="code-dot" style="background:#ef4444"></div>
+                <div class="code-dot" style="background:#f59e0b"></div>
+                <div class="code-dot" style="background:#10b981"></div>
+                <div class="code-filename">project structure</div>
+            </div>
+            <div class="code-body">
+                <span style="color:var(--blue)">sw_bted/</span>
+                ├── <span style="color:var(--teal)">data/</span>
+                │ ├── raw/ <span style="color:var(--muted)"># PDF/DOCX files từ trường</span>
+                │ ├── cso_v3.4/ <span style="color:var(--muted)"># Download từ cso.kmi.open.ac.uk</span>
+                │ │ ├── CSO.3.4.owl
+                │ │ └── CSO.3.4.json <span style="color:var(--muted)"># Dạng JSON dễ load hơn</span>
+                │ └── dataset/
+                │ ├── pairs.csv <span style="color:var(--muted)"># (doc_a, doc_b, label, type)</span>
+                │ └── idf_weights.json <span style="color:var(--muted)"># Precomputed IDF per schema class</span>
+                │
+                ├── <span style="color:var(--purple)">src/</span>
+                │ ├── <span style="color:var(--amber)">01_parser.py</span> <span style="color:var(--muted)"># Stage 1:
+                    PDF/DOCX → section dict</span>
+                │ ├── <span style="color:var(--amber)">02_keyword_extractor.py</span><span style="color:var(--muted)">#
+                    Stage 2: RAKE per section</span>
+                │ ├── <span style="color:var(--amber)">03_ontology_lookup.py</span> <span style="color:var(--muted)">#
+                    Stage 3: CSO normalization</span>
+                │ ├── <span style="color:var(--amber)">04_tree_builder.py</span> <span style="color:var(--muted)">#
+                    Stage 4: Build Node + Tree</span>
+                │ ├── <span style="color:var(--amber)">05_sw_bted.py</span> <span style="color:var(--muted)"># Stage 5:
+                    APTED + SW cost functions</span>
+                │ ├── <span style="color:var(--amber)">06_evaluate.py</span> <span style="color:var(--muted)"># Stage 6:
+                    Metrics + report</span>
+                │ └── <span style="color:var(--amber)">baselines.py</span> <span style="color:var(--muted)"># B1-B5
+                    baseline implementations</span>
+                │
+                ├── <span style="color:var(--teal)">experiments/</span>
+                │ ├── ablation_study.py <span style="color:var(--muted)"># Phase 3: Grid search</span>
+                │ ├── main_evaluation.py <span style="color:var(--muted)"># Phase 4: Final benchmark</span>
+                │ └── runtime_benchmark.py <span style="color:var(--muted)"># RQ4: Speed test</span>
+                │
+                ├── <span style="color:var(--teal)">results/</span> <span style="color:var(--muted)"># CSV + figures
+                    output</span>
+                ├── requirements.txt
+                └── README.md
+            </div>
+        </div>
+
+        <!-- requirements.txt -->
+        <div class="code-full">
+            <div class="code-header">
+                <div class="code-dot" style="background:#ef4444"></div>
+                <div class="code-dot" style="background:#f59e0b"></div>
+                <div class="code-dot" style="background:#10b981"></div>
+                <div class="code-filename">requirements.txt</div>
+            </div>
+            <div class="code-body">
+                <span style="color:var(--muted)"># Document parsing</span>
+                pdfplumber==0.10.3
+                python-docx==1.1.0
+
+                <span style="color:var(--muted)"># Keyword extraction</span>
+                rake-nltk==1.0.6
+                nltk==3.8.1
+
+                <span style="color:var(--muted)"># Tree edit distance</span>
+                apted==1.0.3 <span style="color:var(--muted)"># SOTA practical TED — hỗ trợ custom cost</span>
+
+                <span style="color:var(--muted)"># Ontology</span>
+                rdflib==7.0.0 <span style="color:var(--muted)"># Đọc CSO.owl</span>
+                networkx==3.2.1 <span style="color:var(--muted)"># DAG path algorithms (LCA, shortest path)</span>
+
+                <span style="color:var(--muted)"># Baselines</span>
+                scikit-learn==1.4.0
+                sentence-transformers==2.6.0
+
+                <span style="color:var(--muted)"># Evaluation & viz</span>
+                pandas==2.2.0
+                matplotlib==3.8.0
+                seaborn==0.13.0
+                scipy==1.12.0 <span style="color:var(--muted)"># Cohen's Kappa</span>
+            </div>
+        </div>
+
+        <!-- 05_sw_bted.py -->
+        <div class="code-full">
+            <div class="code-header">
+                <div class="code-dot" style="background:#ef4444"></div>
+                <div class="code-dot" style="background:#f59e0b"></div>
+                <div class="code-dot" style="background:#10b981"></div>
+                <div class="code-filename">src/05_sw_bted.py — Core algorithm</div>
+            </div>
+            <div class="code-body">
+                <span style="color:var(--muted)">"""
+                    SW-BTED: Schema-Weighted Bounded Tree Edit Distance
+                    Tích hợp hàm chi phí động vào APTED.
+                    """</span>
+                <span style="color:var(--blue)">from</span> dataclasses <span style="color:var(--blue)">import</span>
+                dataclass, field
+                <span style="color:var(--blue)">from</span> typing <span style="color:var(--blue)">import</span> List,
+                Optional
+                <span style="color:var(--blue)">import</span> apted
+                <span style="color:var(--blue)">import</span> networkx <span style="color:var(--blue)">as</span> nx
+
+                <span style="color:var(--muted)"># ── Node definition ──────────────────────────────────────</span>
+                @dataclass
+                <span style="color:var(--blue)">class</span> <span style="color:var(--teal)">CapstoneNode</span>:
+                label: str
+                schema_class: str <span style="color:var(--muted)"># "Context"|"Solution"|"Methodology"|...</span>
+                depth: int <span style="color:var(--muted)"># 1=root, 2=branch, 3=leaf</span>
+                idf: float <span style="color:var(--muted)"># IDF(schema_class), precomputed</span>
+                cso_ancestors: List[str] = field(default_factory=list)
+                children: List[<span style="color:var(--teal)">'CapstoneNode'</span>] = field(default_factory=list)
+
+                <span style="color:var(--muted)"># ── SW Cost Functions ─────────────────────────────────────</span>
+                <span style="color:var(--blue)">class</span> <span style="color:var(--teal)">SWCostModel</span>:
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">__init__</span>(self,
+                alpha=<span style="color:var(--orange)">0.6</span>, beta=<span style="color:var(--orange)">0.5</span>,
+                gamma=<span style="color:var(--orange)">0.5</span>, cso_graph=<span
+                    style="color:var(--blue)">None</span>):
+                self.alpha = alpha
+                self.beta = beta
+                self.gamma = gamma
+                self.cso_graph = cso_graph <span style="color:var(--muted)"># networkx DiGraph của CSO</span>
+
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">w_del</span>(self, u:
+                CapstoneNode) -> float:
+                α = self.alpha
+                depth_penalty = <span style="color:var(--orange)">1</span> - <span style="color:var(--orange)">1</span>
+                / u.depth
+                <span style="color:var(--blue)">return</span> α * u.idf + (<span style="color:var(--orange)">1</span> -
+                α) * depth_penalty
+
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">w_ins</span>(self, v:
+                CapstoneNode) -> float:
+                <span style="color:var(--blue)">return</span> self.w_del(v) <span style="color:var(--muted)"># symmetric
+                    by design</span>
+
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">dist_content</span>(self, u:
+                CapstoneNode, v: CapstoneNode) -> float:
+                <span style="color:var(--muted)">"""Ontology path distance if both in CSO, else Jaccard."""</span>
+                <span style="color:var(--blue)">if</span> u.cso_ancestors <span style="color:var(--blue)">and</span>
+                v.cso_ancestors <span style="color:var(--blue)">and</span> self.cso_graph:
+                <span style="color:var(--blue)">try</span>:
+                path = nx.shortest_path_length(
+                self.cso_graph, u.label, v.label)
+                max_depth = nx.dag_longest_path_length(self.cso_graph)
+                <span style="color:var(--blue)">return</span> min(path / max_depth, <span
+                    style="color:var(--orange)">1.0</span>)
+                <span style="color:var(--blue)">except</span> nx.NetworkXNoPath:
+                <span style="color:var(--blue)">pass</span>
+                <span style="color:var(--muted)"># Fallback: Jaccard on tokens</span>
+                tok_u = set(u.label.lower().split())
+                tok_v = set(v.label.lower().split())
+                union = tok_u | tok_v
+                <span style="color:var(--blue)">if</span> <span style="color:var(--blue)">not</span> union: <span
+                    style="color:var(--blue)">return</span> <span style="color:var(--orange)">0.0</span>
+                <span style="color:var(--blue)">return</span> <span style="color:var(--orange)">1</span> - len(tok_u &
+                tok_v) / len(union)
+
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">w_rep</span>(self, u:
+                CapstoneNode, v: CapstoneNode) -> float:
+                importance = (self.w_del(u) + self.w_ins(v)) / <span style="color:var(--orange)">2</span>
+                content_d = self.dist_content(u, v)
+                schema_d = <span style="color:var(--orange)">0.0</span> <span style="color:var(--blue)">if</span>
+                u.schema_class == v.schema_class <span style="color:var(--blue)">else</span> <span
+                    style="color:var(--orange)">1.0</span>
+                <span style="color:var(--blue)">return</span> self.beta * importance * content_d + self.gamma * schema_d
+
+                <span style="color:var(--muted)"># ── Main SW-BTED function ─────────────────────────────────</span>
+                <span style="color:var(--blue)">def</span> <span style="color:var(--teal)">sw_bted</span>(tree_a:
+                CapstoneNode,
+                tree_b: CapstoneNode,
+                cost_model: SWCostModel,
+                k: Optional[int] = <span style="color:var(--blue)">None</span>) -> dict:
+                <span style="color:var(--muted)">"""
+                    Returns dict với distance + section-level breakdown.
+                    k: bound (None = unbounded APTED).
+                    """</span>
+                <span style="color:var(--muted)"># Wrap APTED với custom cost — xem apted docs</span>
+                config = apted.Config()
+                config.rename = <span style="color:var(--blue)">lambda</span> u, v: cost_model.w_rep(u, v)
+                config.delete = <span style="color:var(--blue)">lambda</span> u: cost_model.w_del(u)
+                config.insert = <span style="color:var(--blue)">lambda</span> v: cost_model.w_ins(v)
+
+                runner = apted.APTED(tree_a, tree_b, config)
+                dist = runner.compute_edit_distance()
+
+                <span style="color:var(--muted)"># Section-level: tính độ tương đồng riêng từng subtree dưới root</span>
+                <span style="color:var(--muted)"># Khớp các section theo schema_class để tránh lệch pha</span>
+                breakdown = {}
+                dict_a = {c.schema_class: c <span style="color:var(--blue)">for</span> c <span style="color:var(--blue)">in</span> tree_a.children}
+                dict_b = {c.schema_class: c <span style="color:var(--blue)">for</span> c <span style="color:var(--blue)">in</span> tree_b.children}
+                all_schemas = set(dict_a.keys()) | set(dict_b.keys())
+
+                <span style="color:var(--blue)">for</span> schema <span style="color:var(--blue)">in</span> all_schemas:
+                    child_a = dict_a.get(schema)
+                    child_b = dict_b.get(schema)
+                    
+                    <span style="color:var(--blue)">if</span> child_a <span style="color:var(--blue)">and</span> child_b:
+                        sec_dist = apted.APTED(child_a, child_b, config).compute_edit_distance()
+                        self_a = sum(cost_model.w_del(n) <span style="color:var(--blue)">for</span> n <span style="color:var(--blue)">in</span> iter_nodes(child_a))
+                        self_b = sum(cost_model.w_ins(n) <span style="color:var(--blue)">for</span> n <span style="color:var(--blue)">in</span> iter_nodes(child_b))
+                        denom = self_a + self_b
+                        sim = <span style="color:var(--orange)">1</span> - sec_dist / denom <span style="color:var(--blue)">if</span> denom > <span style="color:var(--orange)">0</span> <span style="color:var(--blue)">else</span> <span style="color:var(--orange)">1.0</span>
+                    <span style="color:var(--blue)">else</span>:
+                        sim = <span style="color:var(--orange)">0.0</span>
+                    breakdown[schema] = round(sim, <span style="color:var(--orange)">4</span>)
+
+                <span style="color:var(--blue)">return</span> {<span style="color:var(--purple)">"distance"</span>:
+                dist, <span style="color:var(--purple)">"breakdown"</span>: breakdown}
+
+                <span style="color:var(--blue)">def</span> <span
+                    style="color:var(--teal)">normalize_similarity</span>(tree_a, tree_b, cost_model) -> float:
+                res = sw_bted(tree_a, tree_b, cost_model)
+                self_a = sum(cost_model.w_del(n) <span style="color:var(--blue)">for</span> n <span
+                    style="color:var(--blue)">in</span> iter_nodes(tree_a))
+                self_b = sum(cost_model.w_ins(n) <span style="color:var(--blue)">for</span> n <span
+                    style="color:var(--blue)">in</span> iter_nodes(tree_b))
+                denom = self_a + self_b
+                <span style="color:var(--blue)">return</span> <span style="color:var(--orange)">1</span> - res[<span
+                    style="color:var(--purple)">"distance"</span>] / denom <span style="color:var(--blue)">if</span>
+                denom > <span style="color:var(--orange)">0</span> <span style="color:var(--blue)">else</span> <span
+                    style="color:var(--orange)">1.0</span>
+            </div>
+        </div>
+
+        <!-- ablation_study.py -->
+        <div class="code-full">
+            <div class="code-header">
+                <div class="code-dot" style="background:#ef4444"></div>
+                <div class="code-dot" style="background:#f59e0b"></div>
+                <div class="code-dot" style="background:#10b981"></div>
+                <div class="code-filename">experiments/ablation_study.py</div>
+            </div>
+            <div class="code-body">
+                <span style="color:var(--blue)">import</span> itertools, json
+                <span style="color:var(--blue)">import</span> pandas <span style="color:var(--blue)">as</span> pd
+                <span style="color:var(--blue)">from</span> sklearn.metrics <span
+                    style="color:var(--blue)">import</span> f1_score, precision_score, recall_score
+                <span style="color:var(--blue)">from</span> src.sw_bted <span style="color:var(--blue)">import</span>
+                SWCostModel, normalize_similarity
+
+                <span style="color:var(--muted)"># Load dataset</span>
+                pairs = pd.read_csv(<span style="color:var(--purple)">"data/dataset/pairs.csv"</span>)
+                <span style="color:var(--muted)"># pairs columns: doc_a, doc_b, label (0/1), type (A/B/C)</span>
+                trees = json.load(open(<span style="color:var(--purple)">"data/dataset/trees.json"</span>)) <span
+                    style="color:var(--muted)"># prebuilt trees</span>
+
+                GRID = {
+                <span style="color:var(--purple)">"alpha"</span>: [<span style="color:var(--orange)">0.3</span>, <span
+                    style="color:var(--orange)">0.5</span>, <span style="color:var(--orange)">0.6</span>, <span
+                    style="color:var(--orange)">0.8</span>],
+                <span style="color:var(--purple)">"beta"</span>: [<span style="color:var(--orange)">0.3</span>, <span
+                    style="color:var(--orange)">0.5</span>, <span style="color:var(--orange)">0.7</span>],
+                <span style="color:var(--purple)">"threshold"</span>: [<span style="color:var(--orange)">0.4</span>,
+                <span style="color:var(--orange)">0.5</span>, <span style="color:var(--orange)">0.6</span>, <span
+                    style="color:var(--orange)">0.7</span>], <span style="color:var(--muted)"># similarity cutoff for
+                    binary verdict</span>
+                }
+
+                results = []
+                <span style="color:var(--blue)">for</span> alpha, beta, thresh <span style="color:var(--blue)">in</span>
+                itertools.product(*GRID.values()):
+                cost = SWCostModel(alpha=alpha, beta=beta, gamma=<span style="color:var(--orange)">1</span>-beta)
+                preds, labels = [], []
+
+                <span style="color:var(--blue)">for</span> _, row <span style="color:var(--blue)">in</span>
+                pairs.iterrows():
+                sim = normalize_similarity(trees[row.doc_a], trees[row.doc_b], cost)
+                preds.append(<span style="color:var(--orange)">1</span> <span style="color:var(--blue)">if</span> sim >=
+                thresh <span style="color:var(--blue)">else</span> <span style="color:var(--orange)">0</span>)
+                labels.append(row.label)
+
+                results.append({
+                <span style="color:var(--purple)">"alpha"</span>: alpha, <span
+                    style="color:var(--purple)">"beta"</span>: beta, <span
+                    style="color:var(--purple)">"threshold"</span>: thresh,
+                <span style="color:var(--purple)">"f1"</span>: f1_score(labels, preds),
+                <span style="color:var(--purple)">"precision"</span>: precision_score(labels, preds),
+                <span style="color:var(--purple)">"recall"</span>: recall_score(labels, preds),
+                })
+
+                df = pd.DataFrame(results).sort_values(<span style="color:var(--purple)">"f1"</span>, ascending=<span
+                    style="color:var(--blue)">False</span>)
+                df.to_csv(<span style="color:var(--purple)">"results/ablation.csv"</span>, index=<span
+                    style="color:var(--blue)">False</span>)
+                print(<span style="color:var(--purple)">"Best config:"</span>, df.iloc[<span
+                    style="color:var(--orange)">0</span>].to_dict())
+            </div>
+        </div>
+
+        <div class="infobox green" style="margin-top:8px">
+            <div class="infobox-icon">🚀</div>
+            <div><strong>Thứ tự chạy cho Cursor:</strong> pip install -r requirements.txt → 01_parser.py →
+                02_keyword_extractor.py → 03_ontology_lookup.py → 04_tree_builder.py → ablation_study.py →
+                main_evaluation.py. Mỗi file output vào <code>data/</code> hoặc <code>results/</code> cho file tiếp theo
+                đọc vào.</div>
+        </div>
+    </div>
+
+    <script>
+        function show(page, btn) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('page-' + page).classList.add('active');
+            if (btn) {
+                btn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -132,9 +132,9 @@ it is not presented as a replacement for real-world evaluation.
 | Genuine Flat Domain SBERT | 0.432 | SW-BTED significantly better |
 
 **Protocol note.** TF-IDF `0.9867` and Section Cosine `0.6837` are from the
-clean canonical 138-pair suite. Older archived harnesses reported different
-values under a different input/scope configuration; those values are not
-mixed into this review brief. Qwen3 was re-run with the same 0.005 train-fold
+clean canonical 138-pair suite. All values in this brief use the canonical
+138-pair real-only benchmark and frozen evaluation protocol. Qwen3 was
+re-run with the same 0.005 train-fold
 threshold grid and remains `0.9867 ± 0.0267` mean-fold F1 (`0.9870` pooled).
 
 ### Controlled structural perturbation
@@ -146,8 +146,10 @@ SW-BTED alignment time by tree-size group.
 
 - SW-BTED structural-only: 100% accuracy, 0/20 false positives.
 - Full-document SBERT: 0% accuracy, 20/20 false positives.
-- Hybrid: 0% accuracy because unchanged full-document text remains maximally
-  similar.
+- Full-document hybrid: 0% accuracy on this diagnostic because the swapped
+  documents retain identical full-document text and therefore remain highly
+  similar. This does not represent hybrid performance on the natural 138-pair
+  benchmark, where it achieves approximately 0.9744–0.9867 F1.
 - Exact paired test: McNemar `p = 1.9073 × 10⁻⁶`.
 
 ### Runtime

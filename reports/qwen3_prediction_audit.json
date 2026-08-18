@@ -1,0 +1,148 @@
+{
+  "source": {
+    "qwen_pair_scores": "D:\\FPT\\Semester_8\\SW_BTED_v2\\kaggle\\qwen3_results\\qwen3_results\\qwen3_pair_scores.csv",
+    "qwen_provenance": "D:\\FPT\\Semester_8\\SW_BTED_v2\\kaggle\\qwen3_results\\qwen3_results\\provenance_manifest.json",
+    "pair_order": "preserved from downloaded Kaggle CSV",
+    "qwen_model": "Qwen/Qwen3-Embedding-4B",
+    "minilm_model_path": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--sentence-transformers--all-MiniLM-L6-v2\\snapshots\\c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+  },
+  "protocol": {
+    "n_pairs": 138,
+    "positive": 38,
+    "negative": 100,
+    "cv": "5-fold StratifiedKFold shuffle=True random_state=42",
+    "threshold_selection": "training fold only",
+    "threshold_grid": "0.00..1.00 step 0.01"
+  },
+  "qwen3": {
+    "TP": 38,
+    "FP": 1,
+    "TN": 99,
+    "FN": 0,
+    "f1_pooled_oof": 0.987012987012987,
+    "precision_pooled_oof": 0.9743589743589743,
+    "recall_pooled_oof": 1.0,
+    "score_min": 0.2818612456321716,
+    "score_max": 0.9561680555343628,
+    "folds": [
+      {
+        "fold": 1,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.66,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 2,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.66,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 3,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.66,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 4,
+        "n_test": 27,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.63,
+        "f1": 0.9333333333333333,
+        "precision": 0.875,
+        "recall": 1.0
+      },
+      {
+        "fold": 5,
+        "n_test": 27,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.66,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    ]
+  },
+  "minilm_independent": {
+    "TP": 38,
+    "FP": 0,
+    "TN": 100,
+    "FN": 0,
+    "f1_pooled_oof": 1.0,
+    "precision_pooled_oof": 1.0,
+    "recall_pooled_oof": 1.0,
+    "score_min": 0.10764624178409576,
+    "score_max": 0.9455811381340027,
+    "folds": [
+      {
+        "fold": 1,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.6,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 2,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.6,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 3,
+        "n_test": 28,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.6,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 4,
+        "n_test": 27,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.6,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 5,
+        "n_test": 27,
+        "threshold_selected_on": "train_fold",
+        "threshold": 0.6,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    ]
+  },
+  "pair_index_84_zero_based": {
+    "doc_a": "SU26SE087",
+    "doc_b": "SP26SE001",
+    "type": "Type_B",
+    "label": 0,
+    "qwen3_cosine": 0.5849661827087402,
+    "fold_threshold": 0.66,
+    "oof_prediction": 0,
+    "correct": true,
+    "minilm_cosine_independent": 0.5151844620704651,
+    "minilm_fold_threshold": 0.6,
+    "minilm_oof_prediction": 0
+  },
+  "same_oof_predictions": 137,
+  "different_oof_predictions": 1
+}

@@ -1,0 +1,96 @@
+{
+  "comparison": [
+    {
+      "Method": "SW-BTED",
+      "Manuscript F1": "0.9498",
+      "Staged F1": "0.9467",
+      "Audit real-only F1": "0.9498",
+      "Stage delta": "-0.0031",
+      "Audit delta": "+0.0000"
+    },
+    {
+      "Method": "B1: Cosine TF-IDF",
+      "Manuscript F1": "0.4364",
+      "Staged F1": "0.9223",
+      "Audit real-only F1": "0.4364",
+      "Stage delta": "+0.4859",
+      "Audit delta": "+0.0000"
+    },
+    {
+      "Method": "B2: Full-document SBERT",
+      "Manuscript F1": "0.9867",
+      "Staged F1": "0.9529",
+      "Audit real-only F1": "0.4131",
+      "Stage delta": "-0.0338",
+      "Audit delta": "-0.5736"
+    },
+    {
+      "Method": "B3: Standard TED",
+      "Manuscript F1": "0.4364",
+      "Staged F1": "0.3425",
+      "Audit real-only F1": "0.4364",
+      "Stage delta": "-0.0939",
+      "Audit delta": "+0.0000"
+    },
+    {
+      "Method": "B4: pq-Gram",
+      "Manuscript F1": "0.9479",
+      "Staged F1": "0.9579",
+      "Audit real-only F1": "0.9579",
+      "Stage delta": "+0.0100",
+      "Audit delta": "+0.0100"
+    },
+    {
+      "Method": "B5: Section Cosine",
+      "Manuscript F1": "0.4081",
+      "Staged F1": "0.5015",
+      "Audit real-only F1": "0.4314",
+      "Stage delta": "+0.0934",
+      "Audit delta": "+0.0233"
+    }
+  ],
+  "provenance": [
+    {
+      "Path": "repro_candidate_138\\config.yaml",
+      "Bytes": 254,
+      "LastWriteTime": "2026-07-01 10:46:46.745992",
+      "SHA256": "8b0f3d2fd86b4989"
+    },
+    {
+      "Path": "repro_candidate_138\\data\\dataset\\pairs.csv",
+      "Bytes": 5469,
+      "LastWriteTime": "2026-08-14 04:17:04.935356",
+      "SHA256": "d20a34fc8997baa2"
+    },
+    {
+      "Path": "repro_candidate_138\\data\\dataset\\trees_section.json",
+      "Bytes": 7214628,
+      "LastWriteTime": "2026-07-20 11:56:21.001910",
+      "SHA256": "35f0797183f9a389"
+    },
+    {
+      "Path": "repro_candidate_138\\data\\dataset\\full_texts.json",
+      "Bytes": 1582409,
+      "LastWriteTime": "2026-06-23 01:30:59.579926",
+      "SHA256": "327953ad210ad145"
+    },
+    {
+      "Path": "repro_candidate_138\\src\\05_sw_bted.py",
+      "Bytes": 9138,
+      "LastWriteTime": "2026-07-20 13:25:59.035202",
+      "SHA256": "ecffa3f0ecd3794e"
+    },
+    {
+      "Path": "repro_candidate_138\\src\\baselines.py",
+      "Bytes": 8639,
+      "LastWriteTime": "2026-08-14 04:27:35.793622",
+      "SHA256": "3c9dd977e171fac3"
+    },
+    {
+      "Path": "repro_candidate_138\\experiments\\main_evaluation.py",
+      "Bytes": 58431,
+      "LastWriteTime": "2026-08-14 04:18:21.410944",
+      "SHA256": "ef2820d7299aeb65"
+    }
+  ]
+}

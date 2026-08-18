@@ -1,0 +1,16 @@
+prefilter_threshold: 0.25
+max_edit_budget_ratio: 0.80
+alpha: 0.60
+beta:
+  T2: 0.0
+  T3: 0.9
+  T4: 1.0
+w_del:
+  T2: 2.0
+  T3: 1.0
+w_ins:
+  T2: 2.0
+  T3: 1.0
+embedding_model: "all-MiniLM-L6-v2"
+spacy_model: "en_core_web_trf"
+tfidf_fit_on: "train_set_only"

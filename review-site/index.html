@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SW-BTED — Project Review</title>
+  <style>
+    :root { --ink:#172033; --muted:#5b667a; --accent:#2563eb; --soft:#eef4ff; --line:#dbe3ef; --bg:#f7f9fc; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; }
+    header { background:linear-gradient(135deg,#13213f,#2563eb); color:white; padding:58px max(24px,calc((100% - 1080px)/2)); }
+    header h1 { margin:0 0 8px; font-size:clamp(2rem,5vw,3.6rem); letter-spacing:-.04em; }
+    header p { max-width:760px; margin:0; opacity:.9; font-size:1.08rem; }
+    .toolbar { max-width:1080px; margin:-22px auto 28px; padding:0 24px; display:flex; justify-content:flex-end; gap:10px; }
+    button { border:1px solid var(--line); border-radius:999px; padding:9px 16px; background:white; color:var(--ink); cursor:pointer; font-weight:700; box-shadow:0 4px 12px #17203312; }
+    button.active { background:var(--accent); color:white; border-color:var(--accent); }
+    main { max-width:1080px; margin:auto; padding:0 24px 60px; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+    nav a { color:var(--accent); background:white; border:1px solid var(--line); border-radius:8px; padding:5px 10px; text-decoration:none; font-size:.9rem; }
+    section { background:white; border:1px solid var(--line); border-radius:16px; padding:28px; margin:20px 0; box-shadow:0 8px 24px #17203308; }
+    h2 { margin-top:0; font-size:1.65rem; }
+    h3 { color:#1d4ed8; margin-bottom:8px; }
+    .hero-grid,.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .stat { background:var(--soft); border-radius:12px; padding:18px; }
+    .stat strong { display:block; color:#1646a0; font-size:1.7rem; }
+    .figure { margin:22px 0 6px; text-align:center; }
+    .figure img { max-width:100%; border:1px solid var(--line); border-radius:10px; background:white; }
+    figcaption { color:var(--muted); font-size:.9rem; margin-top:7px; }
+    table { width:100%; border-collapse:collapse; margin:14px 0; }
+    th,td { text-align:left; padding:10px; border-bottom:1px solid var(--line); }
+    th { background:var(--soft); }
+    .note { border-left:4px solid var(--accent); padding:12px 16px; background:#f5f8ff; }
+    .lang-vi { display:none; }
+    footer { max-width:1080px; margin:auto; padding:0 24px 45px; color:var(--muted); font-size:.9rem; }
+    @media(max-width:720px) { .hero-grid,.grid { grid-template-columns:1fr; } section { padding:21px; } th,td { padding:7px; font-size:.9rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SW-BTED</h1>
+    <p class="lang-en">Schema-Weighted Bounded Tree Edit Distance for interpretable structured document similarity.</p>
+    <p class="lang-vi">Schema-Weighted Bounded Tree Edit Distance cho việc đo tương đồng tài liệu có cấu trúc và có khả năng giải thích.</p>
+  </header>
+  <div class="toolbar"><button id="en" class="active">English</button><button id="vi">Tiếng Việt</button></div>
+  <main>
+    <nav>
+      <a href="#summary">Summary / Tóm tắt</a><a href="#problem">Problem / Vấn đề</a><a href="#pipeline">Pipeline</a><a href="#results">Results / Kết quả</a><a href="#limits">Limitations / Hạn chế</a><a href="#questions">Questions / Câu hỏi</a>
+    </nav>
+
+    <section id="summary">
+      <div class="lang-en"><h2>Project summary</h2><p>SW-BTED compares documents as four-layer trees: Root → Domain → Intent → Terminology. It combines schema-aware costs, normalized terminology and tree edit distance to provide both a similarity decision and an inspectable explanation.</p></div>
+      <div class="lang-vi"><h2>Tóm tắt dự án</h2><p>SW-BTED biểu diễn tài liệu thành cây bốn tầng: Root → Domain → Intent → Terminology. Phương pháp kết hợp chi phí theo schema, chuẩn hóa thuật ngữ và tree edit distance để vừa đưa ra quyết định tương đồng vừa giải thích được nguyên nhân.</p></div>
+      <div class="hero-grid"><div class="stat"><strong>138</strong><span class="lang-en">real-only document pairs</span><span class="lang-vi">cặp tài liệu real-only</span></div><div class="stat"><strong>0.9498</strong><span class="lang-en">structural-only F1</span><span class="lang-vi">F1 của structural-only</span></div><div class="stat"><strong>100%</strong><span class="lang-en">controlled perturbation accuracy</span><span class="lang-vi">độ chính xác trên perturbation benchmark</span></div><div class="stat"><strong>15.44 ms</strong><span class="lang-en">mean structural scoring time</span><span class="lang-vi">thời gian scoring structural trung bình</span></div></div>
+    </section>
+
+    <section id="problem"><div class="lang-en"><h2>Research problem</h2><p>Flat document embeddings can identify semantic similarity, but they do not show where two documents agree or disagree. They can also remain highly similar when the same content is placed in the wrong structural section.</p><h3>Research question</h3><p>Can a schema-weighted tree-edit framework provide competitive similarity detection while preserving structural attribution and sensitivity to structural perturbations?</p></div><div class="lang-vi"><h2>Vấn đề nghiên cứu</h2><p>Embedding toàn văn có thể đo tương đồng ngữ nghĩa nhưng không cho biết hai tài liệu giống hoặc khác nhau ở đâu. Chúng cũng có thể vẫn cho điểm rất cao khi cùng nội dung bị đặt sai section.</p><h3>Câu hỏi nghiên cứu</h3><p>Một framework tree-edit có trọng số theo schema có thể đạt hiệu năng cạnh tranh đồng thời giữ được khả năng giải thích cấu trúc và phát hiện perturbation hay không?</p></div></section>
+
+    <section id="pipeline"><div class="lang-en"><h2>Four-layer pipeline</h2><p>The pipeline parses each document, extracts and normalizes terms, maps them to a domain taxonomy, builds a CapTree, aligns two trees with SW-BTED, and converts the normalized score into a decision.</p></div><div class="lang-vi"><h2>Pipeline bốn tầng</h2><p>Pipeline parse tài liệu, trích xuất và chuẩn hóa thuật ngữ, ánh xạ vào taxonomy, xây dựng CapTree, align hai cây bằng SW-BTED rồi chuyển điểm chuẩn hóa thành quyết định.</p></div><figure class="figure"><img src="assets/figure_2_end_to_end_pipeline.png" alt="SW-BTED end-to-end pipeline"><figcaption>End-to-end processing pipeline / Pipeline xử lý end-to-end</figcaption></figure><figure class="figure"><img src="assets/figure_1_captree_architecture.png" alt="Four-layer CapTree architecture"><figcaption>Four-layer CapTree representation / Biểu diễn CapTree bốn tầng</figcaption></figure></section>
+
+    <section id="results"><div class="lang-en"><h2>Results</h2><p>The primary evidence is the frozen 138-pair real-only benchmark. SW-BTED is competitive with strong natural-document baselines; its clearest advantages are structural attribution and controlled perturbation robustness.</p></div><div class="lang-vi"><h2>Kết quả</h2><p>Bằng chứng chính là benchmark 138 cặp real-only đã được đóng băng. SW-BTED cạnh tranh với các baseline mạnh trên tài liệu tự nhiên; ưu thế rõ nhất là khả năng quy kết theo cấu trúc và độ bền trước perturbation có kiểm soát.</p></div><table><thead><tr><th>Method</th><th>F1</th><th>Interpretation</th></tr></thead><tbody><tr><td><b>SW-BTED structural-only</b></td><td><b>0.9498 ± 0.0253</b></td><td>Reference</td></tr><tr><td>TF-IDF</td><td>0.9867</td><td>Statistical parity</td></tr><tr><td>SBERT / BGE / MPNet / Qwen3</td><td>≈ 0.987</td><td>Statistical parity</td></tr><tr><td>pq-Gram</td><td>0.9479 ± 0.0478</td><td>Statistical parity</td></tr><tr><td>Section Cosine</td><td>0.6837</td><td>SW-BTED better</td></tr><tr><td>Standard TED</td><td>0.4364</td><td>SW-BTED better</td></tr></tbody></table><figure class="figure"><img src="assets/figure_3_canonical_results.png" alt="Canonical results chart"><figcaption>Canonical 138-pair results / Kết quả canonical 138 cặp</figcaption></figure><figure class="figure"><img src="assets/figure_4_interpretability_traces.png" alt="Interpretability traces"><figcaption>Structural interpretability examples / Ví dụ interpretability cấu trúc</figcaption></figure></section>
+
+    <section><div class="lang-en"><h2>Controlled perturbation and runtime</h2><p>On 20 constructed pairs, the D2↔D3 content is swapped while the full-document vocabulary remains unchanged. Structural-only SW-BTED achieves 100% accuracy; full-document SBERT and the full-document hybrid achieve 0% on this diagnostic because their text content remains maximally similar. This does not mean hybrid has 0% F1 on the natural benchmark.</p><p>The runtime chart groups pairs by tree size: smallest quartile, middle half and largest quartile. It measures structural alignment only, excluding parsing, model loading and embedding inference.</p></div><div class="lang-vi"><h2>Perturbation có kiểm soát và runtime</h2><p>Trên 20 cặp nhân tạo, nội dung D2↔D3 bị hoán đổi nhưng vocabulary toàn văn vẫn giữ nguyên. Structural-only SW-BTED đạt 100%; SBERT toàn văn và hybrid toàn văn đạt 0% trên diagnostic này vì nội dung văn bản vẫn gần như giống hệt. Điều này không có nghĩa hybrid có F1 bằng 0 trên benchmark tự nhiên.</p><p>Biểu đồ runtime chia các cặp theo kích thước cây: quartile nhỏ nhất, 50% ở giữa và quartile lớn nhất. Thời gian chỉ đo structural alignment, không bao gồm parsing, load model và embedding inference.</p></div><figure class="figure"><img src="assets/figure_5_perturbation_runtime.png" alt="Perturbation accuracy and runtime chart"><figcaption>Perturbation accuracy and runtime scaling / Accuracy perturbation và runtime</figcaption></figure></section>
+
+    <section><div class="lang-en"><h2>Document-disjoint robustness audit</h2><p>A stricter GroupKFold audit prevents the same document identity from appearing in both training and test groups. SW-BTED obtains pooled F1 0.9157 (38 TP, 7 FP, 93 TN, 0 FN). This is a supplemental generalization check, not a replacement for the primary protocol.</p></div><div class="lang-vi"><h2>Document-disjoint robustness audit</h2><p>Audit GroupKFold nghiêm ngặt hơn, không cho cùng một document xuất hiện ở cả train và test. SW-BTED đạt pooled F1 0.9157 (38 TP, 7 FP, 93 TN, 0 FN). Đây là kiểm tra bổ sung về khả năng tổng quát hóa, không thay thế protocol chính.</p></div></section>
+
+    <section id="limits"><div class="lang-en"><h2>Limitations</h2><ul><li>The primary dataset is modest and comes from one capstone-document setting.</li><li>The 20-pair perturbation benchmark is constructed and does not represent all real-world errors.</li><li>Each new document genre needs a grounded taxonomy.</li><li>Cross-domain transfer currently requires parameter adaptation.</li><li>Runtime excludes embedding inference and is not end-to-end service latency.</li><li>A third genre has not yet been evaluated.</li></ul></div><div class="lang-vi"><h2>Hạn chế</h2><ul><li>Dataset chính còn nhỏ và chỉ đến từ một bối cảnh capstone.</li><li>Benchmark perturbation 20 cặp là dữ liệu constructed, chưa đại diện cho mọi lỗi thực tế.</li><li>Mỗi genre tài liệu mới cần taxonomy phù hợp.</li><li>Chuyển domain hiện vẫn cần điều chỉnh tham số.</li><li>Runtime chưa bao gồm embedding inference và không phải latency end-to-end.</li><li>Chưa đánh giá trên genre thứ ba.</li></ul></div></section>
+
+    <section id="questions"><div class="lang-en"><h2>Questions for lecturer review</h2><ol><li>Is the structural interpretability contribution sufficiently distinct?</li><li>Is the controlled perturbation benchmark convincing as a diagnostic?</li><li>Is the four-layer taxonomy adequately justified?</li><li>Should the paper emphasize structural attribution more than raw F1?</li><li>Is a third domain necessary before submission?</li><li>Are the metric-preservation assumptions rigorous enough?</li></ol></div><div class="lang-vi"><h2>Câu hỏi xin ý kiến giảng viên</h2><ol><li>Đóng góp về interpretability cấu trúc đã đủ khác biệt chưa?</li><li>Benchmark perturbation có đủ thuyết phục như một diagnostic không?</li><li>Taxonomy bốn tầng đã được giải thích và tái lập đủ tốt chưa?</li><li>Có nên nhấn mạnh structural attribution hơn raw F1 không?</li><li>Có cần thêm domain thứ ba trước khi submit không?</li><li>Các giả định bảo toàn metric và proof đã đủ chặt chưa?</li></ol></div></section>
+
+    <section><div class="note"><b>Canonical source:</b> `reports/FINAL_CANONICAL_RESULTS_138.md` · <b>Manuscript:</b> `draft/SW_BTED_FULL_DRAFT_CITED_V2.md` · <b>Repository:</b> <a href="https://github.com/Tuan-Kiet-Le/SW_BTED">GitHub</a></div></section>
+  </main>
+  <footer>SW-BTED project review · Four-layer canonical protocol · Last content freeze: August 2026</footer>
+  <script>
+    const buttons = { en: document.getElementById('en'), vi: document.getElementById('vi') };
+    function setLanguage(lang) { document.documentElement.lang = lang; document.querySelectorAll('.lang-en,.lang-vi').forEach(el => el.style.display = el.classList.contains('lang-' + lang) ? '' : 'none'); Object.entries(buttons).forEach(([key,button]) => button.classList.toggle('active', key === lang)); localStorage.setItem('sw-bted-language', lang); }
+    buttons.en.onclick = () => setLanguage('en'); buttons.vi.onclick = () => setLanguage('vi'); setLanguage(localStorage.getItem('sw-bted-language') || 'en');
+  </script>
+</body>
+</html>

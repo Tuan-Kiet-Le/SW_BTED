@@ -1,0 +1,116 @@
+================================================================================
+TỔNG HỢP CÔNG THỨC TOÁN HỌC - THUẬT TOÁN SW-BTED (PLAGIARISM DETECTION)
+================================================================================
+
+Tài liệu này tổng hợp toàn bộ các công thức toán học được sử dụng trong hệ thống 
+Schema-Weighted Bounded Tree Edit Distance (SW-BTED) phục vụ viết báo cáo nghiên cứu.
+
+--------------------------------------------------------------------------------
+1. CHI PHÍ THAY ĐỔI CẤU TRÚC CÂY (SCHEMA-WEIGHTED EDIT COSTS)
+--------------------------------------------------------------------------------
+
+Mỗi nút u trong cây đề tài (Capstone Tree) chứa các thông số:
+- depth(u): Độ sâu của nút trong cấu trúc cây (1 = root, 2 = branch/section, 3 = leaf/keyword).
+- idf(u): Trọng số IDF của chương (schema class) chứa nút u, nhằm giảm tầm quan trọng 
+          của các chương thủ tục lặp đi lặp lại.
+
+A. Chi phí Xóa nút (Deletion Cost - w_del):
+   Chi phí xóa một nút u phụ thuộc vào trọng số IDF của chương đó và độ sâu của nút:
+
+   w_del(u) = alpha * idf(u) + (1 - alpha) * (1 - 1 / depth(u))
+
+   Trong đó:
+   - alpha: Hyperparameter điều phối sự cân bằng giữa trọng số chương (IDF) và độ sâu (depth).
+   - (1 - 1 / depth(u)): Phạt độ sâu (depth penalty). Nút càng sâu (lá) chi phí xóa càng lớn.
+
+B. Chi phí Thêm nút (Insertion Cost - w_ins):
+   Chi phí thêm nút được thiết kế đối xứng hoàn toàn với chi phí xóa:
+
+   w_ins(v) = w_del(v)
+
+C. Chi phí Thay thế nút (Replacement Cost - w_rep):
+   Chi phí thay thế nút u bằng nút v phụ thuộc vào khoảng cách nội dung (dist_content) 
+   và khoảng cách phân lớp schema (dist_schema):
+
+   w_rep(u, v) = (w_del(u) + w_ins(v)) * (beta * dist_content(u, v) + gamma * dist_schema(u, v))
+
+   Trong đó:
+   - beta, gamma: Các trọng số điều phối nội dung và cấu trúc (thường đặt gamma = 1 - beta).
+   - dist_schema(u, v) = 0.0  nếu u.schema_class == v.schema_class
+                       = 1.0  nếu u.schema_class != v.schema_class
+
+--------------------------------------------------------------------------------
+2. KHOẢNG CÁCH NỘI DUNG TỪ KHÓA (CONTENT DISTANCE - dist_content)
+--------------------------------------------------------------------------------
+
+Khoảng cách nội dung giữa hai nút lá u và v được tính toán thông qua hai cơ chế:
+
+A. Khoảng cách đồ thị phả hệ CSO (Ontology Path Distance):
+   Nếu cả u và v đều ánh xạ thành công vào đồ thị CSO (Computer Science Ontology), 
+   khoảng cách được tính bằng đường đi ngắn nhất trên đồ thị vô hướng CSO:
+
+   dist_content(u, v) = min( path_length(u, v) / max_depth, 1.0 )
+
+   Trong đó:
+   - path_length(u, v): Độ dài đường đi ngắn nhất giữa u và v trên đồ thị vô hướng CSO.
+   - max_depth: Chiều sâu tối đa của đồ thị CSO để chuẩn hóa khoảng cách về [0.0, 1.0] (đặt = 19).
+
+B. Khoảng cách Jaccard trên ký tự (Jaccard Word Distance Fallback):
+   Nếu u hoặc v không nằm trong đồ thị CSO, hệ thống sử dụng khoảng cách Jaccard 
+   trên các token từ vựng của nhãn từ khóa:
+
+   dist_content(u, v) = 1 - |tokens(u) ^ tokens(v)| / |tokens(u) v tokens(v)|
+
+   Trong đó:
+   - tokens(x): Tập hợp các từ đơn lẻ trong nhãn của nút x.
+   - ^: Phép giao (intersection).
+   - v: Phép hợp (union).
+
+--------------------------------------------------------------------------------
+3. ĐỘ TƯƠNG ĐỒNG CHUẨN HÓA (NORMALIZED SIMILARITY - Sim)
+--------------------------------------------------------------------------------
+
+Độ tương đồng chuẩn hóa giữa hai cây đề tài T_A và T_B được tính dựa trên khoảng cách 
+Tree Edit Distance (TED) tối ưu chia cho tổng chi phí tự hủy (self-cost) tối đa:
+
+                    TED(T_A, T_B)
+   Sim(T_A, T_B) = 1 - ---------------------------
+                    SelfCost(T_A) + SelfCost(T_B)
+
+   Trong đó:
+   - TED(T_A, T_B): Khoảng cách sửa cây tối thiểu được tính bởi thuật toán APTED 
+                    dưới mô hình chi phí SWCostModel.
+   - SelfCost(T): Chi phí xóa toàn bộ các nút của cây T (đưa cây về rỗng):
+     SelfCost(T) = Sum_{n in T} ( w_del(n) )
+
+--------------------------------------------------------------------------------
+4. ĐỘ TƯƠNG ĐỒNG CHI TIẾT TỪNG CHƯƠNG (SECTION-LEVEL SIMILARITY BREAKDOWN)
+--------------------------------------------------------------------------------
+
+Để giải thích chi tiết (Explainable Output), độ tương đồng của từng chương s 
+(ví dụ: Solution, Methodology) được tính độc lập trên hai phân nhánh cây tương ứng:
+
+                       TED(Subtree_A(s), Subtree_B(s))
+   Sim_section(s) = 1 - ---------------------------------------------
+                       SelfCost(Subtree_A(s)) + SelfCost(Subtree_B(s))
+
+   Trong đó:
+   - Subtree(s): Nhánh cây xuất phát từ nút chương s ở độ sâu 2.
+
+--------------------------------------------------------------------------------
+5. ĐÁNH GIÁ Ý NGHĨA THỐNG KÊ (MCNEMAR'S CHI-SQUARE TEST)
+--------------------------------------------------------------------------------
+
+Phép kiểm định phi tham số McNemar được dùng để đánh giá ý nghĩa thống kê giữa mô hình 
+đề xuất và các baseline:
+
+            (|b - c| - 1)^2
+   Chi2 = -------------------
+                 b + c
+
+   Trong đó:
+   - b: Số lượng mẫu kiểm thử mô hình đề xuất đoán ĐÚNG nhưng baseline đoán SAI.
+   - c: Số lượng mẫu kiểm thử mô hình đề xuất đoán SAI nhưng baseline đoán ĐÚNG.
+   - Hiệu chỉnh Yates (-1) được áp dụng ở tử số để tránh sai số khi cỡ mẫu nhỏ.
+   - Hệ thống so sánh p-value (từ phân phối Chi2 với 1 bậc tự do) với mức ý nghĩa alpha = 0.05.
+================================================================================
