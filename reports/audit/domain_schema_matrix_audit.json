@@ -1,0 +1,39 @@
+{
+  "labels": [
+    "D1_BUSINESS_CONTEXT",
+    "D2_FUNCTIONAL",
+    "D3_TECHNICAL_REALIZATION",
+    "D4_EXECUTION_PLANNING"
+  ],
+  "matrix": [
+    [
+      0.0,
+      0.8,
+      0.9,
+      0.9
+    ],
+    [
+      0.8,
+      0.0,
+      0.5,
+      0.7
+    ],
+    [
+      0.9,
+      0.5,
+      0.0,
+      0.6
+    ],
+    [
+      0.9,
+      0.7,
+      0.6,
+      0.0
+    ]
+  ],
+  "symmetric": true,
+  "identity_of_indiscernibles_on_schema_classes": true,
+  "triangle_inequality_holds": true,
+  "violations": [],
+  "interpretation": "The domain penalty matrix satisfies the finite-class metric checks, but the complete implementation still uses cosine-derived T3 distance; therefore the manuscript retains a conditional node-level proposition rather than claiming metricity of the implemented cost."
+}

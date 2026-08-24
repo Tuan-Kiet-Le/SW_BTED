@@ -1,6 +1,6 @@
 # Qwen3-Embedding-4B Kaggle Execution Report
 
-**Execution date:** 2026-08-14  
+**Execution date:** 2026-08-24 (version 10; tokenizer-audit rerun)
 **Kaggle kernel:** `lehoangtuankiet/sw-bted-qwen3-baseline`  
 **Input dataset:** private `lehoangtuankiet/sw-bted-138`  
 **Protocol:** canonical 138-pair real-only evaluation
@@ -37,12 +37,15 @@ This exactly matches the manuscript's current Full-Document SBERT result (`0.986
 3. Qwen4B 4-bit loading required `bitsandbytes>=0.46.1`; the runner now installs it when absent.
 4. The successful run used Qwen3-Embedding-4B with maximum length 2048 and batch size 1. The result metadata reports CUDA execution and the model dtype.
 
+5. The version 10 input-length audit found 18/178 documents (10.11%) over the configured 2048-token cutoff; median length was 637, P95 was 2504.2, and maximum was 4156 tokens. The Qwen3 comparison must therefore be described as a 2048-token truncation protocol.
+
 ## Artifacts
 
 - `kaggle/qwen3_results/qwen3_results/qwen3_metrics.json`
 - `kaggle/qwen3_results/qwen3_results/qwen3_pair_scores.csv`
 - `kaggle/qwen3_results/qwen3_results/qwen3_document_embeddings.npz`
 - `kaggle/qwen3_results/qwen3_results/provenance_manifest.json`
+- `kaggle/qwen3_results_v10/qwen3_results/qwen3_input_length_audit.json`
 - `kaggle/run_qwen3_embedding_baseline.py`
 
 ## Manuscript implication

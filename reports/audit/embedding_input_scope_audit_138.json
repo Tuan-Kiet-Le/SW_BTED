@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "pairs": 138,
+    "participating_documents": 178,
+    "pairs_sha256": "d20a34fc8997baa272a6d8f89bf5553922842c6032b11d08b4f831dcb4bc2a56",
+    "text_source": "tree label + full_texts.json section values in JSON order"
+  },
+  "models": {
+    "SBERT_MiniLM": {
+      "snapshot": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--sentence-transformers--all-MiniLM-L6-v2\\snapshots\\c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "tokenizer_class": "BertTokenizerFast",
+      "tokenizer_model_max_length": 512,
+      "sentence_transformer_effective_max_seq_length": 256,
+      "encode_call_in_historical_script": "model.encode(texts, show_progress_bar=False, normalize_embeddings=False where applicable)",
+      "truncation_behavior": "inputs longer than model_max_length are truncated by the SentenceTransformer Transformer module",
+      "length_stats": {
+        "n_documents": 178,
+        "min_tokens": 117,
+        "median_tokens": 605.5,
+        "p95_tokens": 2580.65,
+        "max_tokens": 4235,
+        "n_documents_over_model_limit": 159,
+        "fraction_documents_over_model_limit": 0.8932584269662921
+      }
+    },
+    "BGE_Small_v1.5": {
+      "snapshot": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--BAAI--bge-small-en-v1.5\\snapshots\\5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "tokenizer_class": "BertTokenizerFast",
+      "tokenizer_model_max_length": 512,
+      "sentence_transformer_effective_max_seq_length": 512,
+      "encode_call_in_historical_script": "model.encode(texts, show_progress_bar=False, normalize_embeddings=False where applicable)",
+      "truncation_behavior": "inputs longer than model_max_length are truncated by the SentenceTransformer Transformer module",
+      "length_stats": {
+        "n_documents": 178,
+        "min_tokens": 117,
+        "median_tokens": 605.5,
+        "p95_tokens": 2580.65,
+        "max_tokens": 4235,
+        "n_documents_over_model_limit": 103,
+        "fraction_documents_over_model_limit": 0.5786516853932584
+      }
+    },
+    "MPNet_Base_v2": {
+      "snapshot": "C:\\Users\\DuyTuanPC\\.cache\\huggingface\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+      "tokenizer_class": "MPNetTokenizerFast",
+      "tokenizer_model_max_length": 512,
+      "sentence_transformer_effective_max_seq_length": 384,
+      "encode_call_in_historical_script": "model.encode(texts, show_progress_bar=False, normalize_embeddings=False where applicable)",
+      "truncation_behavior": "inputs longer than model_max_length are truncated by the SentenceTransformer Transformer module",
+      "length_stats": {
+        "n_documents": 178,
+        "min_tokens": 117,
+        "median_tokens": 605.5,
+        "p95_tokens": 2580.65,
+        "max_tokens": 4235,
+        "n_documents_over_model_limit": 124,
+        "fraction_documents_over_model_limit": 0.6966292134831461
+      }
+    }
+  }
+}

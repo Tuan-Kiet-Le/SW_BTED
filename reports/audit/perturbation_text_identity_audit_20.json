@@ -1,0 +1,188 @@
+{
+  "n_pairs": 20,
+  "all_text_inputs_equal": true,
+  "all_structure_labels_changed": true,
+  "interpretation": "For this benchmark, a text-only embedding receives identical input strings on both sides. Truncation cannot explain a difference between original and perturbed embedding scores; it can only affect the shared representation itself.",
+  "rows": [
+    {
+      "doc_id": "SU26SE102",
+      "original_text_sha256": "6eaeb22b4422bd4695e634a79f2e6ee6b56d7d78eabbddf7b26df8deaa2eddf1",
+      "perturbed_text_sha256": "6eaeb22b4422bd4695e634a79f2e6ee6b56d7d78eabbddf7b26df8deaa2eddf1",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE045",
+      "original_text_sha256": "914aec309ea70f0ebcb5165f43168b31896bab94dde244d5a5bd54e1f259079f",
+      "perturbed_text_sha256": "914aec309ea70f0ebcb5165f43168b31896bab94dde244d5a5bd54e1f259079f",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE043",
+      "original_text_sha256": "fe2bd6502e8a1a9cb84db5199dc1ea6482be5b7977752a532aa5d6c64f9b79ef",
+      "perturbed_text_sha256": "fe2bd6502e8a1a9cb84db5199dc1ea6482be5b7977752a532aa5d6c64f9b79ef",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE047",
+      "original_text_sha256": "d971359a476e227f904bec5ebb6766969e76d01fc96362a353221fa9ee09af02",
+      "perturbed_text_sha256": "d971359a476e227f904bec5ebb6766969e76d01fc96362a353221fa9ee09af02",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE063",
+      "original_text_sha256": "08dcfc423cba540278e3f9643475d4133b28dfb71282dd7edbad3181f4d251d4",
+      "perturbed_text_sha256": "08dcfc423cba540278e3f9643475d4133b28dfb71282dd7edbad3181f4d251d4",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE048",
+      "original_text_sha256": "bce28139993e64ee9396844bb007d509473881bf96455f799249db5f0b69882d",
+      "perturbed_text_sha256": "bce28139993e64ee9396844bb007d509473881bf96455f799249db5f0b69882d",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE002",
+      "original_text_sha256": "1e780deb24d028332e39bfe8196626ce42abaa45313fd2d380910492748c8c02",
+      "perturbed_text_sha256": "1e780deb24d028332e39bfe8196626ce42abaa45313fd2d380910492748c8c02",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE093",
+      "original_text_sha256": "c0858d1b15c0ad0eea28f272951ec3973b1855c23539a9cef3cf5eda97f5149e",
+      "perturbed_text_sha256": "c0858d1b15c0ad0eea28f272951ec3973b1855c23539a9cef3cf5eda97f5149e",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE057",
+      "original_text_sha256": "7ab469db1eec568b6c824261dae1bbcc57625b81d44e8dcd9fd05d43d8b57d91",
+      "perturbed_text_sha256": "7ab469db1eec568b6c824261dae1bbcc57625b81d44e8dcd9fd05d43d8b57d91",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE096",
+      "original_text_sha256": "08235f68d3d85eecb6e29b1a8917c6b6276435b0ef9767bf01591c57ac13c745",
+      "perturbed_text_sha256": "08235f68d3d85eecb6e29b1a8917c6b6276435b0ef9767bf01591c57ac13c745",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE013",
+      "original_text_sha256": "380915b82c5e916523264c3e5de38ad3c754a864b3d63dd1f8d1eae3ab34ec92",
+      "perturbed_text_sha256": "380915b82c5e916523264c3e5de38ad3c754a864b3d63dd1f8d1eae3ab34ec92",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE021",
+      "original_text_sha256": "3e86869178b5bcf1f243da9b9e587e830121e90b1728260f6a06002eeb912583",
+      "perturbed_text_sha256": "3e86869178b5bcf1f243da9b9e587e830121e90b1728260f6a06002eeb912583",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE088",
+      "original_text_sha256": "36ee07e0cb14017709e8fd082cf23fccff8cfc54b8ab2d9e77ef040ae47918cc",
+      "perturbed_text_sha256": "36ee07e0cb14017709e8fd082cf23fccff8cfc54b8ab2d9e77ef040ae47918cc",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE106",
+      "original_text_sha256": "13a3e51d80fa2aad26b7020fbe664fd06e00ba8ab55ed35dbfbf092e63006f9f",
+      "perturbed_text_sha256": "13a3e51d80fa2aad26b7020fbe664fd06e00ba8ab55ed35dbfbf092e63006f9f",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE097",
+      "original_text_sha256": "08d70ad6c263bdd2ab89a00a67dddedb8bd55c8fb41bbab7bf0c566dcf3f7cf6",
+      "perturbed_text_sha256": "08d70ad6c263bdd2ab89a00a67dddedb8bd55c8fb41bbab7bf0c566dcf3f7cf6",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE066",
+      "original_text_sha256": "ded9567ef537b5071c080eea0c20376bf59a9b471fbc005248325e898e30c881",
+      "perturbed_text_sha256": "ded9567ef537b5071c080eea0c20376bf59a9b471fbc005248325e898e30c881",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE031",
+      "original_text_sha256": "13d0d6888c6836fe76fd621afb20a150bec411d0705eda0236c5ad21260760a5",
+      "perturbed_text_sha256": "13d0d6888c6836fe76fd621afb20a150bec411d0705eda0236c5ad21260760a5",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU27SE153",
+      "original_text_sha256": "25292a4bd3d55b12bd8e5425798f7b3a889821b12c3ade245f7b04e5943e5b6d",
+      "perturbed_text_sha256": "25292a4bd3d55b12bd8e5425798f7b3a889821b12c3ade245f7b04e5943e5b6d",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE023",
+      "original_text_sha256": "9d9b80366b33e55f8fd08fd716ab3e82d1a30744ddaabf696d6e71315325db1e",
+      "perturbed_text_sha256": "9d9b80366b33e55f8fd08fd716ab3e82d1a30744ddaabf696d6e71315325db1e",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    },
+    {
+      "doc_id": "SU26SE101",
+      "original_text_sha256": "0bdbdb0c0c992b91ab919d3922a4532ae1e2ae918a9d9dc568db4c4300c1fac8",
+      "perturbed_text_sha256": "0bdbdb0c0c992b91ab919d3922a4532ae1e2ae918a9d9dc568db4c4300c1fac8",
+      "text_equal": true,
+      "structure_schema_labels_changed": true,
+      "d2_index": 1,
+      "d3_index": 2
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "protocol": {
+    "pairs": 138,
+    "pair_file_sha256": "d20a34fc8997baa272a6d8f89bf5553922842c6032b11d08b4f831dcb4bc2a56",
+    "split": "GroupKFold(5) by connected components of pair-document graph",
+    "threshold_grid_step": 0.005,
+    "threshold_train_only": true,
+    "alpha": 0.6,
+    "formula": "alpha * structural_similarity + (1-alpha) * full_document_SBERT_cosine",
+    "structural_beta": {
+      "T2": 0.0,
+      "T3": 0.9,
+      "T4": 0.8
+    },
+    "n_documents": 178,
+    "n_components": 43,
+    "input_order_verified_by": "doc_a,doc_b,label,type"
+  },
+  "result": {
+    "mean_fold_f1": 0.9199999999999999,
+    "std_fold_f1": 0.16,
+    "pooled_f1": 0.9047619047619048,
+    "mcc": 0.8717797887081347,
+    "precision": 0.8260869565217391,
+    "recall": 1.0,
+    "tp": 38,
+    "fp": 8,
+    "tn": 92,
+    "fn": 0,
+    "folds": [
+      {
+        "fold": 1,
+        "train_pairs": 66,
+        "test_pairs": 72,
+        "threshold": 0.38,
+        "f1": 0.6,
+        "precision": 0.42857142857142855,
+        "recall": 1.0
+      },
+      {
+        "fold": 2,
+        "train_pairs": 121,
+        "test_pairs": 17,
+        "threshold": 0.41,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 3,
+        "train_pairs": 121,
+        "test_pairs": 17,
+        "threshold": 0.41,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 4,
+        "train_pairs": 122,
+        "test_pairs": 16,
+        "threshold": 0.41,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      {
+        "fold": 5,
+        "train_pairs": 122,
+        "test_pairs": 16,
+        "threshold": 0.41,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    ]
+  }
+}
