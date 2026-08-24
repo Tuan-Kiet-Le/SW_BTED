@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Comparing semi-structured documents — software requirement proposals and bug reports — is a task with real practical stakes: academic integrity review and duplicate-issue triage both depend on similarity judgments a human can act on and defend. Common flat-embedding and unweighted-TED approaches expose a practical tradeoff. Flat document embeddings achieve strong aggregate accuracy but collapse a document pair into a single scalar that does not by itself localize where the documents diverge. Tree-edit-distance (TED) methods are structurally attributable in principle, but unweighted formulations conflate superficial structural overlap with substantive similarity, producing high false-positive rates on documents that merely share a domain.
+Comparing semi-structured documents — software requirement proposals and bug reports — is a task with real practical stakes: academic integrity review and duplicate-issue triage both depend on similarity judgments a human can act on and defend. Common flat-embedding and unweighted-TED approaches expose a practical tradeoff. Flat document embeddings achieve strong aggregate accuracy but collapse a document pair into a single scalar that does not by itself localize where the documents diverge. Tree-edit-distance (TED) methods are structurally attributable in principle, but our unweighted baseline exhibits high false-positive rates on documents that share superficial domain structure while differing substantively.
 
 We propose SW-BTED, a schema-weighted tree-edit-distance framework in which each tree layer's node-level cost combines content and schema distance under a formal sufficient condition for preserving the triangle inequality, while APTED computes the minimum-cost alignment under the implemented edit-cost model. Critically, we ground each domain-layer schema primarily in independent, citable functional taxonomies while documenting justified extensions, and we demonstrate this principle across two structurally distinct domains: software capstone proposals and duplicate bug reports.
 
@@ -176,7 +176,7 @@ The primary 138-pair natural-document results in Table 1 use 5-fold stratified c
 
 ### 4.4 Reproducibility
 
-Reproducibility package: [SW-BTED repository](https://github.com/Tuan-Kiet-Le/SW_BTED), release tag `v1.0.0-canonical-138-2026-08-24`; the canonical dataset, pair hash, configuration, and audit outputs are documented in `reports/CANONICAL_SCIENTIFIC_MANIFEST_138.md` and `repro_candidate_138/data/dataset/`.
+Reproducibility package: [SW-BTED repository](https://github.com/Tuan-Kiet-Le/SW_BTED), release tag `v1.0.1-canonical-138-2026-08-24`; the canonical dataset, pair hash, configuration, and audit outputs are documented in `reports/CANONICAL_SCIENTIFIC_MANIFEST_138.md` and `repro_candidate_138/data/dataset/`.
 
 ---
 
